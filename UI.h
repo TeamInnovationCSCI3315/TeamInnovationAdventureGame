@@ -7,9 +7,10 @@ using namespace std;
 
 class UI
 {
+public: 
 	void DisplayInventory();
 	void DisplayChoices();
 	void UseItem(string);
-	void DisplayLocation();
+	void DisplayLocation(string);
 };
 #endif

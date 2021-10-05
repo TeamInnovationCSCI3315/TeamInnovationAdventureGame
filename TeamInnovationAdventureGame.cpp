@@ -8,7 +8,8 @@ using namespace std;
 
 int main()
 {
-   cout << "Hello Adventure Game!" << endl;
-   return 0;
+	GameClass Game; 
+	UI Interface;
+	Interface.DisplayLocation(Game.GetLocation());
+	return 0;
 }
-
