@@ -11,6 +11,7 @@ private:
 
 public:
 	string GetInventory();
+	void Choice();
 	void SetInventory(string);
 };
 #endif

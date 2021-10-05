@@ -15,6 +15,9 @@ public:
 //	void Location();
 	void SetLocation(string);
 	string GetLocation();
-
+	void VillageDescr();
+	void TavernDescr();
+	void AbandonDescr();
+	void AbandonDescrL();
 };
 #endif
