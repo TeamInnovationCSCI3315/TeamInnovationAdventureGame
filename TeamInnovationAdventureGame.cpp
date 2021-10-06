@@ -6,13 +6,16 @@
 #include "Locations.h"
 #include <iostream>
 using namespace std;
+/*
 
+
+*/
 int main()
 {
 	int playerchoice;
 	Locations VillageEntrance("Village Entrance", "Village Entrance Description, Press 1 to go west to Abandoned Shack, Pres 2 to go east to Tavern");
 	Locations AbandonedShack("Abandoned Shack", "Abandoned Shack Description, Press 1 to go back to Village Entrance");
-	Locations Tavern("Tavern", "Tavern Description, Press 1 to go back to Village Entrance");
+	Locations Tavern("Tavern", "Tavern Description, Press 1 to go to bar, Press 2 to pick up lantern from table, Press 3 to go back to Village Entrance");
 	UI Interface;
 	GameClass Game(VillageEntrance.getLocationName());
 //	cout << VillageEntrance.getLocationName() << endl;
@@ -46,14 +49,21 @@ int main()
 		case 3:
 			Interface.DisplayLocation(Tavern.getLocationName(), Tavern.getLocationDesc());
 			cin >> playerchoice;
-			if (playerchoice == 1)
-			{
-				playerLoc = Village_Entrance;
-			}
+				switch (playerchoice)
+				{
+				case 1:
+					cout << "You sit at the bar, and grab a quick drink. None of the locals are very friendly. \n";
+					break;
+				case 2:
+					cout << "You have picked up the lantern from the table";
+					break;
+				case 3:
+					playerLoc = Village_Entrance;
+					break;
+				}
+				break;
 		//	playerLoc = Village_Tavern;
-			break;
 		}
-	
 	/*switch (playerLoc)
 	{
 	case 1:
