@@ -4,7 +4,9 @@
 #include <cstdlib>
 #include <string>
 using namespace std;
-
+/*
+	This constructs the display for the choices, player input and location and returns it to cpp file to be displayed
+*/
 class UI
 {
 private:

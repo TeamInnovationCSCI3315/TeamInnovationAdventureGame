@@ -7,8 +7,9 @@
 #include <iostream>
 using namespace std;
 /*
-
-
+This file in particular contains the player choice, calls locations, UI and GameClass from the respective header file.
+This is done to run the game for the user and provides the main code, such as asking for the player choice to be 
+processed in the GameClass, Locations and UI.
 */
 int main()
 {

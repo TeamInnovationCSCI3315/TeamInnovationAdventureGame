@@ -5,7 +5,9 @@
 #include <string>
 using namespace std;
 GameClass Game(string n, string d);
-
+/*
+	This displays the location, asks the player choice and takes the player input to be returned to the main cpp file.
+*/
 void UI::DisplayLocation(string room,string desc)
 {
 	cout << "You are currently at: " << room << endl;

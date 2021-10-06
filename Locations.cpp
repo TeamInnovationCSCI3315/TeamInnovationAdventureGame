@@ -5,6 +5,9 @@
 #include <cstdlib>
 #include <string>
 using namespace std;
+/*
+	Constructors for the location and instances for location description and name, and returns these values to the user.
+*/
 Locations::Locations(string n, string d)
 {
 	locationName = n;

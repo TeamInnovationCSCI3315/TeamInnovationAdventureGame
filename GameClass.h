@@ -4,7 +4,9 @@
 #include <cstdlib>
 #include <string>
 using namespace std;
-
+/*
+	This file contains the constructors for the current player location.
+*/
 class GameClass
 {
 private:
