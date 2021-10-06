@@ -11,5 +11,6 @@ int main()
 	GameClass Game; 
 	UI Interface;
 	Interface.DisplayLocation(Game.GetLocation());
+	system("pause");
 	return 0;
 }
