@@ -9,15 +9,13 @@ class GameClass
 {
 private:
 
-	string Locations[3] = { "Village Entrance", "Tavern", "Abandoned Shack" }; //, {"Village Entrance Info", "Tavern Info", "Abandoned Shack Info"} };
-	string PlayerLocation = Locations[0];
+	//string Locations[3] = { "Village Entrance", "Tavern", "Abandoned Shack" }; //, {"Village Entrance Info", "Tavern Info", "Abandoned Shack Info"} };
+	string playerLocation;
 public:
 //	void Location();
+	GameClass(string);
 	void SetLocation(string);
 	string GetLocation();
-	void VillageDescr();
-	void TavernDescr();
-	void AbandonDescr();
-	void AbandonDescrL();
+
 };
 #endif

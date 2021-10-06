@@ -4,11 +4,21 @@
 #include <cstdlib>
 #include <string>
 using namespace std;
+GameClass Game(string n, string d);
 
-
-void UI::DisplayLocation(string room)
+void UI::DisplayLocation(string room,string desc)
 {
 	cout << "You are currently at: " << room << endl;
+	cout << desc << endl;
+	//cin >> playerInput;
+}
+void UI::DisplayChoices(string c)
+{
+	cout << "What do you do? "<<endl;
+}
+int UI::ReturnChoices()
+{
+	return playerInput;
 }
 
 
@@ -26,7 +36,7 @@ string GameClass::GetLocation()
 	return PlayerLocation;
 }*/
 
-void UI::DrinkDesc()
+/*void UI::DrinkDesc()
 {
 	cout << "Would you like a drink from the bar?" << endl;
 
@@ -41,4 +51,4 @@ void UI::LeaveLanternDesc()
 	cout << "Do you want to leave the lantern?" << endl;
 	cout << "Note: The lantern could be a source of light in dark areas" << endl;
 
-}
+}*/

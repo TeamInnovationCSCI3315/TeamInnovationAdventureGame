@@ -7,15 +7,19 @@ using namespace std;
 
 class UI
 {
+private:
+	int playerInput;
 public: 
-	void DisplayInventory();
-	void DisplayChoices();
-	void UseItem(string);
-	void DisplayLocation(string);
+	int ReturnChoices();
+	void DisplayChoices(string);
+	void DisplayLocation(string,string);
+/*	
 	string GetLocation();
 	void DrinkDesc();
 	void PickupLanternDesc();
 	void LeaveLanternDesc();
+	void DisplayInventory();
+	void UseItem(string);*/
 };
 #endif
 

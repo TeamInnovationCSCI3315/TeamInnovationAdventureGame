@@ -5,21 +5,20 @@
 #include <string>
 using namespace std;
 
-
-/* void GameClass::Location()
+GameClass::GameClass(string l)
 {
-	
-
-}*/
+	playerLocation = l;
+}
 void GameClass::SetLocation(string location)
 {
-	PlayerLocation = location;
+	playerLocation = location;
 }
 string GameClass::GetLocation()
 {
-	return PlayerLocation;
+	return playerLocation;
 }
-void GameClass::VillageDescr()
+
+/* void GameClass::VillageDescr()
 {
 	cout << "You find yourself looking at a village as you sit at the entrance of it. There is the light hooting of an owl as you start walking." << endl;
 	cout << "As you look around you notice how dark it is, the village allows you to barely maneuver around with the faint candlelight from the street lamps." << endl;
@@ -48,4 +47,4 @@ void GameClass::AbandonDescrL()
 	cout << "It seems to be made out of a rotting, creeping willow of some kind or another, though it splinters out as a thorny hide." << endl;
 	cout << "It has a flimsy door held together by sheer luck, and a rusted doorknob is the only thing standing between you and the inside." << endl;
 	cout << "Do you open the door and proceed inside?"<<endl;
-}
+}*/
