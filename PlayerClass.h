@@ -8,10 +8,13 @@ using namespace std;
 class PlayerClass
 {
 private:
+	//int inventory[];
 
 public:
 	string GetInventory();
 	void Choice();
-	void SetInventory(string);
+	void SetInventory(int);
+	void DisplayInventory();
+	void AddItem(string);
 };
 #endif

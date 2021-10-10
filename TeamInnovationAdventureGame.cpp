@@ -18,6 +18,7 @@ int main()
 	Locations AbandonedShack("Abandoned Shack", "Abandoned Shack Description, Press 1 to go back to Village Entrance");
 	Locations Tavern("Tavern", "Tavern Description, Press 1 to go to bar, Press 2 to pick up lantern from table, Press 3 to go back to Village Entrance");
 	UI Interface;
+	PlayerClass Inventory;
 	GameClass Game(VillageEntrance.getLocationName());
 //	cout << VillageEntrance.getLocationName() << endl;
 //	cout << VillageEntrance.getLocationDesc() << endl;
@@ -57,6 +58,7 @@ int main()
 					break;
 				case 2:
 					cout << "You have picked up the lantern from the table";
+					//Inventory.AddItem(lantern);
 					break;
 				case 3:
 					playerLoc = Village_Entrance;
