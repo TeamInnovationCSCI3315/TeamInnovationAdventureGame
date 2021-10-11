@@ -3,18 +3,19 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
+#include <vector>
 using namespace std;
 
 class PlayerClass
 {
 private:
-	//int inventory[];
+	vector<string> inventory = {};
 
 public:
-	string GetInventory();
-	void Choice();
-	void SetInventory(int);
+	//string GetInventory();
+	// void Choice();
 	void DisplayInventory();
 	void AddItem(string);
+	bool searchInventory(string);
 };
 #endif

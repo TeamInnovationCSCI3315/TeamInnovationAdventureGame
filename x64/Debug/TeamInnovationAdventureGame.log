@@ -1,10 +1,2 @@
-﻿  PlayerClass.cpp
-C:\Users\louie\source\repos\TeamInnovationAdventureGame3\PlayerClass.h(11,6): warning C4200: nonstandard extension used: zero-sized array in struct/union
-C:\Users\louie\source\repos\TeamInnovationAdventureGame3\PlayerClass.h(11,6): message : This member will be ignored by a defaulted constructor or copy/move assignment operator
-C:\Users\louie\source\repos\TeamInnovationAdventureGame3\PlayerClass.cpp(11,1): error C2600: 'PlayerClass::PlayerClass': cannot define a compiler-generated special member function (must be declared in the class first)
-C:\Users\louie\source\repos\TeamInnovationAdventureGame3\PlayerClass.cpp(16,12): error C2065: 'i': undeclared identifier
-C:\Users\louie\source\repos\TeamInnovationAdventureGame3\PlayerClass.cpp(20,19): error C2065: 'i': undeclared identifier
-  TeamInnovationAdventureGame.cpp
-C:\Users\louie\source\repos\TeamInnovationAdventureGame3\PlayerClass.h(11,6): warning C4200: nonstandard extension used: zero-sized array in struct/union
-C:\Users\louie\source\repos\TeamInnovationAdventureGame3\PlayerClass.h(11,6): message : This member will be ignored by a defaulted constructor or copy/move assignment operator
-  Generating Code...
+﻿  TeamInnovationAdventureGame.cpp
+  TeamInnovationAdventureGame.vcxproj -> C:\Users\guita\source\repos\TeamInnovationAdventureGame\x64\Debug\TeamInnovationAdventureGame.exe

@@ -14,6 +14,8 @@ private:
 public:
 	string getLocationName();
 	string getLocationDesc();
+	void setLocationName(string);
+	void setLocationDesc(string);
 	Locations(string, string);
 };
 #endif

@@ -14,11 +14,11 @@ processed in the GameClass, Locations and UI.
 int main()
 {
 	int playerchoice;
-	Locations VillageEntrance("Village Entrance", "Village Entrance Description, Press 1 to go west to Abandoned Shack, Pres 2 to go east to Tavern");
+	Locations VillageEntrance("Village Entrance", "Village Entrance Description, Press 1 to go west to Abandoned Shack, Press 2 to go east to Tavern");
 	Locations AbandonedShack("Abandoned Shack", "Abandoned Shack Description, Press 1 to go back to Village Entrance");
 	Locations Tavern("Tavern", "Tavern Description, Press 1 to go to bar, Press 2 to pick up lantern from table, Press 3 to go back to Village Entrance");
 	UI Interface;
-	PlayerClass Inventory;
+	PlayerClass Player;
 	GameClass Game(VillageEntrance.getLocationName());
 //	cout << VillageEntrance.getLocationName() << endl;
 //	cout << VillageEntrance.getLocationDesc() << endl;
@@ -38,6 +38,7 @@ int main()
 			{
 				playerLoc = Village_Tavern;
 			}
+			
 			break;
 		case 2:
 			Interface.DisplayLocation(AbandonedShack.getLocationName(), AbandonedShack.getLocationDesc());
@@ -56,15 +57,32 @@ int main()
 				case 1:
 					cout << "You sit at the bar, and grab a quick drink. None of the locals are very friendly. \n";
 					break;
-				case 2:
-					cout << "You have picked up the lantern from the table";
-					//Inventory.AddItem(lantern);
+				case 2:	
+					if (!Player.searchInventory("lantern"))
+					{
+											cout << "You have picked up the lantern from the table\n ";
+					Player.AddItem("lantern");
+					Player.DisplayInventory();
+					Tavern.setLocationDesc("Press 1 to go to bar, Press 2 to go back to Village Entrance");
 					break;
+					}
+					else
+					{
+						playerLoc = Village_Entrance;
+						break;
+					}
 				case 3:
-					playerLoc = Village_Entrance;
+					if (!Player.searchInventory("lantern"))
+					{
+						playerLoc = Village_Entrance;
+						break;
+					}
 					break;
 				}
 				break;
+		default:
+			cout << "Error in main switch statement" << endl;
+			cin >> playerchoice;
 		//	playerLoc = Village_Tavern;
 		}
 	/*switch (playerLoc)

@@ -3,31 +3,45 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
+#include <vector>
 using namespace std;
 
-PlayerClass::PlayerClass()
+/* PlayerClass::PlayerClass()
 {
-	int inventory[10] = {};
+	
+}*/ 
+
+void PlayerClass::AddItem(string itemID)
+{
+	inventory.push_back(itemID);
 }
 
-void PlayerClass::SetInventory(int itemID)
-{
-	inventory[i] = itemID;
-}
-
-string PlayerClass::GetInventory()
+/*string PlayerClass::GetInventory()
 {
 	return inventory[i];
-}
+}*/
 
 void PlayerClass::DisplayInventory()
 {
-	for (int i = 0; i < inventory[i].max_size(); i++)
+	cout << "Your Inventory is the following: " << endl;
+	for (const string i: inventory)
 	{
-		cout << i + 1 << ".) " << inventory[i] << endl;
+		cout << " "<<  i << " ";
+		if (i != inventory.at(inventory.size()-1))
+		{
+		cout << " | ";
+		}
 	}
+	cout << endl;
 }
-void PlayerClass::AddItem(string item)
+bool PlayerClass::searchInventory(string item)
 {
-
+	for (const string i : inventory)
+	{
+		if (i == item)
+		{
+			return true;
+		}
+	}
+	return false;
 }

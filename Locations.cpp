@@ -21,3 +21,11 @@ string Locations::getLocationDesc()
 {
 	return locationDesc;
 }
+void Locations::setLocationDesc(string d)
+{
+	locationDesc = d;
+}
+void Locations::setLocationName(string n)
+{
+	locationName = n;
+}
