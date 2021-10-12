@@ -14,9 +14,9 @@ processed in the GameClass, Locations and UI.
 int main()
 {
 	int playerchoice;
-	Locations VillageEntrance("Village Entrance", "Village Entrance Description, Press 1 to go west to Abandoned Shack, Press 2 to go east to Tavern");
-	Locations AbandonedShack("Abandoned Shack", "Abandoned Shack Description, Press 1 to go back to Village Entrance");
-	Locations Tavern("Tavern", "Tavern Description, Press 1 to go to bar, Press 2 to pick up lantern from table, Press 3 to go back to Village Entrance");
+	Locations VillageEntrance("Village Entrance", "Village Entrance Description, Press [1] to go west to Abandoned Shack, Press [2] to go east to Tavern");
+	Locations AbandonedShack("Abandoned Shack", "Abandoned Shack Description, Press [1] to go back to Village Entrance");
+	Locations Tavern("Tavern", "Tavern Description, Press [1] to go to bar, Press [2] to pick up lantern from table, Press [3] to go back to Village Entrance");
 	UI Interface;
 	PlayerClass Player;
 	GameClass Game(VillageEntrance.getLocationName());
@@ -32,6 +32,7 @@ int main()
 		case 1:
 			Interface.DisplayLocation(VillageEntrance.getLocationName(), VillageEntrance.getLocationDesc());
 			cin >> playerchoice;
+			Player.CallInventory(playerchoice);
 			if (playerchoice == 1)
 				playerLoc = Abandoned_Shack;
 			else if (playerchoice == 2)
@@ -43,6 +44,7 @@ int main()
 		case 2:
 			Interface.DisplayLocation(AbandonedShack.getLocationName(), AbandonedShack.getLocationDesc());
 			cin >> playerchoice;
+			Player.CallInventory(playerchoice);
 			if (playerchoice == 1)
 			{
 				playerLoc = Village_Entrance;
@@ -52,6 +54,7 @@ int main()
 		case 3:
 			Interface.DisplayLocation(Tavern.getLocationName(), Tavern.getLocationDesc());
 			cin >> playerchoice;
+			Player.CallInventory(playerchoice);
 				switch (playerchoice)
 				{
 				case 1:
@@ -60,10 +63,10 @@ int main()
 				case 2:	
 					if (!Player.searchInventory("lantern"))
 					{
-											cout << "You have picked up the lantern from the table\n ";
+					cout << "You have picked up the lantern from the table! Press [5] to display your inventory \n ";
 					Player.AddItem("lantern");
-					Player.DisplayInventory();
-					Tavern.setLocationDesc("Press 1 to go to bar, Press 2 to go back to Village Entrance");
+					//Player.DisplayInventory();
+					Tavern.setLocationDesc("Press [1] to go to bar, Press [2] to go back to Village Entrance");
 					break;
 					}
 					else

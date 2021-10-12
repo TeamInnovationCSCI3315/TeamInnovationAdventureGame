@@ -23,7 +23,9 @@ void PlayerClass::AddItem(string itemID)
 
 void PlayerClass::DisplayInventory()
 {
-	cout << "Your Inventory is the following: " << endl;
+	cout << endl << "Inventory: " << endl;
+	cout << "--------------------" << endl;
+
 	for (const string i: inventory)
 	{
 		cout << " "<<  i << " ";
@@ -32,7 +34,9 @@ void PlayerClass::DisplayInventory()
 		cout << " | ";
 		}
 	}
-	cout << endl;
+	
+	cout << endl << "--------------------" << endl << endl;
+
 }
 bool PlayerClass::searchInventory(string item)
 {
@@ -44,4 +48,11 @@ bool PlayerClass::searchInventory(string item)
 		}
 	}
 	return false;
+}
+void PlayerClass::CallInventory(int i)
+{
+	if (i == 5)
+	{
+		DisplayInventory();
+	}
 }
