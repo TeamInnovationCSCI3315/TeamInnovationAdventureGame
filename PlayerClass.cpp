@@ -11,6 +11,9 @@ using namespace std;
 	
 }*/ 
 
+/*
+Add Item adds an item ID to the vector Inventory
+*/
 void PlayerClass::AddItem(string itemID)
 {
 	inventory.push_back(itemID);
@@ -20,7 +23,9 @@ void PlayerClass::AddItem(string itemID)
 {
 	return inventory[i];
 }*/
-
+/*
+Displays Inventory through loop
+*/
 void PlayerClass::DisplayInventory()
 {
 	cout << endl << "Inventory: " << endl;
@@ -34,10 +39,16 @@ void PlayerClass::DisplayInventory()
 		cout << " | ";
 		}
 	}
-	
+	if (inventory.empty())
+	{
+		cout << "INVENTORY IS EMPTY";
+	}
 	cout << endl << "--------------------" << endl << endl;
 
 }
+/*
+Searches through inventory for item using a sequential search. If found, returns true
+*/
 bool PlayerClass::searchInventory(string item)
 {
 	for (const string i : inventory)
@@ -49,6 +60,9 @@ bool PlayerClass::searchInventory(string item)
 	}
 	return false;
 }
+/*
+Keybind for player to display the inventory
+*/
 void PlayerClass::CallInventory(int i)
 {
 	if (i == 5)

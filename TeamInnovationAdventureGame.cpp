@@ -13,9 +13,13 @@ processed in the GameClass, Locations and UI.
 */
 int main()
 {
+	/*
+	Multiple rooms are created, with their names, descriptions being defined through a constructor. 
+	The main game loop is created for game functionality
+	*/
 	int playerchoice;
 	Locations VillageEntrance("Village Entrance", "Village Entrance Description, Press [1] to go west to Abandoned Shack, Press [2] to go east to Tavern");
-	Locations AbandonedShack("Abandoned Shack", "Abandoned Shack Description, Press [1] to go back to Village Entrance");
+	Locations AbandonedShack("Abandoned Shack", "Abandoned Shack is too dark to explore, needs some sort of light source, Press [1] to go back to Village Entrance");
 	Locations Tavern("Tavern", "Tavern Description, Press [1] to go to bar, Press [2] to pick up lantern from table, Press [3] to go back to Village Entrance");
 	UI Interface;
 	PlayerClass Player;
@@ -39,15 +43,23 @@ int main()
 			{
 				playerLoc = Village_Tavern;
 			}
-			
 			break;
 		case 2:
-			Interface.DisplayLocation(AbandonedShack.getLocationName(), AbandonedShack.getLocationDesc());
-			cin >> playerchoice;
-			Player.CallInventory(playerchoice);
-			if (playerchoice == 1)
+			
+				Interface.DisplayLocation(AbandonedShack.getLocationName(), AbandonedShack.getLocationDesc());
+				cin >> playerchoice;
+				Player.CallInventory(playerchoice);
+				if (Player.searchInventory("lantern"))
+				{
+					if (playerchoice == 2)
+					{
+						playerLoc = Village_Entrance;
+					}
+				}
+			else
 			{
-				playerLoc = Village_Entrance;
+					if (playerchoice == 1)
+						playerLoc = Village_Entrance;
 			}
 			//playerLoc = Abandoned_Shack;
 			break;
@@ -60,6 +72,7 @@ int main()
 				case 1:
 					cout << "You sit at the bar, and grab a quick drink. None of the locals are very friendly. \n";
 					break;
+
 				case 2:	
 					if (!Player.searchInventory("lantern"))
 					{
@@ -67,6 +80,8 @@ int main()
 					Player.AddItem("lantern");
 					//Player.DisplayInventory();
 					Tavern.setLocationDesc("Press [1] to go to bar, Press [2] to go back to Village Entrance");
+					AbandonedShack.setLocationDesc("The lantern lighting up the room reveals there is a trapdoor. Press [1] to open it, Press [2] to return to the village entrance:");
+					
 					break;
 					}
 					else
@@ -80,6 +95,7 @@ int main()
 						playerLoc = Village_Entrance;
 						break;
 					}
+					
 					break;
 				}
 				break;
