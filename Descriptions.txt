@@ -1,0 +1,69 @@
+Village Entrance Description
+
+You find yourself looking at a village as you sit at the entrance of it. There is the light hooting of an owl as you start walking.
+As you look around you notice how dark it is, the village allows you to barely maneuver around with the faint candlelight from the street lamps.
+In one direction, following the road to the east you notice a tavern up ahead with bright lights and the sounds of commerce. This could be a good place to find information and help and it is probably the brightest place.
+In the other direction you notice the lights grow scarcer and scarcer until you can barely see the outline of what seems to be an abandoned shack, something draws you to it's shadow, curiosity maybe?
+Where do you go?
+
+Tavern Description
+
+You enter into a tavern with bright almost blinding light. It is noisy as people chat around at the bar and entrance.
+You are able to squeeze your way into the main room, most people have not taken notice of you and proceed about their bussiness.
+There lays the bar to your right that carries the smells of beer to you alongside other aromas.
+You also see on your left a fine finished table with a lantern on it.
+Where do you go?
+
+Abandoned Shack Description Dark
+
+After walking you arrive at the pitch black shack, it's presence alone stands as if you could die and it wouldn't so much as creek.
+As you approach it closer to inspect the strange building you find that it becomes far too dark to see and proceed forward, at least safely.
+Do you decide to exit now?
+
+Abandoned Shack Description Light
+
+With the lantern in hand you head towards the abandoned shack once again.
+It seems to be made out of a rotting, creeping willow of some kind or another, though it splinters out as a thorny hide.
+It has a flimsy door held together by sheer luck, and a rusted doorknob is the only thing standing between you and the inside.
+Do you open the door and proceed inside?
+
+Inside Abandoned Shack
+
+You pull open the wooden door as you do the door comes off of it's hinges with a loud thunk.
+You step to the side with an inexplicable calmness as it falls where you were previously standing.
+The inside of it is  hard to take in as you enter, still wondering.
+The walls seem warped and as if waves of fabric compared to it's porcupine exterior.
+An ocean of fine willow, sanded and well maintained like it's floors and a nearby bed.
+The candles with their wax drapping over windowsills greet you with the faintest flicker, before extinguishing.
+Startled, you notice the new wax drips just below a trapdoor not just a foot away from you. 
+It's fine finished wood and golden knocker whisper to you almost in a wordless alure. 
+You wonder finally, why?
+The door, the candles, the words, this shack.
+And it's with these thoughts, this pause, this hesitation, this fear.
+It happens.
+What do you do?
+
+The Tunnels Entrance
+
+You awake on the floor, a throbbing pain coming from your head.
+As you open your eyes by some miracle the lantern is lit next to your head.
+You arise, lantern in hand to find a crimson streak on the ground where you laid.
+You look up to find the trapdoor you entered from, out of reach.
+Looking around you notice you're in a cramped cavern.
+It is granite like with it's soft shimmer the walls give off as your lantern's light hits and exits the speckled walls.
+The floors seem smooth, too smooth almost, a thin layer of ice.
+You see two pathways ahead of you, one to the right and one that continues straight.
+What do you do?
+
+The First Puzzle
+
+(To Be Decided)
+
+The First Enemy
+
+As you go down the pathway to the right the granite gives way to finished stonework.
+You see at the end a shadow.
+But not just any shadow, a darkness your light fails to illuminate from where you're standing.
+It's disorienting to your eyes, and startles your stomach as you try to make out what it is.
+A faint moaning can be heard.
+Do you approach the shadow to inspect?

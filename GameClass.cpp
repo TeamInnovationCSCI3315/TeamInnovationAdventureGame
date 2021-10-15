@@ -20,11 +20,11 @@ string GameClass::GetLocation()
 	return playerLocation;
 }
 
-/* void GameClass::VillageDescr()
+/*void GameClass::VillageDescr()
 {
 	cout << "You find yourself looking at a village as you sit at the entrance of it. There is the light hooting of an owl as you start walking." << endl;
 	cout << "As you look around you notice how dark it is, the village allows you to barely maneuver around with the faint candlelight from the street lamps." << endl;
-	cout << "In one direction, following the road to the right you notice a tavern up ahead with bright lights and the sounds of commerce. This could be a good place to find information and help and it is probably the brightest place." << endl;
+	cout << "In one direction, following the road to the east you notice a tavern up ahead with bright lights and the sounds of commerce. This could be a good place to find information and help and it is probably the brightest place." << endl;
 	cout << "In the other direction you notice the lights grow scarcer and scarcer until you can barely see the outline of what seems to be an abandoned shack, something draws you to it's shadow, curiosity maybe?" << endl;
 	cout << "Where do you go?" << endl;
 }
