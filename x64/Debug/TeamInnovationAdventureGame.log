@@ -1,8 +1,2 @@
-﻿  GameClass.cpp
-  Locations.cpp
-  PlayerClass.cpp
-  TeamInnovationAdventureGame.cpp
-  UI.cpp
-  Generating Code...
-  LINK : C:\Users\twood\source\repos\TeamInnovationAGame(1)\x64\Debug\TeamInnovationAdventureGame.exe not found or not built by the last incremental link; performing full link
+﻿  TeamInnovationAdventureGame.cpp
   TeamInnovationAdventureGame.vcxproj -> C:\Users\twood\source\repos\TeamInnovationAGame(1)\x64\Debug\TeamInnovationAdventureGame.exe

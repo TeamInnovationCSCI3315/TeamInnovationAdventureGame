@@ -18,9 +18,9 @@ int main()
 	The main game loop is created for game functionality
 	*/
 	int playerchoice;
-	Locations VillageEntrance("Village Entrance", "Village Entrance Description, Press [1] to go west to Abandoned Shack, Press [2] to go east to Tavern");
-	Locations AbandonedShack("Abandoned Shack", "Abandoned Shack is too dark to explore, needs some sort of light source, Press [1] to go back to Village Entrance");
-	Locations Tavern("Tavern", "Tavern Description, Press [1] to go to bar, Press [2] to pick up lantern from table, Press [3] to go back to Village Entrance");
+	Locations VillageEntrance("Village Entrance", "You find yourself looking at a village as you sit at the entrance of it. There is the light hooting of an owl as you start walking.\nAs you look around you notice how dark it is, the village allows you to barely maneuver around with the faint candlelight from the street lamps.\nIn one direction, following the road to the east you notice a tavern up ahead with bright lights and the sounds of commerce. This could be a good place to find information and help and it is probably the brightest place.\nIn the other direction you notice the lights grow scarcer and scarcer until you can barely see the outline of what seems to be an abandoned shack, something draws you to it's shadow, curiosity maybe?\nWhere do you go?\n Press [1] to go west to Abandoned Shack, Press [2] to go east to Tavern");
+	Locations AbandonedShack("Abandoned Shack", "After walking you arrive at the pitch black shack, it's presence alone stands as if you could die and it wouldn't so much as creek.\nAs you approach it closer to inspect the strange building you find that it becomes far too dark to see and proceed forward, at least safely.\nDo you decide to exit now?\n Press [1] to go back to Village Entrance");
+	Locations Tavern("Tavern", "You enter into a tavern with bright almost blinding light. It is noisy as people chat around at the bar and entrance.\nYou are able to squeeze your way into the main room, most people have not taken notice of you and proceed about their bussiness.\nThere lays the bar to your right that carries the smells of beer to you alongside other aromas.\nYou also see on your left a fine finished table with a lantern on it.\nWhere do you go?\n, Press [1] to go to bar, Press [2] to pick up lantern from table, Press [3] to go back to Village Entrance");
 	UI Interface;
 	PlayerClass Player;
 	GameClass Game(VillageEntrance.getLocationName());
@@ -80,8 +80,7 @@ int main()
 					Player.AddItem("lantern");
 					//Player.DisplayInventory();
 					Tavern.setLocationDesc("Press [1] to go to bar, Press [2] to go back to Village Entrance");
-					AbandonedShack.setLocationDesc("The lantern lighting up the room reveals there is a trapdoor. Press [1] to open it, Press [2] to return to the village entrance:");
-					
+					AbandonedShack.setLocationDesc("With the lantern in hand you head towards the abandoned shack once again.\nIt seems to be made out of a rotting, creeping willow of some kind or another, though it splinters out as a thorny hide.\nIt has a flimsy door held together by sheer luck, and a rusted doorknob is the only thing standing between you and the inside.\nYou pull open the wooden door as you do the door comes off of it's hinges with a loud thunk.\nYou step to the side with an inexplicable calmness as it falls where you were previously standing.\nThe inside of it is  hard to take in as you enter, still wondering.\nThe walls seem warped and as if waves of fabric compared to it's porcupine exterior.\nAn ocean of fine willow, sanded and well maintained like it's floors and a nearby bed.\nThe candles with their wax drapping over windowsills greet you with the faintest flicker, before extinguishing.\nStartled, you notice the new wax drips just below a trapdoor not just a foot away from you.\nIt's fine finished wood and golden knocker whisper to you almost in a wordless alure.\nYou wonder finally, why?\nThe door, the candles, the words, this shack.\nAnd it's with these thoughts, this pause, this hesitation, this fear.\nIt happens.\nWhat do you do?\n Press [1] to open it, Press [2] to return to the village entrance:");
 					break;
 					}
 					else
