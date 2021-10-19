@@ -29,7 +29,7 @@ int main()
 	enum loc{Village_Entrance = 1, Abandoned_Shack = 2, Village_Tavern = 3 };
 	loc playerLoc = Village_Entrance;
 	//Interface.DisplayLocation(Game.GetLocation(),VillageEntrance.getLocationDesc());
-
+	cout << "Place Holder Introduction: Press 0 to quit at any time\n" << endl << endl;
 	while(true)
 		switch (playerLoc)
 		{
@@ -37,6 +37,7 @@ int main()
 			Interface.DisplayLocation(VillageEntrance.getLocationName(), VillageEntrance.getLocationDesc());
 			cin >> playerchoice;
 			Player.CallInventory(playerchoice);
+			Game.Quit(playerchoice);
 			if (playerchoice == 1)
 				playerLoc = Abandoned_Shack;
 			else if (playerchoice == 2)
@@ -49,6 +50,7 @@ int main()
 				Interface.DisplayLocation(AbandonedShack.getLocationName(), AbandonedShack.getLocationDesc());
 				cin >> playerchoice;
 				Player.CallInventory(playerchoice);
+				Game.Quit(playerchoice);
 				if (Player.searchInventory("lantern"))
 				{
 					if (playerchoice == 2)
@@ -67,6 +69,7 @@ int main()
 			Interface.DisplayLocation(Tavern.getLocationName(), Tavern.getLocationDesc());
 			cin >> playerchoice;
 			Player.CallInventory(playerchoice);
+			Game.Quit(playerchoice);
 				switch (playerchoice)
 				{
 				case 1:

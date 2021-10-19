@@ -18,6 +18,7 @@ public:
 	GameClass(string);
 	void SetLocation(string);
 	string GetLocation();
+	void Quit(int);
 
 };
 #endif
