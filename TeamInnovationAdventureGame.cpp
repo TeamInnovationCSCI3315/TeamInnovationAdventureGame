@@ -29,7 +29,7 @@ int main()
 	enum loc{Village_Entrance = 1, Abandoned_Shack = 2, Village_Tavern = 3 };
 	loc playerLoc = Village_Entrance;
 	//Interface.DisplayLocation(Game.GetLocation(),VillageEntrance.getLocationDesc());
-
+	Interface.DisplayIntroduction();
 	while(true)
 		switch (playerLoc)
 		{

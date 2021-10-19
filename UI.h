@@ -15,6 +15,7 @@ public:
 	int ReturnChoices();
 	void DisplayChoices(string);
 	void DisplayLocation(string,string);
+	void DisplayIntroduction();
 /*	
 	string GetLocation();
 	void DrinkDesc();
