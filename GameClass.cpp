@@ -19,7 +19,20 @@ string GameClass::GetLocation()
 {
 	return playerLocation;
 }
+void GameClass::Quit(int i)
+{
+	string tempinput="";
+	if (i == 0)
+	{
+		cout << "Are you sure you would like to quit the game? Your progress will not be saved (Press Y to quit) \n";
+		cin >> tempinput;
+		if (tempinput == "Y" || tempinput ==  "y")
+		{
+			exit(0);
+		}
 
+	}
+}
 /*void GameClass::VillageDescr()
 {
 	cout << "You find yourself looking at a village as you sit at the entrance of it. There is the light hooting of an owl as you start walking." << endl;
