@@ -6,12 +6,32 @@
 #include <string>
 using namespace std;
 /*
-	Constructors for the location and instances for location description and name, and returns these values to the user.
+	Constructors for the location and instances for location description and name, and returns these values.
 */
-Locations::Locations(string n, string d)
+Locations::Locations(string n, string d, string north, string south, string east, string west)
 {
 	locationName = n;
 	locationDesc = d;
+	northDoor = north;
+	southDoor = south;
+	eastDoor = east;
+	westDoor = west;
+}
+string Locations::getEastDoor()
+{
+	return eastDoor;
+}
+string Locations::getWestDoor()
+{
+	return westDoor;
+}
+string Locations::getNorthDoor()
+{
+	return northDoor;
+}
+string Locations::getSouthDoor()
+{
+	return southDoor;
 }
 string Locations::getLocationName()
 {
