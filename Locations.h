@@ -25,5 +25,6 @@ public:
 	void setLocationName(string);
 	void setLocationDesc(string);
 	Locations(string, string, string, string, string, string);
+	void CheckLocation(Locations[], string);
 };
 #endif

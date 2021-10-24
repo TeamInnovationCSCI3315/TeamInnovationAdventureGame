@@ -13,73 +13,81 @@ processed in the GameClass, Locations and UI.
 */
 int main()
 {
-	/*
-	Multiple rooms are created, with their names, descriptions being defined through a constructor. 
-	The main game loop is created for game functionality
-	*/
 	int playerchoice;
-	Locations VillageEntrance("Village Entrance", "You find yourself looking at a village as you sit at the entrance of it. There is the light hooting of an owl as you start walking.\nAs you look around you notice how dark it is, the village allows you to barely maneuver around with the faint candlelight from the street lamps.\nIn one direction, following the road to the east you notice a tavern up ahead with bright lights and the sounds of commerce. This could be a good place to find information and help and it is probably the brightest place.\nIn the other direction you notice the lights grow scarcer and scarcer until you can barely see the outline of what seems to be an abandoned shack, something draws you to it's shadow, curiosity maybe?\nWhere do you go?\n Press [1] to go west to Abandoned Shack, Press [2] to go east to Tavern", "", "", "Tavern", "Abandoned Shack");
-	Locations AbandonedShack("Abandoned Shack", "After walking you arrive at the pitch black shack, it's presence alone stands as if you could die and it wouldn't so much as creek.\nAs you approach it closer to inspect the strange building you find that it becomes far too dark to see and proceed forward, at least safely.\nDo you decide to exit now?\n Press [1] to go back to Village Entrance", "", "", "Village Entrance", "");
-	Locations Tavern("Tavern", "You enter into a tavern with bright almost blinding light. It is noisy as people chat around at the bar and entrance.\nYou are able to squeeze your way into the main room, most people have not taken notice of you and proceed about their bussiness.\nThere lays the bar to your right that carries the smells of beer to you alongside other aromas.\nYou also see on your left a fine finished table with a lantern on it.\nWhere do you go?\n, Press [1] to go to bar, Press [2] to pick up lantern from table, Press [3] to go back to Village Entrance", "", "", "", "Village Entrance");
+	/*
+	Multiple rooms are created Location(Location Name, Location Description, North, South, East, West);
+	*/
+	Locations VillageEntrance("Village Entrance", "Village Entrance Temporary Removed Description\n ", "", "", "Tavern", "Abandoned Shack");
+	Locations AbandonedShack("Abandoned Shack", "Abandoned Shack Temporary Removed Description \n ", "", "", "Village Entrance", "");
+	Locations Tavern("Tavern", "Tavern Temporary Removed Description \n ", "", "", "", "Village Entrance");
 	Locations PlayerLocation("", "", "", "", "","");
+	Locations AllLocations[] = { VillageEntrance,AbandonedShack,Tavern };	
+	
+	// Player starts at Village Entrance, so their initial location is Village Entrance;
 	PlayerLocation = VillageEntrance;
 	UI Interface;
 	PlayerClass Player;
-	GameClass Game(VillageEntrance.getLocationName());
 //	cout << VillageEntrance.getLocationName() << endl;
 //	cout << VillageEntrance.getLocationDesc() << endl;
 	
-	enum loc{Village_Entrance = 1, Abandoned_Shack = 2, Village_Tavern = 3};
-	loc playerLoc = Village_Entrance;
+	//enum loc{Village_Entrance = 1, Abandoned_Shack = 2, Village_Tavern = 3};
+	//loc playerLoc = Village_Entrance;
 	//Interface.DisplayLocation(Game.GetLocation(),VillageEntrance.getLocationDesc());
 	//Interface.DisplayIntroduction();
 	//cout << "Place Holder Introduction: Press 0 to quit at any time\n" << endl << endl;
+	cout << "Game Version 0.1" << endl;
 	while (true)
 	{
-		cout << PlayerLocation.getLocationName() << endl << PlayerLocation.getLocationDesc();
+		cout << PlayerLocation.getLocationName() << endl << PlayerLocation.getLocationDesc() << endl;
+		cout << "\t North: " << PlayerLocation.getNorthDoor() << endl << "\t South" << PlayerLocation.getSouthDoor() << endl << "\t East: " << PlayerLocation.getEastDoor() << endl << "\t West: " <<  PlayerLocation.getWestDoor() << endl << endl;
 		cin >> playerchoice;
 		switch (playerchoice)
 		{
-		case 1:
+		case 1: // North
 			if (PlayerLocation.getNorthDoor() == "")
 			{
-				cout << "Invalid";
+				cout << "Invalid\n";
 			}
 			else
 			{
+				PlayerLocation.CheckLocation(AllLocations, "North");
+				//cout << PlayerLocation.getLocationName() << endl << PlayerLocation.getLocationDesc();
 
 			}
 			break;
-		case 2:
+		case 2: // South
 			if (PlayerLocation.getSouthDoor() == "")
 			{
-				cout << "invalid";
+				cout << "invalid\n";
 			}
 			else
 			{
-
+				PlayerLocation.CheckLocation(AllLocations, "South");
+				//cout << PlayerLocation.getLocationName() << endl << PlayerLocation.getLocationDesc();
 			}
 			break;
-		case 3:
+		case 3: // East
 			if (PlayerLocation.getEastDoor() == "")
 			{
-				cout << "invalid";
-
+				cout << "invalid\n";
 			}
 			else
 			{
-				PlayerLocation = Tavern;
+				PlayerLocation.CheckLocation(AllLocations, "East");
+				//cout << PlayerLocation.getLocationName() << endl << PlayerLocation.getLocationDesc();
 			}
 			break;
-		case 4:
+		case 4: // West
 			if (PlayerLocation.getWestDoor() == "")
 			{
-				cout << "invalid";
+				cout << "invalid\n";
 			}
 			else
 			{
-				PlayerLocation = AbandonedShack;
+				PlayerLocation.CheckLocation(AllLocations, "West");
+				//cout << PlayerLocation.getLocationName() << endl << PlayerLocation.getLocationDesc();
 			}
+			break;
 		}
 	}
 /*
