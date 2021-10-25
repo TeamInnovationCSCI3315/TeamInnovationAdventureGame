@@ -1,3 +1,4 @@
 ﻿  TeamInnovationAdventureGame.cpp
-C:\Users\guita\source\repos\TeamInnovationAdventureGameNew1\TeamInnovationAdventureGame.cpp(27,5): warning C4101: 'Interface': unreferenced local variable
+C:\Users\guita\source\repos\TeamInnovationAdventureGameNew1\TeamInnovationAdventureGame.cpp(37,14): warning C4930: 'PlayerClass Player(void)': prototyped function not called (was a variable definition intended?)
+C:\Users\guita\source\repos\TeamInnovationAdventureGameNew1\TeamInnovationAdventureGame.cpp(36,5): warning C4101: 'Interface': unreferenced local variable
   TeamInnovationAdventureGame.vcxproj -> C:\Users\guita\Source\Repos\TeamInnovationAdventureGameNew1\x64\Debug\TeamInnovationAdventureGame.exe

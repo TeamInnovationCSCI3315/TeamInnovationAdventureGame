@@ -3,6 +3,9 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
+#include "Inventory.h"
+#include "Locations.h"
+#include "PlayerClass.h"
 using namespace std;
 /*
 	This calls the player location and returns the location to the player to be displayed in UI.

@@ -3,6 +3,9 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
+#include "PlayerClass.h"
+#include "GameClass.h"
+#include "Inventory.h"
 using namespace std;
 
 class Locations
@@ -14,6 +17,7 @@ private:
 	string westDoor;
 	string locationName;
 	string locationDesc;
+	Inventory LocationInventory;
 
 public:
 	string getNorthDoor();
@@ -24,7 +28,8 @@ public:
 	string getLocationDesc();
 	void setLocationName(string);
 	void setLocationDesc(string);
-	Locations(string, string, string, string, string, string);
+	Locations(string, string, string, string, string, string, string);
 	void CheckLocation(Locations[], string);
+	void LocationActions(Locations[]);
 };
 #endif

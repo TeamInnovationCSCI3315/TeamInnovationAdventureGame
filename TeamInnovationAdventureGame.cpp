@@ -4,6 +4,7 @@
 #include "GameClass.h"
 #include "UI.h"
 #include "Locations.h"
+#include "Inventory.h"
 #include <iostream>
 using namespace std;
 /*
@@ -14,19 +15,26 @@ processed in the GameClass, Locations and UI.
 int main()
 {
 	int playerchoice;
+	Inventory VillageEntranceInventory;
+	Inventory AbandonedShackInventory;
+	Inventory TavernInventory;
+	Inventory TunnelInventory;
+	Inventory PlayerInventory;
+	TavernInventory.AddItem("Lantern");
 	/*
 	Multiple rooms are created Location(Location Name, Location Description, North, South, East, West);
 	*/
-	Locations VillageEntrance("Village Entrance", "Village Entrance Temporary Removed Description\n ", "", "", "Tavern", "Abandoned Shack");
-	Locations AbandonedShack("Abandoned Shack", "Abandoned Shack Temporary Removed Description \n ", "", "", "Village Entrance", "");
-	Locations Tavern("Tavern", "Tavern Temporary Removed Description \n ", "", "", "", "Village Entrance");
-	Locations PlayerLocation("", "", "", "", "","");
-	Locations AllLocations[] = { VillageEntrance,AbandonedShack,Tavern };	
+	Locations VillageEntrance("Village Entrance", "Village Entrance Temporary Removed Description\n ", "", "", "Tavern", "Abandoned Shack", "");
+	Locations AbandonedShack("Abandoned Shack", "Abandoned Shack Temporary Removed Description \n ", "", "Tunnel", "Village Entrance", "", "");
+	Locations Tavern("Tavern", "Tavern Temporary Removed Description \n ", "", "", "", "Village Entrance", "Lantern");
+	Locations Tunnel("Tunnel", "Tunnel Temp \n", "Mysterious Room", "", "", "Left Tunnel Room", "");
+	Locations PlayerLocation("", "", "", "", "","","");
+	Locations AllLocations[] = { VillageEntrance,AbandonedShack,Tavern,Tunnel};	
 	
 	// Player starts at Village Entrance, so their initial location is Village Entrance;
 	PlayerLocation = VillageEntrance;
 	UI Interface;
-	PlayerClass Player;
+	PlayerClass Player();
 //	cout << VillageEntrance.getLocationName() << endl;
 //	cout << VillageEntrance.getLocationDesc() << endl;
 	
@@ -39,7 +47,7 @@ int main()
 	while (true)
 	{
 		cout << PlayerLocation.getLocationName() << endl << PlayerLocation.getLocationDesc() << endl;
-		cout << "\t North: " << PlayerLocation.getNorthDoor() << endl << "\t South" << PlayerLocation.getSouthDoor() << endl << "\t East: " << PlayerLocation.getEastDoor() << endl << "\t West: " <<  PlayerLocation.getWestDoor() << endl << endl;
+		cout << "\t North: " << PlayerLocation.getNorthDoor() << endl << "\t South: " << PlayerLocation.getSouthDoor() << endl << "\t East: " << PlayerLocation.getEastDoor() << endl << "\t West: " <<  PlayerLocation.getWestDoor() << endl << endl;
 		cin >> playerchoice;
 		switch (playerchoice)
 		{
@@ -75,6 +83,9 @@ int main()
 			{
 				PlayerLocation.CheckLocation(AllLocations, "East");
 				//cout << PlayerLocation.getLocationName() << endl << PlayerLocation.getLocationDesc();
+				cout << "Location Inventory: \n";
+				TavernInventory.DisplayInventory();
+				cout << "Player Inventory: \n";
 			}
 			break;
 		case 4: // West

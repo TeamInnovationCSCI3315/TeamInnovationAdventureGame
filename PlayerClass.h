@@ -4,19 +4,22 @@
 #include <cstdlib>
 #include <string>
 #include <vector>
+#include "Inventory.h"
 using namespace std;
 
 class PlayerClass
 {
 private:
-	vector<string> inventory = {};
-
+//	vector<string> inventory = {};
+	string playername;
 public:
-	//string GetInventory();
+	PlayerClass();
 	// void Choice();
-	void DisplayInventory();
-	void AddItem(string);
-	bool searchInventory(string);
-	void CallInventory(int);
+	void setName(string);
+	string getName();
+//	void DisplayInventory();
+//	void AddItem(string);
+//	bool searchInventory(string);
+//	void CallInventory(int);
 };
 #endif
