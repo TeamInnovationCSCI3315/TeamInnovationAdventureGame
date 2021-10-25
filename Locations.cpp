@@ -9,9 +9,10 @@ using namespace std;
 /*
 	Constructors for the location and instances for location description and name, and returns these values.
 */
-Locations::Locations(string n, string d, string north, string south, string east, string west, string item)
+Locations::Locations(string n, string d, string north, string south, string east, string west, string i)
 {
-	LocationInventory.AddItem(item);
+	item = i;
+	LocationInventory.AddItem(i);
 	locationName = n;
 	locationDesc = d;
 	northDoor = north;
@@ -43,6 +44,10 @@ string Locations::getLocationDesc()
 {
 	return locationDesc;
 }
+string Locations::getItem()
+{
+	return item;
+}
 void Locations::setLocationDesc(string d)
 {
 	locationDesc = d;
@@ -54,14 +59,14 @@ void Locations::setLocationName(string n)
 /*
 	CheckLocation compares the location of a player to all other locations to determine its relation in direction to other rooms
 */ 
-void Locations::CheckLocation(Locations TempLocation[], string direction)
+void Locations::CheckLocation(Locations TempLocation[], string direction, int size)
 {
-	int index;
+	int index = 0;
 
 	if (direction == "North")
 	{
 
-		for (int i = 0; i < 4; i++)
+		for (int i = 0; i < size; i++)
 		{
 
 			if (northDoor == TempLocation[i].getLocationName())
@@ -73,7 +78,7 @@ void Locations::CheckLocation(Locations TempLocation[], string direction)
 	}
 	if (direction == "South")
 	{
-		for (int i = 0; i < 4; i++)
+		for (int i = 0; i < size; i++)
 		{
 
 			if (southDoor == TempLocation[i].getLocationName())
@@ -86,7 +91,7 @@ void Locations::CheckLocation(Locations TempLocation[], string direction)
 	}
 	if (direction == "East")
 	{
-		for (int i = 0; i < 4; i++)
+		for (int i = 0; i < size; i++)
 		{
 
 			if (eastDoor == TempLocation[i].getLocationName())
@@ -98,7 +103,7 @@ void Locations::CheckLocation(Locations TempLocation[], string direction)
 	}
 	if (direction == "West")
 	{
-		for (int i = 0; i < 4; i++)
+		for (int i = 0; i < size; i++)
 		{
 
 			if (westDoor == TempLocation[i].getLocationName())
@@ -114,12 +119,49 @@ void Locations::CheckLocation(Locations TempLocation[], string direction)
 	southDoor = TempLocation[index].getSouthDoor();
 	eastDoor = TempLocation[index].getEastDoor();
 	westDoor = TempLocation[index].getWestDoor();
+	LocationInventory.AddItem(TempLocation[index].getItem());
 
 }
-void Locations::LocationActions(Locations TempLocation[])
+void Locations::LocationActions(Locations TempLocation[], Inventory& playerinventory)
 {
+	int playerchoice=1;
+	
 	if (locationName == "Abandoned Shack")
 	{
-		
+			if (playerinventory.searchInventory("Lantern"))
+			{
+				southDoor = "Tunnel";
+				locationDesc = "lantern lights up the room, theres a trapdoor	";
+			}
 	}
+		if (locationName == "Tavern")
+		{
+			while (playerchoice != 0)
+			{
+				cout << locationDesc;
+				cin >> playerchoice;
+				switch (playerchoice)
+				{
+				case 1:
+					cout << "You sit at the bar, and grab a quick drink. None of the locals are very friendly. \n";
+					break;
+
+				case 2:
+					if (!playerinventory.searchInventory("Lantern"))
+					{
+						cout << "You have picked up the lantern from the table! Press [5] to display your inventory \n ";
+						playerinventory.AddItem("Lantern");
+						playerinventory.DisplayInventory();
+						//Player.DisplayInventory();
+						TempLocation[2].setLocationDesc("Press [1] to go to bar, Press [3] to go back to Village Entrance");
+						locationDesc = "Press [1] to go to bar, Press [3] to go back to Village Entrance";
+						TempLocation[1].setLocationDesc("With the lantern in hand you head towards the abandoned shack once again.\nIt seems to be made out of a rotting, creeping willow of some kind or another, though it splinters out as a thorny hide.\nIt has a flimsy door held together by sheer luck, and a rusted doorknob is the only thing standing between you and the inside.\nYou pull open the wooden door as you do the door comes off of it's hinges with a loud thunk.\nYou step to the side with an inexplicable calmness as it falls where you were previously standing.\nThe inside of it is  hard to take in as you enter, still wondering.\nThe walls seem warped and as if waves of fabric compared to it's porcupine exterior.\nAn ocean of fine willow, sanded and well maintained like it's floors and a nearby bed.\nThe candles with their wax drapping over windowsills greet you with the faintest flicker, before extinguishing.\nStartled, you notice the new wax drips just below a trapdoor not just a foot away from you.\nIt's fine finished wood and golden knocker whisper to you almost in a wordless alure.\nYou wonder finally, why?\nThe door, the candles, the words, this shack.\nAnd it's with these thoughts, this pause, this hesitation, this fear.\nIt happens.\nWhat do you do?\n Press [1] to open it, Press [2] to return to the village entrance:");
+
+					}
+					break;
+				}
+			}
+			
+		}
+	
 }

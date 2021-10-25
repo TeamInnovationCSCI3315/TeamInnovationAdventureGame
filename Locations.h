@@ -17,6 +17,7 @@ private:
 	string westDoor;
 	string locationName;
 	string locationDesc;
+	string item;
 	Inventory LocationInventory;
 
 public:
@@ -26,10 +27,11 @@ public:
 	string getWestDoor();
 	string getLocationName();
 	string getLocationDesc();
+	string getItem();
 	void setLocationName(string);
 	void setLocationDesc(string);
 	Locations(string, string, string, string, string, string, string);
-	void CheckLocation(Locations[], string);
-	void LocationActions(Locations[]);
+	void CheckLocation(Locations[], string, int);
+	void LocationActions(Locations[], Inventory&);
 };
 #endif

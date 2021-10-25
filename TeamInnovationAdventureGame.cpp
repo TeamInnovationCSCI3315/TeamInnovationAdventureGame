@@ -15,21 +15,25 @@ processed in the GameClass, Locations and UI.
 int main()
 {
 	int playerchoice;
-	Inventory VillageEntranceInventory;
+	/*Inventory VillageEntranceInventory;
 	Inventory AbandonedShackInventory;
 	Inventory TavernInventory;
-	Inventory TunnelInventory;
+	Inventory TunnelInventory;*/
 	Inventory PlayerInventory;
-	TavernInventory.AddItem("Lantern");
+	
+	//TavernInventory.AddItem("Lantern");
 	/*
 	Multiple rooms are created Location(Location Name, Location Description, North, South, East, West);
 	*/
-	Locations VillageEntrance("Village Entrance", "Village Entrance Temporary Removed Description\n ", "", "", "Tavern", "Abandoned Shack", "");
-	Locations AbandonedShack("Abandoned Shack", "Abandoned Shack Temporary Removed Description \n ", "", "Tunnel", "Village Entrance", "", "");
-	Locations Tavern("Tavern", "Tavern Temporary Removed Description \n ", "", "", "", "Village Entrance", "Lantern");
+	Locations VillageEntrance("Village Entrance", "You find yourself looking at a village as you sit at the entrance of it. There is the light hooting of an owl as you start walking.\nAs you look around you notice how dark it is, the village allows you to barely maneuver around with the faint candlelight from the street lamps.\nIn one direction, following the road to the east you notice a tavern up ahead with bright lights and the sounds of commerce. This could be a good place to find information and help and it is probably the brightest place.\nIn the other direction you notice the lights grow scarcer and scarcer until you can barely see the outline of what seems to be an abandoned shack, something draws you to it's shadow, curiosity maybe?\n ", "", "", "Tavern", "Abandoned Shack", "");
+	Locations AbandonedShack("Abandoned Shack", "After walking you arrive at the pitch black shack, it's presence alone stands as if you could die and it wouldn't so much as creek.\nAs you approach it closer to inspect the strange building you find that it becomes far too dark to see and proceed forward, at least safely.\nDo you decide to exit now? \n ", "", "", "Village Entrance", "", "");
+	Locations Tavern("Tavern", "You enter into a tavern with bright almost blinding light. It is noisy as people chat around at the bar and entrance.\nYou are able to squeeze your way into the main room, most people have not taken notice of you and proceed about their bussiness.\nThere lays the bar to your right that carries the smells of beer to you alongside other aromas.\nYou also see on your left a fine finished table with a lantern on it.\n, [1] Go to bar \n [2] Pick up lantern from table \n [3] Exit\n ", "", "", "", "Village Entrance", "Lantern");
 	Locations Tunnel("Tunnel", "Tunnel Temp \n", "Mysterious Room", "", "", "Left Tunnel Room", "");
+	Locations MysteriousRoom("Mysterious Room ", "Mysterious Room Temp \n", "", "Tunnel", "", "Left Tunnel Room", "");
+	Locations LeftTunnelRoom("Left Tunnel Room ", "Left Tunnel Room Temp \n", "", "", "Tunnel", "Mysterious Room", "");
 	Locations PlayerLocation("", "", "", "", "","","");
-	Locations AllLocations[] = { VillageEntrance,AbandonedShack,Tavern,Tunnel};	
+	Locations AllLocations[] = { VillageEntrance,AbandonedShack,Tavern,Tunnel,MysteriousRoom,LeftTunnelRoom};	
+	int AllLocationsSize = 6;
 	
 	// Player starts at Village Entrance, so their initial location is Village Entrance;
 	PlayerLocation = VillageEntrance;
@@ -47,7 +51,7 @@ int main()
 	while (true)
 	{
 		cout << PlayerLocation.getLocationName() << endl << PlayerLocation.getLocationDesc() << endl;
-		cout << "\t North: " << PlayerLocation.getNorthDoor() << endl << "\t South: " << PlayerLocation.getSouthDoor() << endl << "\t East: " << PlayerLocation.getEastDoor() << endl << "\t West: " <<  PlayerLocation.getWestDoor() << endl << endl;
+		cout << "\t [1] North: " << PlayerLocation.getNorthDoor() << endl << "\t [2] South: " << PlayerLocation.getSouthDoor() << endl << "\t [3] East: " << PlayerLocation.getEastDoor() << endl << "\t [4] West: " <<  PlayerLocation.getWestDoor() << endl << endl;
 		cin >> playerchoice;
 		switch (playerchoice)
 		{
@@ -58,8 +62,9 @@ int main()
 			}
 			else
 			{
-				PlayerLocation.CheckLocation(AllLocations, "North");
+				PlayerLocation.CheckLocation(AllLocations, "North",AllLocationsSize);
 				//cout << PlayerLocation.getLocationName() << endl << PlayerLocation.getLocationDesc();
+				PlayerLocation.LocationActions(AllLocations, PlayerInventory);
 
 			}
 			break;
@@ -70,8 +75,9 @@ int main()
 			}
 			else
 			{
-				PlayerLocation.CheckLocation(AllLocations, "South");
+				PlayerLocation.CheckLocation(AllLocations, "South",AllLocationsSize);
 				//cout << PlayerLocation.getLocationName() << endl << PlayerLocation.getLocationDesc();
+				PlayerLocation.LocationActions(AllLocations, PlayerInventory);
 			}
 			break;
 		case 3: // East
@@ -81,11 +87,9 @@ int main()
 			}
 			else
 			{
-				PlayerLocation.CheckLocation(AllLocations, "East");
+				PlayerLocation.CheckLocation(AllLocations, "East",AllLocationsSize);
 				//cout << PlayerLocation.getLocationName() << endl << PlayerLocation.getLocationDesc();
-				cout << "Location Inventory: \n";
-				TavernInventory.DisplayInventory();
-				cout << "Player Inventory: \n";
+				PlayerLocation.LocationActions(AllLocations,PlayerInventory);
 			}
 			break;
 		case 4: // West
@@ -95,8 +99,9 @@ int main()
 			}
 			else
 			{
-				PlayerLocation.CheckLocation(AllLocations, "West");
+				PlayerLocation.CheckLocation(AllLocations, "West",AllLocationsSize);
 				//cout << PlayerLocation.getLocationName() << endl << PlayerLocation.getLocationDesc();
+				PlayerLocation.LocationActions(AllLocations, PlayerInventory);
 			}
 			break;
 		}
