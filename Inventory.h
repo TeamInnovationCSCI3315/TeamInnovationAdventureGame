@@ -15,7 +15,7 @@ public:
 	// void Choice();
 	void DisplayInventory();
 	void AddItem(string);
-	bool searchInventory(string);
+	bool SearchInventory(string);
 	void CallInventory(int);
 };
 #endif

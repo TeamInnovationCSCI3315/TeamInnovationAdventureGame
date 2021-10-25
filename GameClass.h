@@ -15,7 +15,7 @@ private:
 	string playerLocation;
 public:
 //	void Location();
-	GameClass(string);
+	GameClass();
 	void SetLocation(string);
 	string GetLocation();
 	void Quit(int);

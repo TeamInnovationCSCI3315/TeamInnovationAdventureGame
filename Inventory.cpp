@@ -4,10 +4,18 @@
 #include <cstdlib>
 #include <string>
 #include <vector>
+/*
+Inventory Class
+
+AddItem Function pushes an item by its ID into a vector
+DisplayInventory displays the inventory's contents 
+searchInventory searches to see if an item is within the player's inventory
+*/
 void Inventory::AddItem(string itemID)
 {
 	inventory.push_back(itemID);
 }
+
 void Inventory::DisplayInventory()
 {
 	cout << endl << "Inventory: " << endl;
@@ -28,7 +36,7 @@ void Inventory::DisplayInventory()
 	cout << endl << "--------------------" << endl << endl;
 
 }
-bool Inventory::searchInventory(string item)
+bool Inventory::SearchInventory(string item)
 {
 	for (const string i : inventory)
 	{

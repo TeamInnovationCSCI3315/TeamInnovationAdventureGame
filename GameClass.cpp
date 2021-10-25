@@ -10,9 +10,9 @@ using namespace std;
 /*
 	This calls the player location and returns the location to the player to be displayed in UI.
 */
-GameClass::GameClass(string l)
+GameClass::GameClass()
 {
-	playerLocation = l;
+	
 }
 void GameClass::SetLocation(string location)
 {
