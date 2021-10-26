@@ -19,6 +19,7 @@ public:
 	void SetLocation(string);
 	string GetLocation();
 	void Quit(int);
+	void TunnelPuzzle();
 
 };
 #endif

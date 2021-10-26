@@ -36,6 +36,80 @@ void GameClass::Quit(int i)
 
 	}
 }
+
+void GameClass::TunnelPuzzle()
+{
+	int choice;
+
+	cout << "Who is reading this to you?" << endl;
+	cout << "-----------------" << endl;
+	cout << "1.) The Narrator " << endl;
+	cout << "2.) I am (me) " << endl;
+	cout << "3.) Nobody " << endl;
+	cout << "4.) Deep Consciousness " << endl;
+
+	while (choice != 4)
+	{
+		cout << "Choose your answer: ";
+		cin >> choice;
+		cout << endl;
+		cout << "You are incorrect! Speak to me again and try my riddles from the beginning." << endl;
+		return;
+	}
+	if (choice == 4)
+	{
+		cout << "You are correct! Onto the next one..." << endl;
+	}
+	
+
+	int choice2;
+
+	cout << "What is down the other tunnel path?" << endl;
+	cout << "-----------------" << endl;
+	cout << "1.) Nothing " << endl;
+	cout << "2.) The way out " << endl;
+	cout << "3.) A shadow " << endl;
+	cout << "4.) A light source " << endl;
+
+	while (choice2 != 3)
+	{
+		cout << "Choose your answer: ";
+		cin >> choice;
+		cout << endl;
+		cout << "You are incorrect but I will spare you another chance. Please answer again." << endl;
+	}
+	if (choice2 == 3)
+	{
+		cout << "You are correct! Onto the next one..." << endl;
+	}
+
+
+
+	int choice3;
+
+	cout << "Where are you right now? Truly, " << endl;
+	cout << "-----------------" << endl;
+	cout << "1.) Shack outside of town " << endl;
+	cout << "2.) A knot between strands " << endl;
+	cout << "3.) The first strand " << endl;
+	cout << "4.) Home, in bed " << endl;
+
+	while (choice3 != 2)
+	{
+		cout << "Choose your answer: ";
+		cin >> choice;
+		cout << endl;
+		cout << "You are incorrect but I will spare you another chance. Please answer again." << endl;
+	}
+	if (choice3 == 2)
+	{
+		cout << "You are correct! Onto the next one..." << endl;
+	}
+
+
+
+}
+
 /*void GameClass::VillageDescr()
 {
 	cout << "You find yourself looking at a village as you sit at the entrance of it. There is the light hooting of an owl as you start walking." << endl;
