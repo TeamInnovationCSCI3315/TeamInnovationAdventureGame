@@ -30,9 +30,10 @@ int main()
 	Locations Tunnel("Tunnel", "You awake on the floor, a throbbing pain coming from your head.\n As you open your eyes by some miracle the lantern is lit next to your head.\n  You arise, lantern in hand to find a crimson streak on the ground where you laid.\n You look up to find the trapdoor you entered from, out of reach.\n Looking around you notice you're in a cramped cavern.\n It is granite like with it's soft shimmer the walls give off as your lantern's light hits and exits the speckled walls.\n You see two pathways ahead of you, one to the left and one that continues straight. \n", "Mysterious Room", "", "", "Left Tunnel Room", "");
 	Locations MysteriousRoom("Mysterious Room", "Mysterious Room Temp \n", "", "Tunnel", "", "Left Tunnel Room", "");
 	Locations LeftTunnelRoom("Left Tunnel Room", "As you go down the pathway to the left the granite gives way to finished stonework.\n You see at the end a shadow.\n But not just any shadow, a darkness your light fails to illuminate from where you're standing.\nIt's disorienting to your eyes, and startles your stomach as you try to make out what it is.\n A faint moaning can be heard, it seems to be alive\n This could be deadly. Do you approach the shadow to inspect ? Or go back ? \n", "", "", "Tunnel", "Mysterious Room", "");
+	Locations MysteriousDoor("Mysterious Door", "Mysterious Door", "", "", "", "", "");
 	Locations PlayerLocation("", "", "", "", "","","");
-	Locations AllLocations[] = { VillageEntrance , AbandonedShack , Tavern ,Tunnel , MysteriousRoom , LeftTunnelRoom};	
-	int AllLocationsSize = 6;
+	Locations AllLocations[] = { VillageEntrance , AbandonedShack , Tavern ,Tunnel , MysteriousRoom , LeftTunnelRoom, MysteriousDoor};
+	const int AllLocationsSize = 7;
 	
 	// Player starts at Village Entrance, so their initial location is Village Entrance;
 	PlayerLocation = VillageEntrance;

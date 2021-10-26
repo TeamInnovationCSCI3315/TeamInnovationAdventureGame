@@ -159,7 +159,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 					if (!playerinventory.SearchInventory("Lantern"))
 					{
 						cout << "You have picked up the lantern from the table! \n ";
-						playerinventory.AddItem("Lantern");
+						playerinventory.AddItem(TempLocation[2].getItem());
 						//playerinventory.DisplayInventory();
 						//Player.DisplayInventory();
 						TempLocation[2].setLocationDesc("[1] Go to bar\n [3] Go back to Village Entrance\n \n");
@@ -183,6 +183,26 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 		if (locationName == "Left Tunnel Room")
 		{
 			isinTunnel = 1;
+
+		}
+		if (locationName == "Mysterious Room")
+		{
+			string playerchoice = "";
+			GameClass Puzzle;
+			cout << "There seems to be some sort of puzzle written into this wall. Should you try to solve it? (Y for yes, anything else for no)\n ";
+			cin >> playerchoice;
+			if (playerchoice == "Y" || playerchoice == "y")
+			{
+				Puzzle.TunnelPuzzle();
+					cout << "A Door Appears to open from within the wall in front of you. Would you like to go through it?";
+					eastDoor = "Mysterious Door";
+			}
+			else
+			{
+
+			}
+
+			
 		}
 			
 	
