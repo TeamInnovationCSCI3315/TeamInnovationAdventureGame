@@ -189,6 +189,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 		{
 			string playerchoice = "";
 			GameClass Puzzle;
+			cout << "You are in a rigid, uneven granite room difficult to walk in. You see up ahead of you a dead end across the granite with nothing left to show signs of life or means of escape however,\n as you get close you start to notice that there may be something to this. You see etchings into the granite with your lantern." << endl;
 			cout << "There seems to be some sort of puzzle written into this wall. Should you try to solve it? (Y for yes, anything else for no)\n ";
 			cin >> playerchoice;
 			if (playerchoice == "Y" || playerchoice == "y")

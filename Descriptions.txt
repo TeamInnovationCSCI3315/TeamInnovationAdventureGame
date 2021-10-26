@@ -74,6 +74,8 @@ You see two pathways ahead of you, one to the left and one that continues straig
 What do you do?
 
 The First Puzzle (Three Questions)
+You see up ahead of you a dead end across the granite with nothing left to show signs of life or means of escape however, as you get closer
+you start to notice that there may be something to this. You see etchings into the granite with your lantern.
 DESIGNER CHEAT SHEET: 4, 3, 2.
 You enter into a room with three questions marked upon the wall. One question reads: 'Who is reading this to you?' how do you answer?
 1. The narrator

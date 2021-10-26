@@ -1,5 +1,5 @@
 ﻿  Locations.cpp
   TeamInnovationAdventureGame.cpp
-C:\Users\guita\source\repos\TeamInnovationAdventureGameNew2\TeamInnovationAdventureGame.cpp(41,14): warning C4930: 'PlayerClass Player(void)': prototyped function not called (was a variable definition intended?)
+C:\Users\twood\source\repos\TEAMINNOVATIONADVGAME(1)\TeamInnovationAdventureGame.cpp(41,14): warning C4930: 'PlayerClass Player(void)': prototyped function not called (was a variable definition intended?)
   Generating Code...
-  TeamInnovationAdventureGame.vcxproj -> C:\Users\guita\Source\Repos\TeamInnovationAdventureGameNew2\x64\Debug\TeamInnovationAdventureGame.exe
+  TeamInnovationAdventureGame.vcxproj -> C:\Users\twood\source\repos\TEAMINNOVATIONADVGAME(1)\x64\Debug\TeamInnovationAdventureGame.exe
