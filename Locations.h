@@ -11,6 +11,7 @@ using namespace std;
 class Locations
 {
 private:
+	int isinTunnel=0;
 	string northDoor;
 	string southDoor;
 	string eastDoor;
