@@ -27,9 +27,9 @@ int main()
 	Locations VillageEntrance("Village Entrance", "You find yourself looking at a village as you sit at the entrance of it. There is the light hooting of an owl as you start walking.\nAs you look around you notice how dark it is, the village allows you to barely maneuver around with the faint candlelight from the street lamps.\nIn one direction, following the road to the east you notice a tavern up ahead with bright lights and the sounds of commerce. This could be a good place to find information and help and it is probably the brightest place.\nIn the other direction you notice the lights grow scarcer and scarcer until you can barely see the outline of what seems to be an abandoned shack, something draws you to it's shadow, curiosity maybe?\n ", "", "", "Tavern", "Abandoned Shack", "");
 	Locations AbandonedShack("Abandoned Shack", "After walking you arrive at the pitch black shack, it's presence alone stands as if you could die and it wouldn't so much as creek.\nAs you approach it closer to inspect the strange building you find that it becomes far too dark to see and proceed forward, at least safely.\nDo you decide to exit now? \n ", "", "", "Village Entrance", "", "");
 	Locations Tavern("Tavern", "You enter into a tavern with bright almost blinding light. It is noisy as people chat around at the bar and entrance.\nYou are able to squeeze your way into the main room, most people have not taken notice of you and proceed about their bussiness.\nThere lays the bar to your right that carries the smells of beer to you alongside other aromas.\nYou also see on your left a fine finished table with a lantern on it.\n \n [1] Go to bar \n [2] Pick up lantern from table \n [3] Exit\n ", "", "", "", "Village Entrance", "Lantern");
-	Locations Tunnel("Tunnel", "Tunnel Temp \n", "Mysterious Room", "", "", "Left Tunnel Room", "");
+	Locations Tunnel("Tunnel", "You awake on the floor, a throbbing pain coming from your head.\n As you open your eyes by some miracle the lantern is lit next to your head.\n  You arise, lantern in hand to find a crimson streak on the ground where you laid.\n You look up to find the trapdoor you entered from, out of reach.\n Looking around you notice you're in a cramped cavern.\n It is granite like with it's soft shimmer the walls give off as your lantern's light hits and exits the speckled walls.\n You see two pathways ahead of you, one to the left and one that continues straight. \n", "Mysterious Room", "", "", "Left Tunnel Room", "");
 	Locations MysteriousRoom("Mysterious Room", "Mysterious Room Temp \n", "", "Tunnel", "", "Left Tunnel Room", "");
-	Locations LeftTunnelRoom("Left Tunnel Room", "Left Tunnel Room Temp \n", "", "", "Tunnel", "Mysterious Room", "");
+	Locations LeftTunnelRoom("Left Tunnel Room", "As you go down the pathway to the left the granite gives way to finished stonework.\n You see at the end a shadow.\n But not just any shadow, a darkness your light fails to illuminate from where you're standing.\nIt's disorienting to your eyes, and startles your stomach as you try to make out what it is.\n A faint moaning can be heard, it seems to be alive\n This could be deadly. Do you approach the shadow to inspect ? Or go back ? \n", "", "", "Tunnel", "Mysterious Room", "");
 	Locations PlayerLocation("", "", "", "", "","","");
 	Locations AllLocations[] = { VillageEntrance , AbandonedShack , Tavern ,Tunnel , MysteriousRoom , LeftTunnelRoom};	
 	int AllLocationsSize = 6;
@@ -53,7 +53,8 @@ int main()
 		
 		//For testing purposes, will later be moved to its own function
 		cout << PlayerLocation.getLocationDesc() << endl;
-		cout << "\t [1] North: " << PlayerLocation.getNorthDoor() << endl << "\t [2] South: " << PlayerLocation.getSouthDoor() << endl << "\t [3] East: " << PlayerLocation.getEastDoor() << endl << "\t [4] West: " <<  PlayerLocation.getWestDoor() << endl << endl;
+		cout << "\t [1] North: " << PlayerLocation.getNorthDoor() << endl << "\t [2] South: " << PlayerLocation.getSouthDoor() << endl << "\t [3] East: " << PlayerLocation.getEastDoor() << endl << "\t [4] West: " <<  PlayerLocation.getWestDoor() << endl << "\t [5] View Inventory" << endl << "\t [0] Quit Game" << endl << endl;
+		
 		cin >> playerchoice;
 		PlayerInventory.CallInventory(playerchoice);
 		Game.Quit(playerchoice);
