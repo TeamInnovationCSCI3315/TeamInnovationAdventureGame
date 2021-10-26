@@ -1,3 +1,21 @@
+Introduction
+string playername;
+	cout << "Who are you Dreamer?\n";
+	cin >> playername;
+	cout << "Interesting, I believe I am familiar.\n";
+	cout << "You were busy " << playername << ", your life had been going along as it was, you were tired.\nSo very tired.\n";
+	cout << "You went to sleep on one of your worse days, and when you slept you dreamt.\n";
+	cout << "You fell into such a terrible nightmare, one that you cannot wake up from it.\n";
+	system("pause");
+	cout << "You fell into a world known as 'The First Strand', along The Bridge to the world of Fiction.\n";
+	cout << "You'll learn more of what I mean in due time " << playername << " all in due time.\n";
+	system("pause");
+	cout << "I will be your guide through this bridge, think of me as your deep concious, in a way I am that.\n";
+	cout << "Your goal as you know it is to find a way to wake up, to return to reality in the only way you know that is to dive into the dream.\n";
+	cout << "I wish you the best of luck, I know you can navigate the knots of this world, you'll find them, they pull you to them.\n I shall be seeing you very soon.\n";
+	system("pause");
+	system("CLS");
+
 Village Entrance Description
 
 You find yourself looking at a village as you sit at the entrance of it. There is the light hooting of an owl as you start walking.
@@ -56,8 +74,24 @@ You see two pathways ahead of you, one to the left and one that continues straig
 What do you do?
 
 The First Puzzle (Three Questions)
+DESIGNER CHEAT SHEET: 4, 3, 2.
+You enter into a room with three questions marked upon the wall. One question reads: 'Who is reading this to you?' how do you answer?
+1. The narrator
+2. I am, that is me
+3. Nobody
+4. My Deep Concious
 
-(To Be Decided)
+The other one reads: 'What was down the other tunnel?'
+1. Nothing
+2. The Way Out
+3. A Shadow
+4. A light source
+
+The final question asks 'Where are you right now? Truly where is your concious?'
+1. Under a shack outside of town
+2. A Knot Between Strands
+3. The First Strand
+4. Home in bed
 
 The First Enemy
 
