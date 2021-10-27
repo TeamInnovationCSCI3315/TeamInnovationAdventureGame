@@ -17,5 +17,6 @@ public:
 	void AddItem(string);
 	bool SearchInventory(string);
 	void CallInventory(int);
+	void RemoveAllItems();
 };
 #endif

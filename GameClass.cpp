@@ -118,6 +118,30 @@ void GameClass::TunnelPuzzle()
 			}
 		}
 }
+void GameClass::FirstDeath()
+{
+	cout << "As you approach the figure up ahead a chill follows your spine but you press on." << endl;
+	cout << "When the figure is about to come into the light of your lantern, you witness a strange occurance." << endl;
+	cout << "As if a puff of midnight the glow causes you to blink, then you find yourself staring ahead at a dead end." << endl;
+	cout << "You turn to leave when you see it." << endl;
+	system("pause");
+	cout << "A cloaked figure draped in shadow as if it were it's own hair stretching to the floor." << endl;
+	cout << "The hood revealing a face of dripping skin as if it were wax, loose aged teeth and bone." << endl;
+	cout << "An eyeball falls out of it's socket, it steps on it as if it's inconsequential." << endl;
+	cout << "Approaching you as you finally take it in, you'd scream before if you knew what just happened." << endl;
+	system("pause");
+	cout << "The figure had a blade already sunk within you." << endl;
+	system("pause");
+	cout << "You paint the floor with a steady drip of crimson, shaking you try to move." << endl;
+	cout << "It unsheathes it's blade from your chest, releasing a bright red current out from you." << endl;
+	cout << "This is followed swiftly by the standing corpse slashing at you." << endl;
+	system("pause");
+	cout << "You find your vision in the air, you see your dismembered corpse from above." << endl;
+	system("pause");
+	cout << "Your head falls to the ground, and the last thing you see is it sinking back into the shadows." << endl;
+	cout << "Ready to dream again, you sleep." << endl;
+	system("pause");
+}
 
 /*void GameClass::VillageDescr()
 {

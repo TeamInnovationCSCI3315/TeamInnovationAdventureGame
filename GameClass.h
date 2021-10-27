@@ -20,6 +20,7 @@ public:
 	string GetLocation();
 	void Quit(int);
 	void TunnelPuzzle();
+	void FirstDeath();
 
 };
 #endif
