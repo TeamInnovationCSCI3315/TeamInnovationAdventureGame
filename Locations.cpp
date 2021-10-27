@@ -182,7 +182,26 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 		}
 		if (locationName == "Left Tunnel Room")
 		{
+			GameClass Death1;
+			GameClass Reset;
 			isinTunnel = 1;
+			string playerchoice = "";
+			cout << locationDesc << endl;
+			cout <<"(Y for yes, anything else for no)\n ";
+			cin >> playerchoice;
+			if (playerchoice == "Y" || playerchoice == "y")
+			{
+				Death1.FirstDeath();
+				locationDesc = "You find your eyes are hazy, you open them. You feel your lantern at your side.";
+				northDoor = "Village Entrance";
+				southDoor = "";
+				westDoor = "";
+				eastDoor = "";
+			}
+			else
+			{
+				locationDesc = "You stand just far enough away from danger, you are able to go back from where you are standing. ";
+			}
 
 		}
 		if (locationName == "Mysterious Room")
@@ -203,7 +222,6 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 
 			}
 
-			
 		}
 			
 	
