@@ -15,7 +15,13 @@ void Inventory::AddItem(string itemID)
 {
 	inventory.push_back(itemID);
 }
-
+void Inventory::RemoveAllItems()
+{
+	while (!inventory.empty())
+	{
+		inventory.pop_back();
+	}
+}
 void Inventory::DisplayInventory()
 {
 	cout << endl << "Inventory: " << endl;

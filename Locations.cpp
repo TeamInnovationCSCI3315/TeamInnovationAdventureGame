@@ -142,9 +142,18 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 				locationDesc = "With the lantern in hand you head towards the abandoned shack once again.\nIt seems to be made out of a rotting, creeping willow of some kind or another, though it splinters out as a thorny hide.\nIt has a flimsy door held together by sheer luck, and a rusted doorknob is the only thing standing between youand the inside.\nYou pull open the wooden door as you do the door comes off of it's hinges with a loud thunk.\nYou step to the side with an inexplicable calmness as it falls where you were previously standing.\nThe inside of it is  hard to take in as you enter, still wondering.\nThe walls seem warped and as if waves of fabric compared to it's porcupine exterior.\nAn ocean of fine willow, sandedand well maintained like it's floors and a nearby bed.\nThe candles with their wax drapping over windowsills greet you with the faintest flicker, before extinguishing.\nStartled, you notice the new wax drips just below a trapdoor not just a foot away from you.\nIt's fine finished wood and golden knocker whisper to you almost in a wordless alure.\nYou wonder finally, why ? \nThe door, the candles, the words, this shack.\nAnd it's with these thoughts you wonder, should you go down the trapdoor? There seems to be some sort of tunnel underneith the door, but it doesnt seem possible to return. \n:	";
 
 			}
+			else
+			{
+				locationDesc = "After walking you arrive at the pitch black shack, it's presence alone stands as if you could die and it wouldn't so much as creek.\nAs you approach it closer to inspect the strange building you find that it becomes far too dark to see and proceed forward, at least safely.\nDo you decide to exit now ? \n";
+				southDoor = "";
+			}
 	}
 		if (locationName == "Tavern")
 		{
+			if (!playerinventory.SearchInventory("Lantern"))
+			{
+				locationDesc= "You enter into a tavern with bright almost blinding light.It is noisy as people chat around at the bar and entrance.\nYou are able to squeeze your way into the main room, most people have not taken notice of youand proceed about their bussiness.\nThere lays the bar to your right that carries the smells of beer to you alongside other aromas.\nYou also see on your left a fine finished table with a lantern on it.\n \n[1] Go to bar \n[2] Pick up lantern from table \n[3] Exit\n";
+			}
 			while (playerchoice != 3)
 			{
 				cout << locationDesc;
@@ -183,7 +192,6 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 		if (locationName == "Left Tunnel Room")
 		{
 			GameClass Death1;
-			GameClass Reset;
 			isinTunnel = 1;
 			string playerchoice = "";
 			cout << locationDesc << endl;
@@ -197,6 +205,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 				southDoor = "";
 				westDoor = "";
 				eastDoor = "";
+				playerinventory.RemoveAllItems();
 			}
 			else
 			{
