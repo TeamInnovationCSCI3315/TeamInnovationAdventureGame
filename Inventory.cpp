@@ -39,6 +39,15 @@ void Inventory::AddItem(string itemID)
 {
 	inventory.push_back(itemID);
 }
+
+bool Inventory::IsInventoryEmpty() {
+	if (inventory.empty()) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
 void Inventory::RemoveAllItems()
 {
 	while (!inventory.empty())
