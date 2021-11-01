@@ -22,18 +22,15 @@ string GameClass::GetLocation()
 {
 	return playerLocation;
 }
-void GameClass::Quit(int i)
+void GameClass::Quit()
 {
 	string tempinput="";
-	if (i == 0)
-	{
+
 		cout << "Are you sure you would like to quit the game? Your progress will not be saved (Press Y to quit) \n";
 		cin >> tempinput;
 		if (tempinput == "Y" || tempinput ==  "y")
 		{
 			exit(0);
-		}
-
 	}
 }
 

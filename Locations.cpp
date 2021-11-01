@@ -171,7 +171,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 						playerinventory.AddItem(TempLocation[2].getItem());
 						//playerinventory.DisplayInventory();
 						//Player.DisplayInventory();
-						TempLocation[2].setLocationDesc("[1] Go to bar\n [3] Go back to Village Entrance\n \n");
+						//TempLocation[2].setLocationDesc("[1] Go to bar\n [3] Go back to Village Entrance\n \n");
 						locationDesc = "[1] Go to bar\n [3] Go back to Village Entrance\n \n";
 						//TempLocation[1].setLocationDesc("With the lantern in hand you head towards the abandoned shack once again.\nIt seems to be made out of a rotting, creeping willow of some kind or another, though it splinters out as a thorny hide.\nIt has a flimsy door held together by sheer luck, and a rusted doorknob is the only thing standing between you and the inside.\nYou pull open the wooden door as you do the door comes off of it's hinges with a loud thunk.\nYou step to the side with an inexplicable calmness as it falls where you were previously standing.\nThe inside of it is  hard to take in as you enter, still wondering.\nThe walls seem warped and as if waves of fabric compared to it's porcupine exterior.\nAn ocean of fine willow, sanded and well maintained like it's floors and a nearby bed.\nThe candles with their wax drapping over windowsills greet you with the faintest flicker, before extinguishing.\nStartled, you notice the new wax drips just below a trapdoor not just a foot away from you.\nIt's fine finished wood and golden knocker whisper to you almost in a wordless alure.\nYou wonder finally, why?\nThe door, the candles, the words, this shack.\nAnd it's with these thoughts, this pause, this hesitation, this fear.\nIt happens.\nWhat do you do?\n Press [1] to open it, Press [2] to return to the village entrance:");
 
@@ -224,13 +224,17 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 			{
 				Puzzle.TunnelPuzzle();
 					cout << "A Door Appears to open from within the wall in front of you. Would you like to go through it?";
-					eastDoor = "Mysterious Door";
+					northDoor = "Mysterious Door";
 			}
 			else
 			{
 
 			}
 
+		}
+		else
+		{
+			cout << "No Options Currently Available" << endl;
 		}
 			
 	

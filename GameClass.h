@@ -18,7 +18,7 @@ public:
 	GameClass();
 	void SetLocation(string);
 	string GetLocation();
-	void Quit(int);
+	void Quit();
 	void TunnelPuzzle();
 	void FirstDeath();
 
