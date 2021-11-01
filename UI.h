@@ -15,6 +15,7 @@ public:
 	int ReturnChoices();
 	void DisplayChoices(string);
 	void DisplayLocation(string,string);
+	void DisplayStartScreen();
 	void DisplayIntroduction();
 /*	
 	string GetLocation();

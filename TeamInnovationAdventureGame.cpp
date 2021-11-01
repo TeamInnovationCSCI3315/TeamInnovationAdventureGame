@@ -48,6 +48,7 @@ int main()
 	//Interface.DisplayIntroduction();
 	//cout << "Place Holder Introduction: Press 0 to quit at any time\n" << endl << endl;
 	cout << "Game Version 0.1" << endl;
+	Interface.DisplayStartScreen();
 	Interface.DisplayIntroduction();
 	while (true) //Will later be switched to !GameOver
 	{

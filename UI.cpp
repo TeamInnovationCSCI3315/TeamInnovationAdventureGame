@@ -9,8 +9,29 @@ PlayerClass player1;
 /*
 	This displays the location, asks the player choice and takes the player input to be returned to the main cpp file.
 */
+void UI::DisplayStartScreen()
+{
+	GameClass Game;
+	cout << "-----------------------(Title of Game)-------------------------" << endl;
+	cout << "---------------(Press 1 to Start the Nightmare)----------------"<<endl;
+	cout << "------------(Press Anything Else to End the Dream)-------------" << endl;
+	int playerinputst;
+	cin >> playerinputst;
+	while (playerinputst != 1)
+	{
+		if (playerinputst == 1)
+		{
+
+		}
+		else
+		{
+			exit(0);
+		}
+	}
+}
 void UI::DisplayIntroduction()
 {
+	system("CLS");
 	string name;
 	cout << "Who are you Dreamer?\n";
 	cin >> name;
