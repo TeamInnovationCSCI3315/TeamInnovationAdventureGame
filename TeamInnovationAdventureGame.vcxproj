@@ -152,6 +152,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="GameClass.cpp" />
+    <ClCompile Include="inputvalidation.cpp" />
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Locations.cpp" />
     <ClCompile Include="PlayerClass.cpp" />
@@ -160,6 +161,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameClass.h" />
+    <ClInclude Include="InputValidation.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Locations.h" />
     <ClInclude Include="PlayerClass.h" />

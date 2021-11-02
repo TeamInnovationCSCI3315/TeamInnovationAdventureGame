@@ -14,7 +14,19 @@ using namespace std;
 class UI
 {
 private:
+	enum PlayerMenuChoices
+	{
+		Interact,
+		Move,
+		ShowInventory,
+		QuitGame
+	};
 	int playerInput;
+	/*
+	map<string, PlayerMenuChoices> PlayerSelection
+	{
+		PlayerSelection['1'] = Interact
+	};*/
 public: 
 	//int ReturnChoices();
 	//void DisplayChoices(string);

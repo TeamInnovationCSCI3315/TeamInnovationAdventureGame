@@ -4,14 +4,10 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
+#include <map>
 using namespace std;
-enum PlayerMenuChoices
-{
-	Interact,
-	Move,
-	ShowInventory,
-	QuitGame
-};
+
+
 PlayerClass player1;
 /*
 	This displays the location, asks the player choice and takes the player input to be returned to the main cpp file.
@@ -39,7 +35,7 @@ void UI::DisplayIntroduction()
 void UI::Menu(Locations AllLocations[], Locations& PlayerLocation, Inventory& PlayerInventory, GameClass& Game, int AllLocationsSize)
 {
 	cout << "--------------------------------------------------------------------------" << endl;
-	cout << PlayerLocation.getLocationDesc() << endl;
+	cout << "You are currently at: " << PlayerLocation.getLocationName() << endl;
 	cout << "--------------------------------------------------------------------------" << endl;
 	cout << "[1] Interact\n" << "[2] Move\n" << "[3] Inventory \n" << "[0] Quit Game\n";
 	cout << "--------------------------------------------------------------------------" << endl;
@@ -68,8 +64,8 @@ void UI::MoveOptions(Locations AllLocations[], Locations& PlayerLocation, int Al
 {
 	cout << "\t [1] North: " << PlayerLocation.getNorthDoor() << endl << "\t [2] South: " << PlayerLocation.getSouthDoor() << endl << "\t [3] East: " << PlayerLocation.getEastDoor() << endl << "\t [4] West: " << PlayerLocation.getWestDoor() << endl << endl;
 	int playerChoice;
-	cin >> playerChoice;
-	switch (playerChoice)
+	cin >> playerInput;
+	switch (playerInput)
 	{
 	case 1: // North
 		if (PlayerLocation.getNorthDoor() == "")
