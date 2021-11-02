@@ -5,6 +5,8 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
+#include "InputValidation.h"
+
 using namespace std;
 /*
 	Constructors for the location and instances for location description and name, and returns these values.
@@ -171,7 +173,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 		while (playerchoice != 3)
 		{
 			//cout << locationDesc;
-			cin >> playerchoice;
+			playerchoice = validate.inputValidation();
 			switch (playerchoice)
 			{
 			case 1:

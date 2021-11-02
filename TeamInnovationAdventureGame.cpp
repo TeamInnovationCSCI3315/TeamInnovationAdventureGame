@@ -49,7 +49,7 @@ int main()
 			//Interface.DisplayLocation(Game.GetLocation(),VillageEntrance.getLocationDesc());
 			//Interface.DisplayIntroduction();
 			//cout << "Place Holder Introduction: Press 0 to quit at any time\n" << endl << endl;
-		cout << "Game Version 0.1" << endl;
+		cout << "Game Version 0.2" << endl;
 		Interface.DisplayIntroduction();
 		while (true) //Will later be switched to !GameOver
 		{

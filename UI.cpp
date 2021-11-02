@@ -5,9 +5,10 @@
 #include <cstdlib>
 #include <string>
 #include <map>
+#include "InputValidation.h"
 using namespace std;
 
-
+InputValidation validate;
 PlayerClass player1;
 /*
 	This displays the location, asks the player choice and takes the player input to be returned to the main cpp file.
@@ -40,7 +41,7 @@ void UI::Menu(Locations AllLocations[], Locations& PlayerLocation, Inventory& Pl
 	cout << "[1] Interact\n" << "[2] Move\n" << "[3] Inventory \n" << "[0] Quit Game\n";
 	cout << "--------------------------------------------------------------------------" << endl;
 	//cout << "\t [1] North: " << PlayerLocation.getNorthDoor() << endl << "\t [2] South: " << PlayerLocation.getSouthDoor() << endl << "\t [3] East: " << PlayerLocation.getEastDoor() << endl << "\t [4] West: " << PlayerLocation.getWestDoor() << endl << "\t [5] View Inventory" << endl << "\t [0] Quit Game" << endl << endl;
-	cin >> playerInput;
+	playerInput = validate.inputValidation();
 	switch (playerInput)
 	{
 	case 1:
@@ -64,7 +65,7 @@ void UI::MoveOptions(Locations AllLocations[], Locations& PlayerLocation, int Al
 {
 	cout << "\t [1] North: " << PlayerLocation.getNorthDoor() << endl << "\t [2] South: " << PlayerLocation.getSouthDoor() << endl << "\t [3] East: " << PlayerLocation.getEastDoor() << endl << "\t [4] West: " << PlayerLocation.getWestDoor() << endl << endl;
 	int playerChoice;
-	cin >> playerInput;
+	playerInput = validate.inputValidation();
 	switch (playerInput)
 	{
 	case 1: // North

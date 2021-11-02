@@ -48,7 +48,7 @@ void GameClass::TunnelPuzzle()
 		while (playerchoice != 4)
 		{
 			cout << "Choose your answer: ";
-			cin >> playerchoice;
+			playerchoice = validate.inputValidation();
 			cout << endl;
 			if (playerchoice == 4)
 			{
@@ -77,7 +77,7 @@ void GameClass::TunnelPuzzle()
 		while (playerchoice != 3)
 		{
 			cout << "Choose your answer: ";
-			cin >> playerchoice;
+			playerchoice = validate.inputValidation();
 			cout << endl;
 			if (playerchoice == 3)
 			{
@@ -102,7 +102,7 @@ void GameClass::TunnelPuzzle()
 		while (playerchoice != 2)
 		{
 			cout << "Choose your answer: ";
-			cin >> playerchoice;
+			playerchoice = validate.inputValidation();
 			cout << endl;
 			if (playerchoice == 2)
 			{
