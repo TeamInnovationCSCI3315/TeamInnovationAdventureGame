@@ -122,3 +122,11 @@ This is followed swiftly by the standing corpse slashing at you.
 You find your vision in the air, you see your dismembered corpse from above.
 Your head falls to the ground, and the last thing you see is it sinking back into the shadows.
 Ready to dream again, you sleep.
+
+Hilly Fields
+As you step outside you squint from the morning haze, it only takes you another moment to notice the fog.\n
+It's thick enough that on any other morning you'd be blinded by it's light.\n
+Instead you're blinded by this mist. You can barely see in front of you.\n
+Your fire is going down from your lamp, you need more light.\n
+You can see two faint images, one to the north and the other to the west.\n
+Where do you go?\n
