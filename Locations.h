@@ -6,6 +6,7 @@
 #include "PlayerClass.h"
 #include "GameClass.h"
 #include "Inventory.h"
+#include "InputValidation.h"
 using namespace std;
 
 class Locations
@@ -20,6 +21,7 @@ private:
 	string locationDesc;
 	string item;
 	Inventory LocationInventory;
+	InputValidation validate;
 
 public:
 	string getNorthDoor();

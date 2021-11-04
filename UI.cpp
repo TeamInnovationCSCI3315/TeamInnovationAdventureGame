@@ -4,7 +4,11 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
+#include <map>
+#include "InputValidation.h"
 using namespace std;
+
+InputValidation validate;
 PlayerClass player1;
 /*
 	This displays the location, asks the player choice and takes the player input to be returned to the main cpp file.
@@ -29,6 +33,89 @@ void UI::DisplayIntroduction()
 	system("pause");
 	system("CLS");
 }
+void UI::Menu(Locations AllLocations[], Locations& PlayerLocation, Inventory& PlayerInventory, GameClass& Game, int AllLocationsSize)
+{
+	cout << "--------------------------------------------------------------------------" << endl;
+	cout << "You are currently at: " << PlayerLocation.getLocationName() << endl;
+	cout << "--------------------------------------------------------------------------" << endl;
+	cout << "[1] Interact\n" << "[2] Move\n" << "[3] Inventory \n" << "[0] Quit Game\n";
+	cout << "--------------------------------------------------------------------------" << endl;
+	//cout << "\t [1] North: " << PlayerLocation.getNorthDoor() << endl << "\t [2] South: " << PlayerLocation.getSouthDoor() << endl << "\t [3] East: " << PlayerLocation.getEastDoor() << endl << "\t [4] West: " << PlayerLocation.getWestDoor() << endl << "\t [5] View Inventory" << endl << "\t [0] Quit Game" << endl << endl;
+	playerInput = validate.inputValidation();
+	switch (playerInput)
+	{
+	case 1:
+		PlayerLocation.LocationActions(AllLocations, PlayerInventory);
+		break;
+	case 2:
+		MoveOptions(AllLocations, PlayerLocation, AllLocationsSize);
+		break;
+	case 3:
+		PlayerInventory.DisplayInventory();
+		break;
+	case 0:
+		Game.Quit();
+		break;
+	default:
+		cout << "Invalid";
+		break;
+	}
+}
+void UI::MoveOptions(Locations AllLocations[], Locations& PlayerLocation, int AllLocationsSize)
+{
+	cout << "\t [1] North: " << PlayerLocation.getNorthDoor() << endl << "\t [2] South: " << PlayerLocation.getSouthDoor() << endl << "\t [3] East: " << PlayerLocation.getEastDoor() << endl << "\t [4] West: " << PlayerLocation.getWestDoor() << endl << endl;
+	int playerChoice;
+	playerInput = validate.inputValidation();
+	switch (playerInput)
+	{
+	case 1: // North
+		if (PlayerLocation.getNorthDoor() == "")
+		{
+			cout << "Invalid\n";
+		}
+		else
+		{
+			PlayerLocation.CheckLocation(AllLocations, "North", AllLocationsSize);
+			//cout << PlayerLocation.getLocationName() << endl << PlayerLocation.getLocationDesc();
+
+		}
+		break;
+	case 2: // South
+		if (PlayerLocation.getSouthDoor() == "")
+		{
+			cout << "invalid\n";
+		}
+		else
+		{
+			PlayerLocation.CheckLocation(AllLocations, "South", AllLocationsSize);
+			//cout << PlayerLocation.getLocationName() << endl << PlayerLocation.getLocationDesc();
+		}
+		break;
+	case 3: // East
+		if (PlayerLocation.getEastDoor() == "")
+		{
+			cout << "invalid\n";
+		}
+		else
+		{
+			PlayerLocation.CheckLocation(AllLocations, "East", AllLocationsSize);
+			//cout << PlayerLocation.getLocationName() << endl << PlayerLocation.getLocationDesc();
+		}
+		break;
+	case 4: // West
+		if (PlayerLocation.getWestDoor() == "")
+		{
+			cout << "invalid\n";
+		}
+		else
+		{
+			PlayerLocation.CheckLocation(AllLocations, "West", AllLocationsSize);
+			//cout << PlayerLocation.getLocationName() << endl << PlayerLocation.getLocationDesc();
+		}
+		break;
+	}
+}
+/*
 void UI::DisplayLocation(string room,string desc)
 {
 	cout << "You are currently at: " << room << endl;
@@ -43,35 +130,5 @@ int UI::ReturnChoices()
 {
 	return playerInput;
 }
+*/
 
-
-
-/* void GameClass::Location()
-{
-
-}
-void GameClass::SetLocation(string location)
-{
-	PlayerLocation = location;
-}
-string GameClass::GetLocation()
-{
-	return PlayerLocation;
-}*/
-
-/*void UI::DrinkDesc()
-{
-	cout << "Would you like a drink from the bar?" << endl;
-
-}
-void UI::PickupLanternDesc()
-{
-	cout << "Do you want to pickup the lantern?" << endl;
-
-}
-void UI::LeaveLanternDesc()
-{
-	cout << "Do you want to leave the lantern?" << endl;
-	cout << "Note: The lantern could be a source of light in dark areas" << endl;
-
-}*/

@@ -3,6 +3,10 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
+#include "GameClass.h"
+#include "Inventory.h"
+#include "PlayerClass.h"
+#include "Locations.h"
 using namespace std;
 /*
 	This constructs the display for the choices, player input and location and returns it to cpp file to be displayed
@@ -10,12 +14,26 @@ using namespace std;
 class UI
 {
 private:
+	enum PlayerMenuChoices
+	{
+		Interact,
+		Move,
+		ShowInventory,
+		QuitGame
+	};
 	int playerInput;
+	/*
+	map<string, PlayerMenuChoices> PlayerSelection
+	{
+		PlayerSelection['1'] = Interact
+	};*/
 public: 
-	int ReturnChoices();
-	void DisplayChoices(string);
-	void DisplayLocation(string,string);
+	//int ReturnChoices();
+	//void DisplayChoices(string);
+	//void DisplayLocation(string,string);
 	void DisplayIntroduction();
+	void Menu(Locations[], Locations&, Inventory&, GameClass&, int);
+	void MoveOptions(Locations[], Locations&, int);
 /*	
 	string GetLocation();
 	void DrinkDesc();
