@@ -256,8 +256,28 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 		cout << locationDesc;
 		if (!playerinventory.SearchInventory("Sword"))
 		{
-			locationDesc = "A rusty sword lays on the ground in front of you.\n It looks like it was left long ago by a weary traveler.\n [1] Pick up sword \n[2] Exit\n";
+			locationDesc = "A rusty sword lays on the ground in front of you.\n It looks like it was left long ago by a weary traveler.\n [1] Pick up sword \n[2] Continue onward\n";
 			
+		}
+		while (playerchoice != 3)
+		{
+			//cout << locationDesc;
+			playerchoice = validate.inputValidation();
+			switch (playerchoice)
+			{
+			case 1:
+				if (!playerinventory.SearchInventory("Sword"))
+				{
+					cout << "You have picked up the Rusty Sword from the ground! \n ";
+					playerinventory.AddItem(TempLocation[4].getItem());
+					locationDesc = "[2] Continue Onwards\n \n";
+				}
+				break;
+
+			case 2:
+				cout << "You glance over the sword and decide you will leave it there.\n";
+				break;
+			}
 		}
 
 			
