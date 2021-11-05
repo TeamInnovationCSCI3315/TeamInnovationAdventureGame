@@ -14,14 +14,22 @@ GameClass::GameClass()
 {
 	
 }
-void GameClass::SetLocation(string location)
+string GameClass::UseMenu(Inventory playerInventory, string s)
 {
-	playerLocation = location;
+	string itemToUse;
+	string usedOn;
+	playerInventory.DisplayInventory();
+	cout << "Select item to use on" << s << endl;
+	int playerchoice = validate.inputValidation();
+	while(playerchoice > playerInventory.GetInventorySize())
+	{
+		cout << "Invalid Selection, Try Again: \n";
+		playerchoice = validate.inputValidation();
+	}
+	itemToUse = playerInventory.GetItemAt(playerchoice); 
+	return itemToUse;
 }
-string GameClass::GetLocation()
-{
-	return playerLocation;
-}
+
 void GameClass::Quit()
 {
 	string tempinput="";

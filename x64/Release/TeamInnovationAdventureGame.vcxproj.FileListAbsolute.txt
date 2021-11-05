@@ -1,1 +1,2 @@
 C:\Users\guita\source\repos\TeamInnovationAdventureGameNew1\x64\Release\TeamInnovationAdventureGame.exe
+C:\Users\guita\source\repos\TeamInnovationAdventureGame1\x64\Release\TeamInnovationAdventureGame.exe

@@ -11,7 +11,7 @@ using namespace std;
 /*
 	Constructors for the location and instances for location description and name, and returns these values.
 */
-Locations::Locations(string n, string d, string north, string south, string east, string west, string i)
+Locations::Locations(string n, string d, string north, string south, string east, string west, string i,string o)
 {
 	item = i;
 	LocationInventory.AddItem(i);
@@ -21,6 +21,15 @@ Locations::Locations(string n, string d, string north, string south, string east
 	southDoor = south;
 	eastDoor = east;
 	westDoor = west;
+	roomObject = o;
+}
+string Locations::getRoomObject()
+{
+	return roomObject;
+}
+void Locations::setRoomObject(string r)
+{
+	roomObject = r;
 }
 string Locations::getEastDoor()
 {
@@ -66,7 +75,7 @@ Check Location sets a new location to the player's location based on the directi
 */
 void Locations::CheckLocation(Locations TempLocation[], string direction, int size)
 {
-	int index;
+	int index=0;
 
 	if (direction == "North")
 	{
@@ -158,6 +167,44 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 				cout << locationDesc;
 			}
 	}
+	if (locationName == "Village Garden")
+	{
+		if (!playerinventory.SearchInventory("Sage"))
+		{
+			locationDesc = "You enter the garden.\n You smell a strong herb nearby.\n There is flora all around you.\n\n[1] Admire garden \n[2] Pick herb \n[3] Exit\n";
+
+		}
+		if (playerinventory.SearchInventory("Sage"))
+		{
+			locationDesc = "[3] Go back to Village Entrance\n \n";
+		}
+		cout << locationDesc;
+		while (playerchoice != 3)
+		{
+			//cout << locationDesc;
+			playerchoice = validate.inputValidation();
+			switch (playerchoice)
+			{
+			case 1:
+				cout << "You look at the garden, the flowers are colorful and smell delightful. \n";
+				break;
+
+			case 2:
+				if (!playerinventory.SearchInventory("Sage"))
+				{
+					cout << "You have picked the Sage Herb from the garden! \n ";
+					playerinventory.AddItem(TempLocation[3].getItem());
+					//playerinventory.DisplayInventory();
+					//Player.DisplayInventory();
+					//TempLocation[2].setLocationDesc("[1] Go to bar\n [3] Go back to Village Entrance\n \n");
+					locationDesc = "[1] Admire the garden \n [3] Go back to Village Entrance\n \n";
+					//TempLocation[1].setLocationDesc("With the lantern in hand you head towards the abandoned shack once again.\nIt seems to be made out of a rotting, creeping willow of some kind or another, though it splinters out as a thorny hide.\nIt has a flimsy door held together by sheer luck, and a rusted doorknob is the only thing standing between you and the inside.\nYou pull open the wooden door as you do the door comes off of it's hinges with a loud thunk.\nYou step to the side with an inexplicable calmness as it falls where you were previously standing.\nThe inside of it is  hard to take in as you enter, still wondering.\nThe walls seem warped and as if waves of fabric compared to it's porcupine exterior.\nAn ocean of fine willow, sanded and well maintained like it's floors and a nearby bed.\nThe candles with their wax drapping over windowsills greet you with the faintest flicker, before extinguishing.\nStartled, you notice the new wax drips just below a trapdoor not just a foot away from you.\nIt's fine finished wood and golden knocker whisper to you almost in a wordless alure.\nYou wonder finally, why?\nThe door, the candles, the words, this shack.\nAnd it's with these thoughts, this pause, this hesitation, this fear.\nIt happens.\nWhat do you do?\n Press [1] to open it, Press [2] to return to the village entrance:");
+				}
+				break;
+			}
+		}
+
+	}
 	if (locationName == "Tavern")
 	{
 		if (!playerinventory.SearchInventory("Lantern"))
@@ -191,6 +238,10 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 					locationDesc = "[1] Go to bar\n [3] Go back to Village Entrance\n \n";
 					//TempLocation[1].setLocationDesc("With the lantern in hand you head towards the abandoned shack once again.\nIt seems to be made out of a rotting, creeping willow of some kind or another, though it splinters out as a thorny hide.\nIt has a flimsy door held together by sheer luck, and a rusted doorknob is the only thing standing between you and the inside.\nYou pull open the wooden door as you do the door comes off of it's hinges with a loud thunk.\nYou step to the side with an inexplicable calmness as it falls where you were previously standing.\nThe inside of it is  hard to take in as you enter, still wondering.\nThe walls seem warped and as if waves of fabric compared to it's porcupine exterior.\nAn ocean of fine willow, sanded and well maintained like it's floors and a nearby bed.\nThe candles with their wax drapping over windowsills greet you with the faintest flicker, before extinguishing.\nStartled, you notice the new wax drips just below a trapdoor not just a foot away from you.\nIt's fine finished wood and golden knocker whisper to you almost in a wordless alure.\nYou wonder finally, why?\nThe door, the candles, the words, this shack.\nAnd it's with these thoughts, this pause, this hesitation, this fear.\nIt happens.\nWhat do you do?\n Press [1] to open it, Press [2] to return to the village entrance:");
 				}
+				else
+				{
+					cout << "Invalid!";
+				}
 				break;
 			}
 		}
@@ -202,7 +253,14 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 		{
 			locationDesc = "You see two pathways ahead of you, one to the left and one that continues straight. ";
 		}
-		cout << locationDesc;	
+		cout << locationDesc;
+		if (!playerinventory.SearchInventory("Sword"))
+		{
+			locationDesc = "A rusty sword lays on the ground in front of you.\n It looks like it was left long ago by a weary traveler.\n [1] Pick up sword \n[2] Exit\n";
+			
+		}
+
+			
 	}
 	if (locationName == "Left Tunnel Room")
 	{
@@ -240,13 +298,46 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 		{
 			Puzzle.TunnelPuzzle();
 				cout << "A Door Appears to open from within the wall in front of you. Would you like to go through it?";
-				northDoor = "Mysterious Door";
+				northDoor = "Staircase Room";
 		}
 		else
 		{
 
 		}
 
+	}
+	if (locationName == "Staircase Room")
+	{
+		GameClass Game;
+		cout << "A ghostly presence is in the room. A wraith appears in front of you\n What would you like to do?\n ";
+		cout << "[1] Use an Item \n [2] Talk to the Wraith\n [3] Leave\n";
+		playerchoice = validate.inputValidation();
+		switch (playerchoice)
+		{
+		case 1:
+		{
+			string use = Game.UseMenu(playerinventory, roomObject);
+			if (use == "Sword")
+			{
+				cout << "You lunge towards the Wraith with your sword, but it goes right through it!";
+			}
+			if (use == "Sage")
+			{
+				cout << "You put the Sage herbs to the lantern, lighting it on fire. Smoke fills the room and the Wraith shrieks as it fades away";
+				northDoor = "Mysterious Door";
+			}
+			else
+			{
+				cout << "Nothing Happens";
+			}
+			break;
+		}
+		case 2:
+		{
+			cout << "You try to talk to the Wraith, but it screams in your face\n";
+			break;
+		}
+		}
 	}
 	else
 	{
