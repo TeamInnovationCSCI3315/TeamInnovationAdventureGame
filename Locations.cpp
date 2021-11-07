@@ -176,7 +176,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 		}
 		if (playerinventory.SearchInventory("Sage"))
 		{
-			locationDesc = "[3] Go back to Village Entrance\n \n";
+			locationDesc = "[1] Admire the Garden \n [3] Go back to Village Entrance\n \n";
 		}
 		cout << locationDesc;
 		while (playerchoice != 3)
@@ -251,14 +251,19 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 	{
 		if (isinTunnel == 1)
 		{
-			locationDesc = "You see two pathways ahead of you, one to the left and one that continues straight. ";
+			locationDesc = "You see two pathways ahead of you, one to the left and one that continues straight. \n ";
 		}
-		cout << locationDesc;
+		
 		if (!playerinventory.SearchInventory("Sword"))
 		{
-			locationDesc = "A rusty sword lays on the ground in front of you.\n It looks like it was left long ago by a weary traveler.\n [1] Pick up sword \n[2] Continue onward\n";
+			locationDesc = "A rusty sword lays on the ground in front of you.\n It looks like it was left long ago by a weary traveler.\n[1] Pick up sword \n[3] Continue onward\n";
 			
 		}
+		if(playerinventory.SearchInventory("Sword"))
+		{
+			locationDesc = "[3] Continue Onward\n";
+		}
+		cout << locationDesc;
 		while (playerchoice != 3)
 		{
 			//cout << locationDesc;
@@ -270,17 +275,26 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 				{
 					cout << "You have picked up the Rusty Sword from the ground! \n ";
 					playerinventory.AddItem(TempLocation[4].getItem());
-					locationDesc = "[2] Continue Onwards\n \n";
+					locationDesc = "[3] Continue Onwards\n \n";
+				}
+				
+				else
+				{
+					cout << "Invalid";
 				}
 				break;
 
-			case 2:
-				cout << "You glance over the sword and decide you will leave it there.\n";
+			case 3:
+				if (!playerinventory.SearchInventory("Sword"))
+				{
+					cout << "You glance over the sword and decide you will leave it there.\n";
+				}
+				break;
+			default:
+				cout << "Invalid";
 				break;
 			}
 		}
-
-			
 	}
 	if (locationName == "Left Tunnel Room")
 	{
@@ -312,13 +326,21 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 		string playerchoice = "";
 		GameClass Puzzle;
 		cout << "You are in a rigid, uneven granite room difficult to walk in. You see up ahead of you a dead end across the granite with nothing left to show signs of life or means of escape however,\n as you get close you start to notice that there may be something to this. You see etchings into the granite with your lantern." << endl;
-		cout << "There seems to be some sort of puzzle written into this wall. Should you try to solve it? (Y for yes, anything else for no)\n ";
-		cin >> playerchoice;
-		if (playerchoice == "Y" || playerchoice == "y")
+		if (!taskDone[5])
 		{
-			Puzzle.TunnelPuzzle();
-				cout << "A Door Appears to open from within the wall in front of you. Would you like to go through it?";
+			cout << "There seems to be some sort of puzzle written into this wall. Should you try to solve it? (Y for yes, anything else for no)\n ";
+			cin >> playerchoice;
+			if (playerchoice == "Y" || playerchoice == "y")
+			{
+				Puzzle.TunnelPuzzle();
+				cout << "A Door Appears to open from within the wall in front of you. Would you like to go through it?\n";
 				northDoor = "Staircase Room";
+				taskDone[5] = true;
+			}
+		}
+		if (taskDone[5])
+		{
+			northDoor = "Staircase Room";
 		}
 		else
 		{
@@ -328,40 +350,54 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 	}
 	if (locationName == "Staircase Room")
 	{
+		
 		GameClass Game;
-		cout << "A ghostly presence is in the room. A wraith appears in front of you\n What would you like to do?\n ";
-		cout << "[1] Use an Item \n [2] Talk to the Wraith\n [3] Leave\n";
-		playerchoice = validate.inputValidation();
-		switch (playerchoice)
+		if (!taskDone[7])
 		{
-		case 1:
-		{
-			string use = Game.UseMenu(playerinventory, roomObject);
-			if (use == "Sword")
+			cout << "A ghostly presence is in the room. A wraith appears in front of you\n What would you like to do?\n ";
+			cout << "[1] Use an Item \n [2] Talk to the Wraith\n [3] Leave\n";
+			while (playerchoice != 3)
 			{
-				cout << "You lunge towards the Wraith with your sword, but it goes right through it!";
+				playerchoice = validate.inputValidation();
+				switch (playerchoice)
+				{
+				case 1:
+				{
+					string use = Game.UseMenu(playerinventory, roomObject);
+					if (use == "Sword")
+					{
+						cout << "You lunge towards the Wraith with your sword, but it goes right through it! \n";
+					}
+					if (use == "Sage")
+					{
+						cout << "You put the Sage herbs to the lantern, lighting it on fire. Smoke fills the room and the Wraith shrieks as it fades away \n";
+						northDoor = "Mysterious Door";
+					}
+					else
+					{
+						cout << "Nothing Happens\n";
+					}
+					break;
+				}
+				case 2:
+				{
+					cout << "You try to talk to the Wraith, but it screams in your face\n";
+					break;
+				}
+				default:
+					cout << "Invalid";
+					break;
+				}
 			}
-			if (use == "Sage")
-			{
-				cout << "You put the Sage herbs to the lantern, lighting it on fire. Smoke fills the room and the Wraith shrieks as it fades away";
-				northDoor = "Mysterious Door";
-			}
-			else
-			{
-				cout << "Nothing Happens";
-			}
-			break;
 		}
-		case 2:
+		if (taskDone[7])
 		{
-			cout << "You try to talk to the Wraith, but it screams in your face\n";
-			break;
-		}
+			cout << "There path to the staircase is clear, and a mysterious door with light surrounding its edges glows brightly at the top"
 		}
 	}
 	else
 	{
 		cout << "No Options Currently Available" << endl;
 	}
-	
 }
+	

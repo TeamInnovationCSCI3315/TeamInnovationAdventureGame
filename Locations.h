@@ -21,6 +21,7 @@ private:
 	string locationDesc;
 	string item;
 	string roomObject;
+	bool taskDone[10] = { false };
 	Inventory LocationInventory;
 	InputValidation validate;
 
