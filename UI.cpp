@@ -12,9 +12,10 @@ PlayerClass player1;
 void UI::DisplayStartScreen()
 {
 	GameClass Game;
-	cout << "-----------------------(Title of Game)-------------------------" << endl;
-	cout << "---------------(Press 1 to Start the Nightmare)----------------"<<endl;
-	cout << "------------(Press Anything Else to End the Dream)-------------" << endl;
+	cout << "-----------------------A Strand of Nightmares--------------------------" << endl;
+	cout << "                   | |--|                       |--| |                 " << endl << "                   |-|  |-----------------------|  |-|" << endl << "                   | |  |                       |  | |                 " << endl;
+	cout << "------------------(Press 1 to Start the Nightmare)---------------------"<<endl;
+	cout << "---------------(Press Anything Else to End the Dream)------------------" << endl;
 	int playerinputst;
 	cin >> playerinputst;
 	while (playerinputst != 1)

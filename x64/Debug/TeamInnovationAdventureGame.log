@@ -1,5 +1,2 @@
-﻿  TeamInnovationAdventureGame.cpp
-C:\Users\twood\source\repos\TEAMINNOVATIONADVGAME(3)\TeamInnovationAdventureGame.cpp(41,14): warning C4930: 'PlayerClass Player(void)': prototyped function not called (was a variable definition intended?)
-  UI.cpp
-  Generating Code...
-  TeamInnovationAdventureGame.vcxproj -> C:\Users\twood\source\repos\TEAMINNOVATIONADVGAME(3)\x64\Debug\TeamInnovationAdventureGame.exe
+﻿  UI.cpp
+  TeamInnovationAdventureGame.vcxproj -> C:\Users\twood\source\repos\TEAMINNOVATIONADVGAME(BR68)\x64\Debug\TeamInnovationAdventureGame.exe

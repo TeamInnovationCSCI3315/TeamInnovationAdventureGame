@@ -33,6 +33,10 @@ void GameClass::Quit(int i)
 		{
 			exit(0);
 		}
+		else if (tempinput == "N" || tempinput == "n")
+		{
+			return;
+		}
 
 	}
 }
