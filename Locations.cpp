@@ -141,7 +141,7 @@ void Locations::CheckLocation(Locations TempLocation[], string direction, int si
 LocationActions displays different actions specific to every room
 
 */
-void Locations::LocationActions(Locations TempLocation[], Inventory& playerinventory)
+void Locations::LocationActions(Locations TempLocation[], Inventory& playerinventory, int locationsize)
 {
 	
 	int playerchoice=1;
@@ -151,7 +151,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 		locationDesc = "You find yourself looking at a village as you sit at the entrance of it. There is the light hooting of an owl as you start walking.\nAs you look around you notice how dark it is, the village allows you to barely maneuver around with the faint candlelight from the street lamps.\nIn one direction, following the road to the east you notice a tavern up ahead with bright lights and the sounds of commerce. This could be a good place to find information and help and it is probably the brightest place.\nIn the other direction you notice the lights grow scarcer and scarcer until you can barely see the outline of what seems to be an abandoned shack, something draws you to it's shadow, curiosity maybe?\n ";
 		cout << locationDesc;
 	}
-	if (locationName == "Abandoned Shack")
+	else if (locationName == "Abandoned Shack")
 	{
 			if (playerinventory.SearchInventory("Lantern"))
 			{	
@@ -167,7 +167,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 				cout << locationDesc;
 			}
 	}
-	if (locationName == "Village Garden")
+	else if (locationName == "Village Garden")
 	{
 		if (!playerinventory.SearchInventory("Sage"))
 		{
@@ -205,7 +205,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 		}
 
 	}
-	if (locationName == "Tavern")
+	else if (locationName == "Tavern")
 	{
 		if (!playerinventory.SearchInventory("Lantern"))
 		{
@@ -247,23 +247,24 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 		}
 			
 	}
-	if (locationName == "Tunnel")
+	else if (locationName == "Tunnel")
 	{
+		
 		if (isinTunnel == 1)
 		{
 			locationDesc = "You see two pathways ahead of you, one to the left and one that continues straight. \n ";
 		}
-		
+		cout << locationDesc;
 		if (!playerinventory.SearchInventory("Sword"))
 		{
-			locationDesc = "A rusty sword lays on the ground in front of you.\n It looks like it was left long ago by a weary traveler.\n[1] Pick up sword \n[3] Continue onward\n";
+			cout << "A rusty sword lays on the ground in front of you.\n It looks like it was left long ago by a weary traveler.\n[1] Pick up sword \n[3] Continue onward\n";
 			
 		}
 		if(playerinventory.SearchInventory("Sword"))
 		{
-			locationDesc = "[3] Continue Onward\n";
+			cout << "[3] Continue Onward\n";
 		}
-		cout << locationDesc;
+		
 		while (playerchoice != 3)
 		{
 			//cout << locationDesc;
@@ -296,7 +297,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 			}
 		}
 	}
-	if (locationName == "Left Tunnel Room")
+	else if (locationName == "Left Tunnel Room")
 	{
 		GameClass Death1;
 		isinTunnel = 1;
@@ -313,6 +314,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 			southDoor = "";
 			westDoor = "";
 			eastDoor = "";
+			taskDone[locationsize] = { false };
 			playerinventory.RemoveAllItems();
 		}
 		else
@@ -321,7 +323,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 		}
 		cout << locationDesc;
 	}
-	if (locationName == "Mysterious Room")
+	else if (locationName == "Mysterious Room")
 	{
 		string playerchoice = "";
 		GameClass Puzzle;
@@ -348,16 +350,19 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 		}
 
 	}
-	if (locationName == "Staircase Room")
+	else if (locationName == "Staircase Room")
 	{
-		
+	
 		GameClass Game;
+		STAIRS:
 		if (!taskDone[7])
 		{
 			cout << "A ghostly presence is in the room. A wraith appears in front of you\n What would you like to do?\n ";
-			cout << "[1] Use an Item \n [2] Talk to the Wraith\n [3] Leave\n";
+			
 			while (playerchoice != 3)
 			{
+				locationDesc = "[1] Use an Item \n[2] Talk to the Wraith\n[3] Leave\n";
+				cout << locationDesc;
 				playerchoice = validate.inputValidation();
 				switch (playerchoice)
 				{
@@ -368,10 +373,14 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 					{
 						cout << "You lunge towards the Wraith with your sword, but it goes right through it! \n";
 					}
-					if (use == "Sage")
+					else if (use == "Sage")
 					{
 						cout << "You put the Sage herbs to the lantern, lighting it on fire. Smoke fills the room and the Wraith shrieks as it fades away \n";
 						northDoor = "Mysterious Door";
+						taskDone[7] = true;
+						locationDesc = "Press [3] to exit";
+						goto STAIRS;
+						break;
 					}
 					else
 					{
@@ -390,9 +399,10 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 				}
 			}
 		}
-		if (taskDone[7])
+		else if (taskDone[7])
 		{
-			cout << "There path to the staircase is clear, and a mysterious door with light surrounding its edges glows brightly at the top"
+			cout << "The path to the staircase is clear, and a mysterious door with light surrounding its edges is at the top\n";
+			northDoor = "Mysterious Door";
 		}
 	}
 	else

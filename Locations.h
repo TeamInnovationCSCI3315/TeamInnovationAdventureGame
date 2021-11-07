@@ -21,6 +21,7 @@ private:
 	string locationDesc;
 	string item;
 	string roomObject;
+
 	bool taskDone[10] = { false };
 	Inventory LocationInventory;
 	InputValidation validate;
@@ -39,6 +40,6 @@ public:
 	void setLocationDesc(string);
 	Locations(string, string, string, string, string, string, string, string);
 	void CheckLocation(Locations[], string, int);
-	void LocationActions(Locations[], Inventory&);
+	void LocationActions(Locations[], Inventory&, int);
 };
 #endif

@@ -45,7 +45,7 @@ void UI::Menu(Locations AllLocations[], Locations& PlayerLocation, Inventory& Pl
 	switch (playerInput)
 	{
 	case 1:
-		PlayerLocation.LocationActions(AllLocations, PlayerInventory);
+		PlayerLocation.LocationActions(AllLocations, PlayerInventory, AllLocationsSize);
 		break;
 	case 2:
 		MoveOptions(AllLocations, PlayerLocation, AllLocationsSize);
