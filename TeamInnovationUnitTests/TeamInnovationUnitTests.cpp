@@ -58,6 +58,29 @@ namespace TeamInnovationUnitTests
 			Assert::IsTrue(playerInventory.IsInventoryEmpty());   // verify inventory now empty
 			playerInventory.AddItem("Baby Monitor");
 			Assert::IsFalse(playerInventory.IsInventoryEmpty());   // verify inventory no longer empty
+
+			// verify that inventory at
+
 		}
+		TEST_METHOD(TestGettingItemFromInventory)
+		{
+			Inventory playerInventory;
+			playerInventory.AddItem("Flower");
+			playerInventory.AddItem("Pickaxe");
+			string getitem = playerInventory.GetItemAt(1);
+			Assert::AreEqual(getitem,playerInventory.GetItemAt(1));
+		}
+
+		
+		TEST_METHOD(TestInventoryForOddCharacters) {
+			Inventory playerInventory;
+			playerInventory.AddItem("*@#$@a");
+			playerInventory.AddItem("&%$$&");
+			playerInventory.AddItem("CTRL+C");
+			Assert::IsTrue(playerInventory.SearchInventory("*@#$@a"));
+			Assert::IsTrue(playerInventory.SearchInventory("&%$$&"));
+			Assert::IsTrue(playerInventory.SearchInventory("CTRL+C"));
+		}
+
 	};
 }
