@@ -39,14 +39,15 @@ int main()
 	const int AllLocationsSize = 10;
 	
 	// Player starts at Village Entrance, so their initial location is Village Entrance;
-	//PlayerLocation = VillageEntrance;
+	PlayerLocation = VillageEntrance;
+	/*
 	PlayerLocation = Tunnel;
 	PlayerInventory.AddItem("Lantern");
-	PlayerInventory.AddItem("Sage");
+	PlayerInventory.AddItem("Sage");*/
 	UI Interface;
 	PlayerClass Player();
 			//cout << "Place Holder Introduction: Press 0 to quit at any time\n" << endl << endl;
-		cout << "Game Version 0.2" << endl;
+		cout << "Game Version 0.3" << endl;
 		Interface.DisplayIntroduction();
 		while (true) //Will later be switched to !GameOver
 		{
