@@ -23,6 +23,7 @@ int main()
 	GameClass Game;
 	/*
 	Multiple rooms are created Location(Location Name, Location Description, North Room, South Room, East Room, West Room, item within room, object within room: NPC);
+	All will be strings, if there is no value for one, set to ""
 	*/
 	Locations VillageEntrance("Village Entrance", "You find yourself looking at a village as you sit at the entrance of it. There is the light hooting of an owl as you start walking.\nAs you look around you notice how dark it is, the village allows you to barely maneuver around with the faint candlelight from the street lamps.\nIn one direction, following the road to the east you notice a tavern up ahead with bright lights and the sounds of commerce. This could be a good place to find information and help and it is probably the brightest place.\nIn the other direction you notice the lights grow scarcer and scarcer until you can barely see the outline of what seems to be an abandoned shack, something draws you to it's shadow, curiosity maybe?\n ", "Village Garden", "", "Tavern", "Abandoned Shack", "","");
 	Locations AbandonedShack("Abandoned Shack", "After walking you arrive at the pitch black shack, it's presence alone stands as if you could die and it wouldn't so much as creek.\nAs you approach it closer to inspect the strange building you find that it becomes far too dark to see and proceed forward, at least safely.\nDo you decide to exit now? \n ", "", "", "Village Entrance", "", "", "");
@@ -41,16 +42,20 @@ int main()
 	// Player starts at Village Entrance, so their initial location is Village Entrance;
 	PlayerLocation = VillageEntrance;
 	/*
-	PlayerLocation = Tunnel;
-	PlayerInventory.AddItem("Lantern");
+	Testing commands. Replace with desired commands below, comment out above starting location:
+	PlayerLocation = Tunnel; // Change location to whatever starting area you want
+	PlayerInventory.AddItem("Lantern"); // add items you want
 	PlayerInventory.AddItem("Sage");*/
 	UI Interface;
 	PlayerClass Player();
 			//cout << "Place Holder Introduction: Press 0 to quit at any time\n" << endl << endl;
 		cout << "Game Version 0.3" << endl;
+		// Display Introduction
 		Interface.DisplayIntroduction();
+		// While true, show interface for the game
 		while (true) //Will later be switched to !GameOver
 		{
+			// Display interface with options
 			Interface.Menu(AllLocations, PlayerLocation, PlayerInventory, Game, AllLocationsSize);
 
 		}

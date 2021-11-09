@@ -11,7 +11,7 @@ using namespace std;
 InputValidation validate;
 PlayerClass player1;
 /*
-	This displays the location, asks the player choice and takes the player input to be returned to the main cpp file.
+	Displays the introduction to the game
 */
 void UI::DisplayIntroduction()
 {
@@ -33,6 +33,13 @@ void UI::DisplayIntroduction()
 	system("pause");
 	system("CLS");
 }
+/*
+Displays the user interface for the game as a whole. Player can:
+		Case 1: Interact (Location Actions),
+		Case 2: Move Locations (MoveOptions),
+		Case 3: Show Inventory (DisplayInventory),
+		Case 0: Quit Game (Quit)
+*/
 void UI::Menu(Locations AllLocations[], Locations& PlayerLocation, Inventory& PlayerInventory, GameClass& Game, int AllLocationsSize)
 {
 	cout << "--------------------------------------------------------------------------" << endl;
@@ -61,6 +68,13 @@ void UI::Menu(Locations AllLocations[], Locations& PlayerLocation, Inventory& Pl
 		break;
 	}
 }
+/*
+Switch Statement to move between:
+	Case 1: North
+	Case 2: South
+	Case 3: East
+	Case 4: West
+*/
 void UI::MoveOptions(Locations AllLocations[], Locations& PlayerLocation, int AllLocationsSize)
 {
 	cout << "\t [1] North: " << PlayerLocation.getNorthDoor() << endl << "\t [2] South: " << PlayerLocation.getSouthDoor() << endl << "\t [3] East: " << PlayerLocation.getEastDoor() << endl << "\t [4] West: " << PlayerLocation.getWestDoor() << endl << endl;

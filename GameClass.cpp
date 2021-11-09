@@ -8,7 +8,7 @@
 #include "PlayerClass.h"
 using namespace std;
 /*
-	This calls the player location and returns the location to the player to be displayed in UI.
+	GameClass contains different functions for game methods like minigames, and events, as well as other methods that are used through the game but don't involve other classes
 */
 GameClass::GameClass()
 {

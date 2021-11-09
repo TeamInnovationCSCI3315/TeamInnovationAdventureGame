@@ -33,6 +33,6 @@ public:
 #endif
 
 
-// adding item descriptions here, not sure if this is a the proper location, but I will review with Andrew tonight
+
 
 

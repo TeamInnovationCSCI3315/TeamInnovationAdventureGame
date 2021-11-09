@@ -8,7 +8,7 @@
 #include "InputValidation.h"
 using namespace std;
 /*
-	This file contains the constructors for the current player location.
+	GameClass contains different functions for game methods like minigames, and events, as well as other methods that are used through the game but don't involve other classes
 */
 class GameClass
 {

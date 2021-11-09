@@ -10,6 +10,7 @@
 using namespace std;
 /*
 	Constructors for the location and instances for location description and name, and returns these values.
+	Location Constructor stores Location Name, Description, and Adjacent doors North, South, East, and West, a well as an Item, and an NPC/Object to interact with
 */
 Locations::Locations(string n, string d, string north, string south, string east, string west, string i,string o)
 {
@@ -139,6 +140,10 @@ void Locations::CheckLocation(Locations TempLocation[], string direction, int si
 }
 /*
 LocationActions displays different actions specific to every room
+If(locationName == "Room"
+{
+Do this:
+}
 
 */
 void Locations::LocationActions(Locations TempLocation[], Inventory& playerinventory, int locationsize)
