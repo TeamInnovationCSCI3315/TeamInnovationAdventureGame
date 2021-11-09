@@ -1,12 +1,1 @@
-﻿  GameClass.cpp
-  Inventory.cpp
-  Locations.cpp
-  PlayerClass.cpp
-  TeamInnovationAdventureGame.cpp
-C:\Users\guita\source\repos\TeamInnovationAdventureGameNew1\TeamInnovationAdventureGame.cpp(40,14): warning C4930: 'PlayerClass Player(void)': prototyped function not called (was a variable definition intended?)
-  UI.cpp
-  Generating code
-  Previous IPDB not found, fall back to full compilation.
-  All 256 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
-  Finished generating code
-  TeamInnovationAdventureGame.vcxproj -> C:\Users\guita\Source\Repos\TeamInnovationAdventureGameNew1\x64\Release\TeamInnovationAdventureGame.exe
+﻿  TeamInnovationAdventureGame.vcxproj -> C:\Users\guita\Source\Repos\TeamInnovationAdventureGameSWORD\x64\Release\TeamInnovationAdventureGame.exe

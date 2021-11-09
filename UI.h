@@ -22,29 +22,17 @@ private:
 		QuitGame
 	};
 	int playerInput;
-	/*
-	map<string, PlayerMenuChoices> PlayerSelection
-	{
-		PlayerSelection['1'] = Interact
-	};*/
+
 public: 
-	//int ReturnChoices();
-	//void DisplayChoices(string);
-	//void DisplayLocation(string,string);
+
 	void DisplayIntroduction();
 	void Menu(Locations[], Locations&, Inventory&, GameClass&, int);
 	void MoveOptions(Locations[], Locations&, int);
-/*	
-	string GetLocation();
-	void DrinkDesc();
-	void PickupLanternDesc();
-	void LeaveLanternDesc();
-	void DisplayInventory();
-	void UseItem(string);*/
+
 };
 #endif
 
 
-// adding item descriptions here, not sure if this is a the proper location, but I will review with Andrew tonight
+
 
 

@@ -2,10 +2,10 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Users\User\Source\Repos\TeamInnovationAdventureGame\x64\Debug\TeamInnovationAdventureGame.exe</FullPath>
+      <FullPath>C:\Users\szawo\source\repos\TeamInnovationAdventureGame5\x64\Debug\TeamInnovationAdventureGame.exe</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>C:\Users\User\source\Repos\TeamInnovationAdventureGame\x64\Debug\TeamInnovationUnitTests.dll</FullPath>
+      <FullPath>C:\Users\szawo\source\repos\TeamInnovationAdventureGame5\x64\Debug\TeamInnovationUnitTests.dll</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

@@ -19,5 +19,7 @@ public:
 	bool SearchInventory(string);
 	void CallInventory(int);
 	void RemoveAllItems();
+	string GetItemAt(int);
+	int GetInventorySize();
 };
 #endif

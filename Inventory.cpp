@@ -57,19 +57,21 @@ void Inventory::RemoveAllItems()
 }
 void Inventory::DisplayInventory()
 {
+	int e=0;
 	cout << endl << "Inventory: " << endl;
 	cout << "--------------------" << endl;
 
 	// loop through all items in inventory
 	for (const string i : inventory)
 	{
-		cout << " " << i << " ";
+		cout << e+1 << ": " << i << " ";
 
 		// print | after printing item name, except for last item
 		if (i != inventory.at(inventory.size() - 1))
 		{
 			cout << " | ";
 		}
+		e++;
 	}
 	if (inventory.empty())
 	{
@@ -98,4 +100,12 @@ void Inventory::CallInventory(int i)
 	{
 		DisplayInventory();
 	}
+}
+string Inventory::GetItemAt(int i)
+{
+	return inventory[i-1];
+}
+int Inventory::GetInventorySize()
+{
+	return inventory.size();
 }

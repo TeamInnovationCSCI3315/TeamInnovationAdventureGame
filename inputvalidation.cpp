@@ -3,6 +3,10 @@
 #include <string>
 #include "InputValidation.h"
 using namespace std;
+/*
+Function for Input Validation
+Player Inputs an integer. Program checks if the input is valid, otherwise resets the buffer and asks the user for another input
+*/
 int InputValidation::inputValidation()
  {
     int input = -1;

@@ -8,20 +8,28 @@
 #include "PlayerClass.h"
 using namespace std;
 /*
-	This calls the player location and returns the location to the player to be displayed in UI.
+	GameClass contains different functions for game methods like minigames, and events, as well as other methods that are used through the game but don't involve other classes
 */
 GameClass::GameClass()
 {
 	
 }
-void GameClass::SetLocation(string location)
+string GameClass::UseMenu(Inventory playerInventory, string s)
 {
-	playerLocation = location;
+	string itemToUse;
+	string usedOn;
+	playerInventory.DisplayInventory();
+	cout << "Select item to use on" << s << endl;
+	int playerchoice = validate.inputValidation();
+	while(playerchoice > playerInventory.GetInventorySize())
+	{
+		cout << "Invalid Selection, Try Again: \n";
+		playerchoice = validate.inputValidation();
+	}
+	itemToUse = playerInventory.GetItemAt(playerchoice); 
+	return itemToUse;
 }
-string GameClass::GetLocation()
-{
-	return playerLocation;
-}
+
 void GameClass::Quit()
 {
 	string tempinput="";

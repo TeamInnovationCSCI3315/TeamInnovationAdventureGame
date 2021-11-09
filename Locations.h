@@ -20,10 +20,14 @@ private:
 	string locationName;
 	string locationDesc;
 	string item;
+	string roomObject;
+
+	bool taskDone[10] = { false };
 	Inventory LocationInventory;
 	InputValidation validate;
 
 public:
+	string getRoomObject();
 	string getNorthDoor();
 	string getSouthDoor();
 	string getEastDoor();
@@ -31,10 +35,11 @@ public:
 	string getLocationName();
 	string getLocationDesc();
 	string getItem();
+	void setRoomObject(string);
 	void setLocationName(string);
 	void setLocationDesc(string);
-	Locations(string, string, string, string, string, string, string);
+	Locations(string, string, string, string, string, string, string, string);
 	void CheckLocation(Locations[], string, int);
-	void LocationActions(Locations[], Inventory&);
+	void LocationActions(Locations[], Inventory&, int);
 };
 #endif
