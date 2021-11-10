@@ -423,16 +423,16 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 	}
 	else if (locationName == "Cemetary")
 	{
-		bool ThiefisAlive = true;
+		//bool ThiefisAlive = true;
 		GameClass Game;
-
+		cout << locationDesc;
 		while (playerchoice != 3)
 		{
 
-			if (ThiefisAlive == true)
+			if (!taskDone[10])
 			{
-				locationDesc = "[1] Talk to the figure \n[2] Use item\n[3] Leave\n";
-				cout << locationDesc;
+				
+				cout<<"\n[1] Talk to the figure \n[2] Use item\n[3] Leave\n";
 				playerchoice = validate.inputValidation();
 				switch (playerchoice)
 				{
@@ -446,10 +446,11 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 						string use = Game.UseMenu(playerinventory, roomObject);
 						if (use == "Sword")
 						{
-							cout << "You lunge towards the thief with your sword, stabbing him straight through his twisted heart.\n He doubles back in pain, slumping to the ground like a sack of grain, and like one he spills to the ground. Instead of grain, he spills out blood from his wound and mouth.\n He is now dead, his ill-gotten goods are now yours.\n Unfortunately, you have little use for most of his wares, except for a small stash of lamp oil. You take it hastily.";
-							ThiefisAlive = false;
+							cout << "You lunge towards the thief with your sword, stabbing him straight through his twisted heart.\n He doubles back in pain, slumping to the ground like a sack of grain, and like one he spills to the ground. Instead of grain, he spills out blood from his wound and mouth.\n He is now dead, his ill-gotten goods are now yours.\n Unfortunately, you have little use for most of his wares, except for a small stash of lamp oil. You take it hastily.\n\n[1] Inspect the Graves \n[2] Inspect Body\n[3] Leave\n";
+							//ThiefisAlive = false;
+							taskDone[10] = true;
 							playerinventory.AddItem("Lamp Oil");
-							cout << "Is the theif alive????????" << ThiefisAlive;
+							//cout << "Is the theif alive????????" << ThiefisAlive;
 							break;
 						}
 						else if (use == "Lantern")
@@ -472,10 +473,10 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 				}
 				
 			}
-			else if (ThiefisAlive == false)
+			else if (taskDone[10])
 			{
-				locationDesc = "You are in the decrepid cemetary.\n The dates indicate that some of these graves have been here for hundreds of years.\n Most are too weathered to be legible anymore.\n The thief's lifeless body lays on the ground.\n[1] Inspect graves \n[2] Inspect dead body\n[3] Leave\n";
-				
+				locationDesc = "You are in the decrepid cemetary.\n The dates indicate that some of these graves have been here for hundreds of years.\n Most are too weathered to be legible anymore.\n The thief's lifeless body lays on the ground.\n\n[1] Inspect the Graves \n[2] Inspect Body\n[3] Leave\n";
+				cout << locationDesc;
 				playerchoice = validate.inputValidation();
 				switch (playerchoice)
 				{
@@ -507,7 +508,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 		}
 		else
 		{
-			locationDesc = "You keep walking forward, but the fog becomes too much for you to handle, you're certain that there has to be another way through the fog. You luckily still know the way back.";
+			locationDesc = "You keep walking forward, but the fog becomes too much for you to handle, you're certain that there has to be another way through the fog. You luckily still know the way back.\n";
 			northDoor = "";
 			cout << locationDesc;
 		}

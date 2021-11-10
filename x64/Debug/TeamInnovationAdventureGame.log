@@ -1,2 +1,6 @@
 ﻿  Locations.cpp
+  TeamInnovationAdventureGame.cpp
+C:\Users\twood\source\repos\TEAMINNOVATIONADVGAME(BR90)\TeamInnovationAdventureGame.cpp(55,14): warning C4930: 'PlayerClass Player(void)': prototyped function not called (was a variable definition intended?)
+C:\Users\twood\source\repos\TEAMINNOVATIONADVGAME(BR90)\TeamInnovationAdventureGame.cpp(17,6): warning C4101: 'playerchoice': unreferenced local variable
+  Generating Code...
   TeamInnovationAdventureGame.vcxproj -> C:\Users\twood\source\repos\TEAMINNOVATIONADVGAME(BR90)\x64\Debug\TeamInnovationAdventureGame.exe
