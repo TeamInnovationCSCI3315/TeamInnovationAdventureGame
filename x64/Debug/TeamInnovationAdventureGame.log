@@ -1,13 +1,7 @@
-﻿  GameClass.cpp
-  inputvalidation.cpp
-  Inventory.cpp
-C:\Users\guita\source\repos\TeamInnovationAdventureGameenemysword\Inventory.cpp(110,25): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-  Locations.cpp
-  PlayerClass.cpp
+﻿  Locations.cpp
+C:\Users\twood\source\repos\TEAMINNOVATIONADVGAME(BR90)\Locations.cpp(450,19): warning C4553: '==': result of expression not used; did you intend '='?
   TeamInnovationAdventureGame.cpp
-C:\Users\guita\source\repos\TeamInnovationAdventureGameenemysword\TeamInnovationAdventureGame.cpp(50,14): warning C4930: 'PlayerClass Player(void)': prototyped function not called (was a variable definition intended?)
-C:\Users\guita\source\repos\TeamInnovationAdventureGameenemysword\TeamInnovationAdventureGame.cpp(17,6): warning C4101: 'playerchoice': unreferenced local variable
-  UI.cpp
-C:\Users\guita\source\repos\TeamInnovationAdventureGameenemysword\UI.cpp(81,6): warning C4101: 'playerChoice': unreferenced local variable
+C:\Users\twood\source\repos\TEAMINNOVATIONADVGAME(BR90)\TeamInnovationAdventureGame.cpp(52,14): warning C4930: 'PlayerClass Player(void)': prototyped function not called (was a variable definition intended?)
+C:\Users\twood\source\repos\TEAMINNOVATIONADVGAME(BR90)\TeamInnovationAdventureGame.cpp(17,6): warning C4101: 'playerchoice': unreferenced local variable
   Generating Code...
-  TeamInnovationAdventureGame.vcxproj -> C:\Users\guita\Source\Repos\TeamInnovationAdventureGameenemysword\x64\Debug\TeamInnovationAdventureGame.exe
+  TeamInnovationAdventureGame.vcxproj -> C:\Users\twood\source\repos\TEAMINNOVATIONADVGAME(BR90)\x64\Debug\TeamInnovationAdventureGame.exe
