@@ -48,12 +48,12 @@ int main()
 	PlayerInventory.AddItem("Sage");*/
 	UI Interface;
 	PlayerClass Player();
-			//cout << "Place Holder Introduction: Press 0 to quit at any time\n" << endl << endl;
 		cout << "Game Version 0.3" << endl;
-		// Display Introduction
-		Interface.DisplayIntroduction();
-		// While true, show interface for the game
-		while (true) //Will later be switched to !GameOver
+		// Display Start Screen
+	Interface.DisplayStartScreen();
+	// Display Introduction
+	Interface.DisplayIntroduction();
+	while (true) //Will later be switched to !GameOver
 		{
 			// Display interface with options
 			Interface.Menu(AllLocations, PlayerLocation, PlayerInventory, Game, AllLocationsSize);

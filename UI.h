@@ -24,7 +24,7 @@ private:
 	int playerInput;
 
 public: 
-
+	void DisplayStartScreen();
 	void DisplayIntroduction();
 	void Menu(Locations[], Locations&, Inventory&, GameClass&, int);
 	void MoveOptions(Locations[], Locations&, int);

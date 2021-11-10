@@ -13,8 +13,30 @@ PlayerClass player1;
 /*
 	Displays the introduction to the game
 */
+void UI::DisplayStartScreen()
+{
+	GameClass Game;
+	cout << "-----------------------A Strand of Nightmares--------------------------" << endl;
+	cout << "                   | |--|                       |--| |                 " << endl << "                   |-|  |-----------------------|  |-|" << endl << "                   | |  |                       |  | |                 " << endl;
+	cout << "------------------(Press 1 to Start the Nightmare)---------------------"<<endl;
+	cout << "---------------(Press Anything Else to End the Dream)------------------" << endl;
+	int playerinputst;
+	cin >> playerinputst;
+	while (playerinputst != 1)
+	{
+		if (playerinputst == 1)
+		{
+
+		}
+		else
+		{
+			exit(0);
+		}
+	}
+}
 void UI::DisplayIntroduction()
 {
+	system("CLS");
 	string name;
 	cout << "Who are you Dreamer?\n";
 	cin >> name;
