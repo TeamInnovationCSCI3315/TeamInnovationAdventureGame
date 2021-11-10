@@ -15,6 +15,7 @@ public:
 	// void Choice();
 	void DisplayInventory();
 	void AddItem(string);
+	void RemoveItem(string);
 	bool IsInventoryEmpty();
 	bool SearchInventory(string);
 	void CallInventory(int);
