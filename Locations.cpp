@@ -380,7 +380,8 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 					}
 					else if (use == "Sage")
 					{
-						cout << "You put the Sage herbs to the lantern, lighting it on fire. Smoke fills the room and the Wraith shrieks as it fades away \n";
+						cout << "You put the Sage herbs to the lantern, lighting it on fire. Smoke fills the room and the Wraith shrieks as it fades away. \n";
+						//playerinventory.RemoveItem("Sage");
 						northDoor = "Mysterious Door";
 						taskDone[7] = true;
 						locationDesc = "Press [3] to exit";
@@ -410,6 +411,109 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 			northDoor = "Mysterious Door";
 		}
 	}
+	else if (locationName == "Mysterious Door")
+	{
+		locationDesc = "You approach the mysterious door you managed to open, you can peel back the slab to head outside it seems.\n";
+		cout << locationDesc;
+	}
+	else if (locationName == "Hilly Fields")
+	{
+		locationDesc = "As you step outside you squint from the morning haze, it only takes you another moment to notice the fog.\nIt's thick enough that on any other morning you'd be blinded by it's light.\nInstead you're blinded by this mist. You can barely see in front of you.\nYour fire is going down from your lamp, you need more light.\nYou see the silhoutte of a large structure to your north, and a long path that winds across the hills towards it.\nYou see a shadowy structure to the west that appears to be a bit closer.\nIt is difficult to make it all out clearly.\nWhere do you go?\n";
+		cout << locationDesc;
+	}
+	else if (locationName == "Cemetary")
+	{
+		//bool ThiefisAlive = true;
+		GameClass Game;
+		cout << locationDesc;
+		while (playerchoice != 3)
+		{
+
+			if (!taskDone[10])
+			{
+				
+				cout<<"\n[1] Talk to the figure \n[2] Use item\n[3] Leave\n";
+				playerchoice = validate.inputValidation();
+				switch (playerchoice)
+				{
+					case 1:
+					{
+						cout << "You approach the figure until you can just barely make out their face. They reveal themselves to be a thief graverobber.\n They casually go about their business digging up and peeling jewelry off of various corpses.\n They happen to have what looks like children's toys and other knick-knacks from the recently deceased on their person.\n He asks you if you're new around here, casually indifferent to the actions he is doing.\n";
+						break;
+					}
+					case 2:
+					{
+						string use = Game.UseMenu(playerinventory, roomObject);
+						if (use == "Sword")
+						{
+							cout << "You lunge towards the thief with your sword, stabbing him straight through his twisted heart.\n He doubles back in pain, slumping to the ground like a sack of grain, and like one he spills to the ground. Instead of grain, he spills out blood from his wound and mouth.\n He is now dead, his ill-gotten goods are now yours.\n Unfortunately, you have little use for most of his wares, except for a small stash of lamp oil. You take it hastily.\n\n[1] Inspect the Graves \n[2] Inspect Body\n[3] Leave\n";
+							//ThiefisAlive = false;
+							taskDone[10] = true;
+							playerinventory.AddItem("Lamp Oil");
+							//cout << "Is the theif alive????????" << ThiefisAlive;
+							break;
+						}
+						else if (use == "Lantern")
+						{
+							cout << " 'Watch where you're swingin' that thing lad. I don't need new scars.' ";
+						}
+						else if (use == "Sage")
+						{
+							cout << " 'I have no time for witchy things.' ";
+						}
+						else
+						{
+							cout << "Nothing Happens\n";
+						}	
+						break;
+					}
+					default:
+					cout << "Invalid";
+					break;
+				}
+				
+			}
+			else if (taskDone[10])
+			{
+				locationDesc = "You are in the decrepid cemetary.\n The dates indicate that some of these graves have been here for hundreds of years.\n Most are too weathered to be legible anymore.\n The thief's lifeless body lays on the ground.\n\n[1] Inspect the Graves \n[2] Inspect Body\n[3] Leave\n";
+				cout << locationDesc;
+				playerchoice = validate.inputValidation();
+				switch (playerchoice)
+				{
+					case 1:
+					{
+						cout << "The graves are weathered.\n";
+						break;
+					}
+					case 2:
+					{
+						cout << "The thief's body is already being violated by various bugs and insects. The sight of it all reminds you of what just took place and you gag. Best to not look.\n";
+						
+						break;
+					}
+					default:
+					cout << "Invalid\n\n";
+					break;
+				}			
+			}
+		}
+	}
+	else if (locationName == "Winding Path")
+	{
+		if (playerinventory.SearchInventory("Lamp Oil"))
+		{
+			northDoor = "Castle Gate";
+			locationDesc = "";
+			cout << locationDesc;
+		}
+		else
+		{
+			locationDesc = "You keep walking forward, but the fog becomes too much for you to handle, you're certain that there has to be another way through the fog. You luckily still know the way back.\n";
+			northDoor = "";
+			cout << locationDesc;
+		}
+	}
+
 	else
 	{
 		cout << "No Options Currently Available" << endl;

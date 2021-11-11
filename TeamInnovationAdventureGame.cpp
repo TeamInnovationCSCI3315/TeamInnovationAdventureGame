@@ -34,18 +34,23 @@ int main()
 	Locations LeftTunnelRoom("Left Tunnel Room", "As you go down the pathway to the left the granite gives way to finished stonework.\n You see at the end a shadow.\n But not just any shadow, a darkness your light fails to illuminate from where you're standing.\nIt's disorienting to your eyes, and startles your stomach as you try to make out what it is.\n A faint moaning can be heard, it seems to be alive\n This could be deadly. Do you approach the shadow to inspect? \n", "", "", "Tunnel", "Mysterious Room", "","");
 	Locations StaircaseRoom("Staircase Room", "Staircase Room Description", "", "Mysterious Room", "", "", "", "Wraith");
 	Locations MysteriousDoor("Mysterious Door", "You approach the mysterious door you managed to open, you can peel back the slab to head outside it seems.", "", "", "Hilly Fields", "Staircase Room", "","");
-	Locations HillyFields("Hilly Fields", "As you step outside you squint from the morning haze, it only takes you another moment to notice the fog.\nIt's thick enough that on any other morning you'd be blinded by it's light.\nInstead you're blinded by this mist. You can barely see in front of you.\nYour fire is going down from your lamp, you need more light.\nYou can see two faint images, one to the north and the other to the west.\nWhere do you go?\n", "Image to the North", "", "Mysterious Door", "Image to the West", "","");
+	Locations HillyFields("Hilly Fields", "As you step outside you squint from the morning haze, it only takes you another moment to notice the fog.\nIt's thick enough that on any other morning you'd be blinded by it's light.\nInstead you're blinded by this mist. You can barely see in front of you.\nYour fire is going down from your lamp, you need more light.\nYou see the silhoutte of a large structure to your north, and a long path that winds across the hills towards it.\nYou see a shadowy structure to the west that appears to be a bit closer.\nIt is difficult to make it all out clearly.\nWhere do you go?\n", "Winding Path", "", "Mysterious Door", "Cemetary", "","");
+	Locations Cemetary("Cemetary", "You are in the decrepid cemetary.\n The dates indicate that some of these graves have been here for hundreds of years.\n Most are too weathered to be legible anymore.\n You see a figure walking around, perhaps they are here visiting someone.\n", "", "", "Hilly Fields", "", "","graverobber");
+	Locations WindingPath("Winding Path", "Winding Path Description", "Foggy Structure", "Hilly Fields", "","","","");
 	Locations PlayerLocation("", "", "", "", "","","","");
-	Locations AllLocations[] = { VillageEntrance , AbandonedShack , Tavern , VillageGarden, Tunnel , MysteriousRoom , LeftTunnelRoom, StaircaseRoom, MysteriousDoor, HillyFields};
-	const int AllLocationsSize = 10;
+	Locations AllLocations[] = { VillageEntrance , AbandonedShack , Tavern , VillageGarden, Tunnel , MysteriousRoom , LeftTunnelRoom, StaircaseRoom, MysteriousDoor, HillyFields, Cemetary, WindingPath};
+	const int AllLocationsSize = 12;
 	
 	// Player starts at Village Entrance, so their initial location is Village Entrance;
 	PlayerLocation = VillageEntrance;
+	
+	// Testing commands. Replace with desired commands below, comment out above starting location:
 	/*
-	Testing commands. Replace with desired commands below, comment out above starting location:
-	PlayerLocation = Tunnel; // Change location to whatever starting area you want
+	 PlayerLocation = HillyFields; // Change location to whatever starting area you want
 	PlayerInventory.AddItem("Lantern"); // add items you want
-	PlayerInventory.AddItem("Sage");*/
+	PlayerInventory.AddItem("Sage");
+	PlayerInventory.AddItem("Sword");
+	*/
 	UI Interface;
 	PlayerClass Player();
 		cout << "Game Version 0.3" << endl;

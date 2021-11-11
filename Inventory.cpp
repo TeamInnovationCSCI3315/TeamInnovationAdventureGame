@@ -55,6 +55,12 @@ void Inventory::RemoveAllItems()
 		inventory.pop_back();
 	}
 }
+/*void Inventory::RemoveItem(string item)
+{
+	inventory.pop_back(item);
+}
+*/
+
 void Inventory::DisplayInventory()
 {
 	int e=0;
