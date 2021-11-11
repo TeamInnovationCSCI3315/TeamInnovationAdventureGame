@@ -1,6 +1,14 @@
-﻿  Locations.cpp
+﻿  GameClass.cpp
+  inputvalidation.cpp
+  Inventory.cpp
+C:\Users\twood\source\repos\TEAMINNOVATIONADVGAME(BR91)\Inventory.cpp(116,25): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  Locations.cpp
+  PlayerClass.cpp
   TeamInnovationAdventureGame.cpp
-C:\Users\twood\source\repos\TEAMINNOVATIONADVGAME(BR90)\TeamInnovationAdventureGame.cpp(55,14): warning C4930: 'PlayerClass Player(void)': prototyped function not called (was a variable definition intended?)
-C:\Users\twood\source\repos\TEAMINNOVATIONADVGAME(BR90)\TeamInnovationAdventureGame.cpp(17,6): warning C4101: 'playerchoice': unreferenced local variable
+C:\Users\twood\source\repos\TEAMINNOVATIONADVGAME(BR91)\TeamInnovationAdventureGame.cpp(59,14): warning C4930: 'PlayerClass Player(void)': prototyped function not called (was a variable definition intended?)
+C:\Users\twood\source\repos\TEAMINNOVATIONADVGAME(BR91)\TeamInnovationAdventureGame.cpp(17,6): warning C4101: 'playerchoice': unreferenced local variable
+  UI.cpp
+C:\Users\twood\source\repos\TEAMINNOVATIONADVGAME(BR91)\UI.cpp(103,6): warning C4101: 'playerChoice': unreferenced local variable
   Generating Code...
-  TeamInnovationAdventureGame.vcxproj -> C:\Users\twood\source\repos\TEAMINNOVATIONADVGAME(BR90)\x64\Debug\TeamInnovationAdventureGame.exe
+  LINK : C:\Users\twood\source\repos\TEAMINNOVATIONADVGAME(BR91)\x64\Debug\TeamInnovationAdventureGame.exe not found or not built by the last incremental link; performing full link
+  TeamInnovationAdventureGame.vcxproj -> C:\Users\twood\source\repos\TEAMINNOVATIONADVGAME(BR91)\x64\Debug\TeamInnovationAdventureGame.exe
