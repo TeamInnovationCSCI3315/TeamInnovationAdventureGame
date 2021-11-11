@@ -37,9 +37,13 @@ int main()
 	Locations HillyFields("Hilly Fields", "As you step outside you squint from the morning haze, it only takes you another moment to notice the fog.\nIt's thick enough that on any other morning you'd be blinded by it's light.\nInstead you're blinded by this mist. You can barely see in front of you.\nYour fire is going down from your lamp, you need more light.\nYou see the silhoutte of a large structure to your north, and a long path that winds across the hills towards it.\nYou see a shadowy structure to the west that appears to be a bit closer.\nIt is difficult to make it all out clearly.\nWhere do you go?\n", "Winding Path", "", "Mysterious Door", "Cemetary", "","");
 	Locations Cemetary("Cemetary", "You are in the decrepid cemetary.\n The dates indicate that some of these graves have been here for hundreds of years.\n Most are too weathered to be legible anymore.\n You see a figure walking around, perhaps they are here visiting someone.\n", "", "", "Hilly Fields", "", "","graverobber");
 	Locations WindingPath("Winding Path", "Winding Path Description", "Foggy Structure", "Hilly Fields", "","","","");
-	Locations PlayerLocation("", "", "", "", "","","","");
-	Locations AllLocations[] = { VillageEntrance , AbandonedShack , Tavern , VillageGarden, Tunnel , MysteriousRoom , LeftTunnelRoom, StaircaseRoom, MysteriousDoor, HillyFields, Cemetary, WindingPath};
-	const int AllLocationsSize = 12;
+	Locations CastleGate("Castle Gate", "Castle Gate Description", "Castle Courtyard", "Winding Path", "", "", "", "");
+	Locations CastleCourtyard("Castle Courtyard", "Castle Courtyard Description", "Castle Waiting Room", "Castle Gate", "", "", "", "");
+	Locations CastleWaitingRoom("Castle Waiting Room", "Castle Waiting Room Description+Puzzle", "Castle Throne Room", "Castle Courtyard", "", "", "", "");
+	Locations CastleThroneRoom("Castle Throne Room", "Castle Throne Room Description+Boss", "Wake Up", "", "", "", "", "");
+	Locations PlayerLocation("", "", "", "", "", "", "", "");
+	Locations AllLocations[] = { VillageEntrance , AbandonedShack , Tavern , VillageGarden, Tunnel , MysteriousRoom , LeftTunnelRoom, StaircaseRoom, MysteriousDoor, HillyFields, Cemetary, WindingPath, CastleGate, CastleCourtyard, CastleWaitingRoom, CastleThroneRoom };
+	const int AllLocationsSize = 16;
 	
 	// Player starts at Village Entrance, so their initial location is Village Entrance;
 	PlayerLocation = VillageEntrance;
