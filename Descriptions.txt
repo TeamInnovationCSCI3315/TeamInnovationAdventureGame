@@ -132,3 +132,33 @@ You see the silhoutte of a large structure to your north, and a long path that w
 You see a shadowy structure to the west that appears to be a bit closer.\n
 It is difficult to make it all out clearly.\n
 Where do you go?\n
+
+Castle Gate Description
+The gate of the shadowy structure is an intimidating sight.\nYou realize this is a large, stone castle.\nThe largest you’ve ever seen in your life.\nThe entire structure stands over a large abyss.\nYou expect to see the ocean but as you look down it is simply a void.\nThe gate could never open, you'd think.\nIt’s steel portcullis is rusted and aged to a point.\nYet the gate, like a malicious maw, opens widely for you.\nAs you approach the gate the courtyard is in sight.\nWhere do you go?
+
+
+Castle Courtyard Description
+As you enter the courtyard the sight of the palace is ominously peaceful.\nFlowers grow in the courtyard.\nRose bushes, though with many thorns, border the courtyard.\nA light rain falls on the courtyard.\nThe rest of this world feels so twisted.\nBirds chirp, leaves rustle.\nAnd it is almost as disturbing as it is beautiful.\nThe grand doors to the castle lay on the path.
+
+Castle Waiting Room Description
+You enter the waiting room of the castle.\nIt is warm, everywhere has been uncomfortably chilly.\nOr they made your spine shiver at least.\nWhy not this place?\nYou find no obvious gateway to the throne room.\nYou do find something though.\n(Insert the puzzle here)
+
+
+Castle Throne Room Description + Boss
+You stand before the castle throne room.\nFrustrated, desperate you approach the throne.\nIt is a gilded majestic sight to behold.\nBut you have no care for these things\nYou want to just have this over.\nYou want to wake up.\nBut I won’t let you.
+[Pause]
+\nOh you’re surprised?\nDon’t be, you saw this coming no doubt.\nOr have you regressed so far?\nI suppose you would’ve had to.\nI sit up and walk towards you.\nI share your frustrations.\nYour horror.\nThat is why I made this place.\nLook at it.
+[Pause] 
+\nIt’s home.\nIt’s peaceful.\nIt’s everything a dream could ask for.\nI only had to subject myself to sleep.
+\n[Pause]
+\nI knew you would have to pass the final strand and fall into the abyss.\nSo I set up this fort and waited.\nI got so bored I guided you here.\nBecause I mean to end this.
+[Pause]
+\nYou pulled out your trump card though haven’t you?\nYou forgot.\nYou were so close to giving in.\Just finally letting me live in fantasy.\nBut you forgot and thus now intend to wake up.\nOr you would anyway in time.\nSo I gave you your “quest”....
+[Pause]
+\nYou understand?\nI embraced our nightmare.\nWipe that expression off your face.\nDon’t you understand how ugly we look like that?\nMust I spell it out again.\nI am your deep conscience.\nI AM YOU.
+[Pause]
+\nI would rather spend our entire lives in this nightmare.\nIt’s so much better than the reality we subjected ourselves to.\nIn time it’s ugly now but I may be able to make it beautiful.\nBecause it’s ours.\nNobody else's.
+[Pause]
+\nBut you, you always insist on awaking.\nSo I’ll keep killing you until you give in.\nI’d do this for an eternity if I must.
+[Pause]
+\nI will scar myself if need be.\nI will be the worst nightmare of myself.\nI give a devilish smirk to you as you find it revolting.\nYou ready yourself to fight as always.\nOh how I can’t wait to finish this.\n[Enter the combat]
