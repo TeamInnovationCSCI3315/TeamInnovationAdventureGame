@@ -1,4 +1,6 @@
-﻿  TeamInnovationAdventureGame.cpp
-C:\Users\twood\source\repos\TEAMINNOVATIONADVGAME(BR103)\TeamInnovationAdventureGame.cpp(59,14): warning C4930: 'PlayerClass Player(void)': prototyped function not called (was a variable definition intended?)
-C:\Users\twood\source\repos\TEAMINNOVATIONADVGAME(BR103)\TeamInnovationAdventureGame.cpp(17,6): warning C4101: 'playerchoice': unreferenced local variable
-  TeamInnovationAdventureGame.vcxproj -> C:\Users\twood\source\repos\TEAMINNOVATIONADVGAME(BR103)\x64\Debug\TeamInnovationAdventureGame.exe
+﻿  Locations.cpp
+C:\Users\louie\source\repos\TeamInnovationAdventureGame2\Locations.cpp(538,11): warning C4129: 'J': unrecognized character escape sequence
+  UI.cpp
+C:\Users\louie\source\repos\TeamInnovationAdventureGame2\UI.cpp(108,6): warning C4101: 'playerChoice': unreferenced local variable
+  Generating Code...
+  TeamInnovationAdventureGame.vcxproj -> C:\Users\louie\source\repos\TeamInnovationAdventureGame2\x64\Debug\TeamInnovationAdventureGame.exe

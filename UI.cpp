@@ -60,14 +60,16 @@ Displays the user interface for the game as a whole. Player can:
 		Case 1: Interact (Location Actions),
 		Case 2: Move Locations (MoveOptions),
 		Case 3: Show Inventory (DisplayInventory),
+		Case 4: Look (LocationDesc)
 		Case 0: Quit Game (Quit)
 */
+
 void UI::Menu(Locations AllLocations[], Locations& PlayerLocation, Inventory& PlayerInventory, GameClass& Game, int AllLocationsSize)
 {
 	cout << "--------------------------------------------------------------------------" << endl;
 	cout << "You are currently at: " << PlayerLocation.getLocationName() << endl;
 	cout << "--------------------------------------------------------------------------" << endl;
-	cout << "[1] Interact\n" << "[2] Move\n" << "[3] Inventory \n" << "[0] Quit Game\n";
+	cout << "[1] Interact\n" << "[2] Move\n" << "[3] Inventory \n" << "[4] Look\n" << "[0] Quit Game\n";
 	cout << "--------------------------------------------------------------------------" << endl;
 	//cout << "\t [1] North: " << PlayerLocation.getNorthDoor() << endl << "\t [2] South: " << PlayerLocation.getSouthDoor() << endl << "\t [3] East: " << PlayerLocation.getEastDoor() << endl << "\t [4] West: " << PlayerLocation.getWestDoor() << endl << "\t [5] View Inventory" << endl << "\t [0] Quit Game" << endl << endl;
 	playerInput = validate.inputValidation();
@@ -81,6 +83,9 @@ void UI::Menu(Locations AllLocations[], Locations& PlayerLocation, Inventory& Pl
 		break;
 	case 3:
 		PlayerInventory.DisplayInventory();
+		break;
+	case 4:
+		PlayerLocation.LocationLook(AllLocations, PlayerInventory, AllLocationsSize);
 		break;
 	case 0:
 		Game.Quit();
