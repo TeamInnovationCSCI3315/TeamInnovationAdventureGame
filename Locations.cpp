@@ -433,13 +433,13 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 	{
 		//bool ThiefisAlive = true;
 		GameClass Game;
-		cout << locationDesc;
+		//cout << locationDesc;
 		while (playerchoice != 3)
 		{
 
 			if (!taskDone[10])
 			{
-				
+				cout << locationDesc;
 				cout<<"\n[1] Talk to the figure \n[2] Use item\n[3] Leave\n";
 				playerchoice = validate.inputValidation();
 				switch (playerchoice)
@@ -454,7 +454,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 						string use = Game.UseMenu(playerinventory, roomObject);
 						if (use == "Sword")
 						{
-							cout << "You lunge towards the thief with your sword, stabbing him straight through his twisted heart.\n He doubles back in pain, slumping to the ground like a sack of grain, and like one he spills to the ground. Instead of grain, he spills out blood from his wound and mouth.\n He is now dead, his ill-gotten goods are now yours.\n Unfortunately, you have little use for most of his wares, except for a small stash of lamp oil. You take it hastily.\n\n[1] Inspect the Graves \n[2] Inspect Body\n[3] Leave\n";
+							cout << "You lunge towards the thief with your sword, stabbing him straight through his twisted heart.\n He doubles back in pain, slumping to the ground like a sack of grain, and like one he spills to the ground. Instead of grain, he spills out blood from his wound and mouth.\n He is now dead, his ill-gotten goods are now yours.\n Unfortunately, you have little use for most of his wares, except for a small stash of lamp oil. You take it hastily.\n\n";
 							//ThiefisAlive = false;
 							taskDone[10] = true;
 							playerinventory.AddItem("Lamp Oil");
@@ -483,7 +483,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 			}
 			else if (taskDone[10])
 			{
-				locationDesc = "You are in the decrepid cemetary.\n The dates indicate that some of these graves have been here for hundreds of years.\n Most are too weathered to be legible anymore.\n The thief's lifeless body lays on the ground.\n\n[1] Inspect the Graves \n[2] Inspect Body\n[3] Leave\n";
+				locationDesc = "[1] Inspect the Graves \n[2] Inspect Body\n[3] Leave\n";
 				cout << locationDesc;
 				playerchoice = validate.inputValidation();
 				switch (playerchoice)

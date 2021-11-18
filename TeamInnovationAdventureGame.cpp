@@ -57,7 +57,7 @@ int main()
 	
 	UI Interface;
 	PlayerClass Player();
-		cout << "Game Version 0.3" << endl;
+		cout << "Game Version 0.4" << endl;
 		// Display Start Screen
 	Interface.DisplayStartScreen();
 	// Display Introduction

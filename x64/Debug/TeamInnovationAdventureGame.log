@@ -1,2 +1,4 @@
-﻿  GameClass.cpp
-  TeamInnovationAdventureGame.vcxproj -> C:\Users\guita\source\repos\TeamInnovationAdventureGame\x64\Debug\TeamInnovationAdventureGame.exe
+﻿  TeamInnovationAdventureGame.cpp
+C:\Users\guita\source\repos\TeamInnovationAdventureGame\TeamInnovationAdventureGame.cpp(59,14): warning C4930: 'PlayerClass Player(void)': prototyped function not called (was a variable definition intended?)
+C:\Users\guita\source\repos\TeamInnovationAdventureGame\TeamInnovationAdventureGame.cpp(17,6): warning C4101: 'playerchoice': unreferenced local variable
+  TeamInnovationAdventureGame.vcxproj -> C:\Users\guita\Source\Repos\TeamInnovationAdventureGame\x64\Debug\TeamInnovationAdventureGame.exe
