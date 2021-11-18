@@ -6,6 +6,7 @@
 #include <string>
 #include <map>
 #include "InputValidation.h"
+#include <fstream>
 using namespace std;
 
 InputValidation validate;
@@ -20,19 +21,20 @@ void UI::DisplayStartScreen()
 	cout << "                   | |--|                       |--| |                 " << endl << "                   |-|  |-----------------------|  |-|" << endl << "                   | |  |                       |  | |                 " << endl;
 	cout << "------------------(Press 1 to Start the Nightmare)---------------------"<<endl;
 	cout << "---------------(Press Anything Else to End the Dream)------------------" << endl;
-	int playerinputst;
+	string playerinputst = "";
 	cin >> playerinputst;
-	while (playerinputst != 1)
-	{
-		if (playerinputst == 1)
+		if (playerinputst == "1")
 		{
-
+			DisplayIntroduction();
+		}
+		else if (playerinputst == "2")
+		{
+			//loadgame
 		}
 		else
 		{
 			exit(0);
 		}
-	}
 }
 void UI::DisplayIntroduction()
 {
@@ -67,7 +69,7 @@ void UI::Menu(Locations AllLocations[], Locations& PlayerLocation, Inventory& Pl
 	cout << "--------------------------------------------------------------------------" << endl;
 	cout << "You are currently at: " << PlayerLocation.getLocationName() << endl;
 	cout << "--------------------------------------------------------------------------" << endl;
-	cout << "[1] Interact\n" << "[2] Move\n" << "[3] Inventory \n" << "[0] Quit Game\n";
+	cout << "[1] Interact\n" << "[2] Move\n" << "[3] Inventory \n" << "[4] Look \n" << "[5] Save Game \n" << "[0] Quit Game\n";
 	cout << "--------------------------------------------------------------------------" << endl;
 	//cout << "\t [1] North: " << PlayerLocation.getNorthDoor() << endl << "\t [2] South: " << PlayerLocation.getSouthDoor() << endl << "\t [3] East: " << PlayerLocation.getEastDoor() << endl << "\t [4] West: " << PlayerLocation.getWestDoor() << endl << "\t [5] View Inventory" << endl << "\t [0] Quit Game" << endl << endl;
 	playerInput = validate.inputValidation();
@@ -81,6 +83,9 @@ void UI::Menu(Locations AllLocations[], Locations& PlayerLocation, Inventory& Pl
 		break;
 	case 3:
 		PlayerInventory.DisplayInventory();
+		break;
+	case 5:
+		SaveGame(PlayerInventory, PlayerLocation);
 		break;
 	case 0:
 		Game.Quit();
@@ -167,4 +172,14 @@ int UI::ReturnChoices()
 	return playerInput;
 }
 */
+void UI::SaveGame(Inventory& playerInventory, Locations& playerLocation)
+{
+	ofstream saveFile;
+	saveFile.open("TeamInnovationSaveInventory.txt");
+	for (int i = 0; i < playerInventory.GetInventorySize(); i++)
+	{
+		saveFile << playerInventory.GetItemAt(i + 1) << endl;
+	}
+	saveFile.close();
 
+}
