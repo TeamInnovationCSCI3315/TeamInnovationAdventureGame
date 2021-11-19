@@ -161,29 +161,30 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 			if (playerinventory.SearchInventory("Lantern"))
 			{	
 				southDoor = "Tunnel";
-				locationDesc = "With the lantern in hand you head towards the abandoned shack once again.\nIt seems to be made out of a rotting, creeping willow of some kind or another, though it splinters out as a thorny hide.\nIt has a flimsy door held together by sheer luck, and a rusted doorknob is the only thing standing between youand the inside.\nYou pull open the wooden door as you do the door comes off of it's hinges with a loud thunk.\nYou step to the side with an inexplicable calmness as it falls where you were previously standing.\nThe inside of it is  hard to take in as you enter, still wondering.\nThe walls seem warped and as if waves of fabric compared to it's porcupine exterior.\nAn ocean of fine willow, sandedand well maintained like it's floors and a nearby bed.\nThe candles with their wax drapping over windowsills greet you with the faintest flicker, before extinguishing.\nStartled, you notice the new wax drips just below a trapdoor not just a foot away from you.\nIt's fine finished wood and golden knocker whisper to you almost in a wordless alure.\nYou wonder finally, why ? \nThe door, the candles, the words, this shack.\nAnd it's with these thoughts you wonder, should you go down the trapdoor? There seems to be some sort of tunnel underneith the door, but it doesnt seem possible to return. \n:	";
+				//locationDesc = "With the lantern in hand you head towards the abandoned shack once again.\nIt seems to be made out of a rotting, creeping willow of some kind or another, though it splinters out as a thorny hide.\nIt has a flimsy door held together by sheer luck, and a rusted doorknob is the only thing standing between youand the inside.\nYou pull open the wooden door as you do the door comes off of it's hinges with a loud thunk.\nYou step to the side with an inexplicable calmness as it falls where you were previously standing.\nThe inside of it is  hard to take in as you enter, still wondering.\nThe walls seem warped and as if waves of fabric compared to it's porcupine exterior.\nAn ocean of fine willow, sandedand well maintained like it's floors and a nearby bed.\nThe candles with their wax drapping over windowsills greet you with the faintest flicker, before extinguishing.\nStartled, you notice the new wax drips just below a trapdoor not just a foot away from you.\nIt's fine finished wood and golden knocker whisper to you almost in a wordless alure.\nYou wonder finally, why ? \nThe door, the candles, the words, this shack.\nAnd it's with these thoughts you wonder, should you go down the trapdoor? There seems to be some sort of tunnel underneith the door, but it doesnt seem possible to return. \n:	";
 				cout << locationDesc;
 			}
 			else
 			{
 				
-				locationDesc = "After walking you arrive at the pitch black shack, it's presence alone stands as if you could die and it wouldn't so much as creek.\nAs you approach it closer to inspect the strange building you find that it becomes far too dark to see and proceed forward, at least safely.\nDo you decide to exit now ? \n";
+				//locationDesc = "After walking you arrive at the pitch black shack, it's presence alone stands as if you could die and it wouldn't so much as creek.\nAs you approach it closer to inspect the strange building you find that it becomes far too dark to see and proceed forward, at least safely.\nDo you decide to exit now ? \n";
 				southDoor = "";
-				cout << locationDesc;
+				//cout << locationDesc;
 			}
 	}
 	else if (locationName == "Village Garden")
 	{
 		if (!playerinventory.SearchInventory("Sage"))
 		{
-			locationDesc = "You enter the garden.\n You smell a strong herb nearby.\n There is flora all around you.\n\n[1] Admire garden \n[2] Pick herb \n[3] Exit\n";
-
+			cout << "[1] Admire garden \n[2] Pick herb \n[3] Exit\n";
+			//cout << locationDesc;
 		}
 		if (playerinventory.SearchInventory("Sage"))
 		{
-			locationDesc = "[1] Admire the Garden \n [3] Go back to Village Entrance\n \n";
+			cout << "[1] Admire the Garden \n [3] Go back to Village Entrance\n \n";
+			//cout << locationDesc;
 		}
-		cout << locationDesc;
+		
 		while (playerchoice != 3)
 		{
 			//cout << locationDesc;
@@ -214,14 +215,16 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 	{
 		if (!playerinventory.SearchInventory("Lantern"))
 		{
-			locationDesc= "You enter into a tavern with bright almost blinding light.It is noisy as people chat around at the bar and entrance.\nYou are able to squeeze your way into the main room, most people have not taken notice of youand proceed about their bussiness.\nThere lays the bar to your right that carries the smells of beer to you alongside other aromas.\nYou also see on your left a fine finished table with a lantern on it.\n \n[1] Go to bar \n[2] Pick up lantern from table \n[3] Exit\n";
+			//locationDesc= "You enter into a tavern with bright almost blinding light.It is noisy as people chat around at the bar and entrance.\nYou are able to squeeze your way into the main room, most people have not taken notice of youand proceed about their bussiness.\nThere lays the bar to your right that carries the smells of beer to you alongside other aromas.\nYou also see on your left a fine finished table with a lantern on it.\n 
+			cout << "\n[1] Go to bar \n[2] Pick up lantern from table \n[3] Exit\n";
 			
 		}
 		if (playerinventory.SearchInventory("Lantern"))
 		{
-			locationDesc = "[1] Go to bar\n [3] Go back to Village Entrance\n \n";
+			
+			cout << "[1] Go to bar\n [3] Go back to Village Entrance\n \n";
 		}
-		cout << locationDesc;
+		//cout << locationDesc;
 		while (playerchoice != 3)
 		{
 			//cout << locationDesc;
@@ -257,12 +260,12 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 		
 		if (isinTunnel == 1)
 		{
-			locationDesc = "You see two pathways ahead of you, one to the left and one that continues straight. \n ";
+			//locationDesc = "You see two pathways ahead of you, one to the left and one that continues straight. \n ";
 		}
 		cout << locationDesc;
 		if (!playerinventory.SearchInventory("Sword"))
 		{
-			cout << "A rusty sword lays on the ground in front of you.\n It looks like it was left long ago by a weary traveler.\n[1] Pick up sword \n[3] Continue onward\n";
+			cout << "\n[1] Pick up sword \n[3] Continue onward\n";
 			
 		}
 		if(playerinventory.SearchInventory("Sword"))
@@ -281,7 +284,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 				{
 					cout << "You have picked up the Rusty Sword from the ground! \n ";
 					playerinventory.AddItem(TempLocation[4].getItem());
-					locationDesc = "[3] Continue Onwards\n \n";
+					cout << "[3] Continue Onwards\n \n";
 				}
 				
 				else
@@ -552,8 +555,11 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 	}
 }
 
+
+
 /*
 * This function allows a player to replay the description of the area they are, without having to open the interact menu. 
+* 
 */
 void Locations::LocationLook(Locations TempLocation[], Inventory& playerinventory, int locationsize)
 {
@@ -581,25 +587,27 @@ void Locations::LocationLook(Locations TempLocation[], Inventory& playerinventor
 	{
 		if (!playerinventory.SearchInventory("Sage"))
 		{
-			locationDesc = "You enter the garden.\n You smell a strong herb nearby.\n There is flora all around you.\n\n[1] Admire garden \n[2] Pick herb \n[3] Exit\n";
-
+			locationDesc = "You enter the garden.\n You smell a strong herb nearby.\n There is flora all around you.\n\n";// [1] Admire garden \n[2] Pick herb \n[3] Exit\n";
+			cout << locationDesc;
 		}
 		if (playerinventory.SearchInventory("Sage"))
 		{
 			locationDesc = "[1] Admire the Garden \n [3] Go back to Village Entrance\n \n";
+			cout << locationDesc;
 		}
-		cout << locationDesc;
+		
 
 	}
 	else if (locationName == "Tavern")
 	{
 		if (!playerinventory.SearchInventory("Lantern"))
 		{
-			locationDesc = "You enter into a tavern with bright almost blinding light.It is noisy as people chat around at the bar and entrance.\nYou are able to squeeze your way into the main room, most people have not taken notice of youand proceed about their bussiness.\nThere lays the bar to your right that carries the smells of beer to you alongside other aromas.\nYou also see on your left a fine finished table with a lantern on it.\n \n[1] Go to bar \n[2] Pick up lantern from table \n[3] Exit\n";
+			locationDesc = "You enter into a tavern with bright almost blinding light.It is noisy as people chat around at the bar and entrance.\nYou are able to squeeze your way into the main room, most people have not taken notice of you  and proceed about their bussiness.\nThere lays the bar to your right that carries the smells of beer to you alongside other aromas.\nYou also see on your left a fine finished table with a lantern on it.\n \n[1] Go to bar \n[2] Pick up lantern from table \n[3] Exit\n";
 		}
 		if (playerinventory.SearchInventory("Lantern"))
 		{
-			locationDesc = "[1] Go to bar\n [3] Go back to Village Entrance\n \n";
+			locationDesc = "You enter into a tavern with bright almost blinding light.It is noisy as people chat around at the bar and entrance.\nYou are able to squeeze your way into the main room, most people have not taken notice of you and proceed about their bussiness.\nThere lays the bar to your right that carries the smells of beer to you alongside other aromas.\n";
+			//locationDesc = "[1] Go to bar\n [3] Go back to Village Entrance\n \n";
 		}
 		cout << locationDesc;
 		while (playerchoice != 3)
@@ -615,11 +623,11 @@ void Locations::LocationLook(Locations TempLocation[], Inventory& playerinventor
 			case 2:
 				if (!playerinventory.SearchInventory("Lantern"))
 				{
-					cout << "You have picked up the lantern from the table! \n ";
-					playerinventory.AddItem(TempLocation[2].getItem());
+					//cout << "You have picked up the lantern from the table! \n ";
+					//playerinventory.AddItem(TempLocation[2].getItem());
 					//playerinventory.DisplayInventory();
 					//Player.DisplayInventory();
-					//TempLocation[2].setLocationDesc("[1] Go to bar\n [3] Go back to Village Entrance\n \n");
+					TempLocation[2].setLocationDesc("[1] Go to bar\n [3] Go back to Village Entrance\n \n");
 					locationDesc = "[1] Go to bar\n [3] Go back to Village Entrance\n \n";
 					//TempLocation[1].setLocationDesc("With the lantern in hand you head towards the abandoned shack once again.\nIt seems to be made out of a rotting, creeping willow of some kind or another, though it splinters out as a thorny hide.\nIt has a flimsy door held together by sheer luck, and a rusted doorknob is the only thing standing between you and the inside.\nYou pull open the wooden door as you do the door comes off of it's hinges with a loud thunk.\nYou step to the side with an inexplicable calmness as it falls where you were previously standing.\nThe inside of it is  hard to take in as you enter, still wondering.\nThe walls seem warped and as if waves of fabric compared to it's porcupine exterior.\nAn ocean of fine willow, sanded and well maintained like it's floors and a nearby bed.\nThe candles with their wax drapping over windowsills greet you with the faintest flicker, before extinguishing.\nStartled, you notice the new wax drips just below a trapdoor not just a foot away from you.\nIt's fine finished wood and golden knocker whisper to you almost in a wordless alure.\nYou wonder finally, why?\nThe door, the candles, the words, this shack.\nAnd it's with these thoughts, this pause, this hesitation, this fear.\nIt happens.\nWhat do you do?\n Press [1] to open it, Press [2] to return to the village entrance:");
 				}
@@ -642,12 +650,13 @@ void Locations::LocationLook(Locations TempLocation[], Inventory& playerinventor
 		cout << locationDesc;
 		if (!playerinventory.SearchInventory("Sword"))
 		{
-			cout << "A rusty sword lays on the ground in front of you.\n It looks like it was left long ago by a weary traveler.\n[1] Pick up sword \n[3] Continue onward\n";
+			locationDesc = "You look up to find the trapdoor you entered from, out of reach.\n Looking around you notice you're in a cramped cavern.\n It is granite like with it's soft shimmer the walls give off as your lantern's light hits and exits the speckled walls.\n You see two pathways ahead of you, one to the left and one that continues straight.\n";
+			cout << "A rusty sword lays on the ground in front of you.\n It looks like it was left long ago by a weary traveler.";  // \n[1] Pick up sword \n[3] Continue onward\n";
 
 		}
 		if (playerinventory.SearchInventory("Sword"))
 		{
-			cout << "[3] Continue Onward\n";
+			cout << locationDesc;
 		}
 
 		while (playerchoice != 3)
