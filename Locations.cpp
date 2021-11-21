@@ -176,12 +176,12 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 	{
 		if (!playerinventory.SearchInventory("Sage"))
 		{
-			cout << "[1] Admire garden \n[2] Pick herb \n[3] Exit\n";
+			cout << "[1] Admire garden \n[2] Pick herb \n[3] Return to menu\n";
 			//cout << locationDesc;
 		}
 		if (playerinventory.SearchInventory("Sage"))
 		{
-			cout << "[1] Admire the Garden \n [3] Go back to Village Entrance\n \n";
+			cout << "[1] Admire garden \n [3] Return to menu\n \n";
 			//cout << locationDesc;
 		}
 		
@@ -192,7 +192,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 			switch (playerchoice)
 			{
 			case 1:
-				cout << "You look at the garden, the flowers are colorful and smell delightful. \n";
+				cout << "You look at the garden, the flowers are colorful and smell delightful. \n You wonder who is responsible for the upkeep of this garden.\n";
 				break;
 
 			case 2:
@@ -203,7 +203,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 					//playerinventory.DisplayInventory();
 					//Player.DisplayInventory();
 					//TempLocation[2].setLocationDesc("[1] Go to bar\n [3] Go back to Village Entrance\n \n");
-					locationDesc = "[1] Admire the garden \n [3] Go back to Village Entrance\n \n";
+					cout << "\n[1] Admire the garden \n[3] Return to menu\n \n";
 					//TempLocation[1].setLocationDesc("With the lantern in hand you head towards the abandoned shack once again.\nIt seems to be made out of a rotting, creeping willow of some kind or another, though it splinters out as a thorny hide.\nIt has a flimsy door held together by sheer luck, and a rusted doorknob is the only thing standing between you and the inside.\nYou pull open the wooden door as you do the door comes off of it's hinges with a loud thunk.\nYou step to the side with an inexplicable calmness as it falls where you were previously standing.\nThe inside of it is  hard to take in as you enter, still wondering.\nThe walls seem warped and as if waves of fabric compared to it's porcupine exterior.\nAn ocean of fine willow, sanded and well maintained like it's floors and a nearby bed.\nThe candles with their wax drapping over windowsills greet you with the faintest flicker, before extinguishing.\nStartled, you notice the new wax drips just below a trapdoor not just a foot away from you.\nIt's fine finished wood and golden knocker whisper to you almost in a wordless alure.\nYou wonder finally, why?\nThe door, the candles, the words, this shack.\nAnd it's with these thoughts, this pause, this hesitation, this fear.\nIt happens.\nWhat do you do?\n Press [1] to open it, Press [2] to return to the village entrance:");
 				}
 				break;
@@ -221,7 +221,6 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 		}
 		if (playerinventory.SearchInventory("Lantern"))
 		{
-			
 			cout << "[1] Go to bar\n [3] Go back to Village Entrance\n \n";
 		}
 		//cout << locationDesc;
@@ -310,14 +309,14 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 		GameClass Death1;
 		isinTunnel = 1;
 		string playerchoice = "";
-		cout << locationDesc << endl;
+		//cout << locationDesc << endl;
 		cout <<"(Y for yes, anything else for no)\n ";
 		cin >> playerchoice;
 		if (playerchoice == "Y" || playerchoice == "y")
 		{
 			Death1.FirstDeath();
 			locationName = "...";
-			locationDesc = "You find your eyes are hazy, you open them. Theres nothing around you but what appears to be a door back to where you started...";
+			/locationDesc = "You find your eyes are hazy, you open them. Theres nothing around you but what appears to be a door back to where you started...";
 			northDoor = "Village Entrance";
 			southDoor = "";
 			westDoor = "";
@@ -327,15 +326,15 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 		}
 		else
 		{
-			locationDesc = "You stand just far enough away from danger, you are able to go back from where you are standing. ";
+			//locationDesc = "You stand just far enough away from danger, you are able to go back from where you are standing. ";
 		}
-		cout << locationDesc;
+		//cout << locationDesc;
 	}
 	else if (locationName == "Mysterious Room")
 	{
 		string playerchoice = "";
 		GameClass Puzzle;
-		cout << "You are in a rigid, uneven granite room difficult to walk in. You see up ahead of you a dead end across the granite with nothing left to show signs of life or means of escape however,\n as you get close you start to notice that there may be something to this. You see etchings into the granite with your lantern." << endl;
+		//cout << "You are in a rigid, uneven granite room difficult to walk in. You see up ahead of you a dead end across the granite with nothing left to show signs of life or means of escape however,\n as you get close you start to notice that there may be something to this. You see etchings into the granite with your lantern." << endl;
 		if (!taskDone[5])
 		{
 			cout << "There seems to be some sort of puzzle written into this wall. Should you try to solve it? (Y for yes, anything else for no)\n ";
@@ -478,10 +477,11 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 			}
 			else if (taskDone[10])
 			{
-				locationDesc = "You are in the decrepid cemetary.\n The dates indicate that some of these graves have been here for hundreds of years.\n Most are too weathered to be legible anymore.\n The thief's lifeless body lays on the ground.\n\n[1] Inspect the Graves \n[2] Inspect Body\n[3] Leave\n";
-				cout << locationDesc;
+				//locationDesc = "You are in the decrepid cemetary.\n The dates indicate that some of these graves have been here for hundreds of years.\n Most are too weathered to be legible anymore.\n The thief's lifeless body lays on the ground.\n";
+				cout << [1] Inspect the Graves \n[2] Inspect Body\n[3] Leave\n;
+				//cout << locationDesc;
 				playerchoice = validate.inputValidation();
-				switch (playerchoice)
+		      switch (playerchoice)
 				{
 					case 1:
 					{
@@ -497,7 +497,8 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 					default:
 					cout << "Invalid\n\n";
 					break;
-				}			
+				}	
+			  		
 			}
 		}
 	}
@@ -506,27 +507,27 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 		if (playerinventory.SearchInventory("Lamp Oil"))
 		{
 			northDoor = "Castle Gate";
-			locationDesc = "";
-			cout << locationDesc;
+			//locationDesc = "";
+			//cout << locationDesc;
 		}
 		else
 		{
-			locationDesc = "You keep walking forward, but the fog becomes too much for you to handle, you're certain that there has to be another way through the fog. You luckily still know the way back.\n";
+			//locationDesc = "You keep walking forward, but the fog becomes too much for you to handle, you're certain that there has to be another way through the fog. You luckily still know the way back.\n";
 			northDoor = "";
-			cout << locationDesc;
+			//cout << locationDesc;
 		}
 	}
 	else if (locationName == "Castle Gate")
 	{
-	cout << locationDesc;
+	//cout << locationDesc;
 	}
 	else if (locationName == "Castle Courtyard")
 	{
-	cout << locationDesc;
+	//cout << locationDesc;
 	}
 	else if (locationName == "Castle Waiting Room")
 	{
-	cout << locationDesc;
+	//cout << locationDesc;
 	}
 	else if (locationName == "Castle Throne Room")
 	{
@@ -587,12 +588,12 @@ void Locations::LocationLook(Locations TempLocation[], Inventory& playerinventor
 	{
 		if (!playerinventory.SearchInventory("Sage"))
 		{
-			locationDesc = "You enter the garden.\n You smell a strong herb nearby.\n There is flora all around you.\n\n";// [1] Admire garden \n[2] Pick herb \n[3] Exit\n";
+			locationDesc = "You enter the garden.\nIt is full of fresh smelling herbs, but one scent is particularly strong. \nThere is flora all around you.\n\n";// [1] Admire garden \n[2] Pick herb \n[3] Exit\n";
 			cout << locationDesc;
 		}
 		if (playerinventory.SearchInventory("Sage"))
 		{
-			locationDesc = "[1] Admire the Garden \n [3] Go back to Village Entrance\n \n";
+			//locationDesc = "[1] Admire the Garden \n [3] Go back to Village Entrance\n \n";
 			cout << locationDesc;
 		}
 		
@@ -695,9 +696,9 @@ void Locations::LocationLook(Locations TempLocation[], Inventory& playerinventor
 	{
 		GameClass Death1;
 		isinTunnel = 1;
-		string playerchoice = "";
-		cout << locationDesc << endl;
-		cout << "(Y for yes, anything else for no)\n ";
+		//string playerchoice = "";
+		//cout << locationDesc << endl;
+		//cout << "(Y for yes, anything else for no)\n ";
 		cin >> playerchoice;
 		if (playerchoice == "Y" || playerchoice == "y")
 		{
@@ -753,7 +754,7 @@ void Locations::LocationLook(Locations TempLocation[], Inventory& playerinventor
 		{
 			cout << "A ghostly presence is in the room. A wraith appears in front of you\n What would you like to do?\n ";
 
-			while (playerchoice != 3)
+			/*while (playerchoice != 3)
 			{
 				locationDesc = "[1] Use an Item \n[2] Talk to the Wraith\n[3] Leave\n";
 				cout << locationDesc;
@@ -793,11 +794,12 @@ void Locations::LocationLook(Locations TempLocation[], Inventory& playerinventor
 					break;
 				}
 			}
+			*/
 		}
 		else if (taskDone[7])
 		{
 			cout << "The path to the staircase is clear, and a mysterious door with light surrounding its edges is at the top\n";
-			northDoor = "Mysterious Door";
+			//northDoor = "Mysterious Door";
 		}
 	}
 	else if (locationName == "Mysterious Door")
@@ -812,7 +814,6 @@ void Locations::LocationLook(Locations TempLocation[], Inventory& playerinventor
 	}
 	else if (locationName == "Cemetary")
 	{
-		//bool ThiefisAlive = true;
 		GameClass Game;
 		cout << locationDesc;
 		while (playerchoice != 3)
@@ -821,13 +822,13 @@ void Locations::LocationLook(Locations TempLocation[], Inventory& playerinventor
 			if (!taskDone[10])
 			{
 
-				cout << "\n[1] Talk to the figure \n[2] Use item\n[3] Leave\n";
+				//cout << "\n[1] Talk to the figure \n[2] Use item\n[3] Leave\n";
 				playerchoice = validate.inputValidation();
 				switch (playerchoice)
 				{
 				case 1:
 				{
-					cout << "You approach the figure until you can just barely make out their face. They reveal themselves to be a thief graverobber.\n They casually go about their business digging up and peeling jewelry off of various corpses.\n They happen to have what looks like children's toys and other knick-knacks from the recently deceased on their person.\n He asks you if you're new around here, casually indifferent to the actions he is doing.\n";
+					cout << "You approach the figure until you can just barely make out their face. After speaking for a while, you gather that they are a graverobber.\n They casually go about their business digging up and peeling jewelry off of various corpses.\n They happen to have what looks like children's toys and other knick-knacks from the recently deceased on their person.\n He asks you if you're new around here, casually indifferent to the actions he is doing.\n";
 					break;
 				}
 				case 2:
@@ -836,10 +837,8 @@ void Locations::LocationLook(Locations TempLocation[], Inventory& playerinventor
 					if (use == "Sword")
 					{
 						cout << "You lunge towards the thief with your sword, stabbing him straight through his twisted heart.\n He doubles back in pain, slumping to the ground like a sack of grain, and like one he spills to the ground. Instead of grain, he spills out blood from his wound and mouth.\n He is now dead, his ill-gotten goods are now yours.\n Unfortunately, you have little use for most of his wares, except for a small stash of lamp oil. You take it hastily.\n\n[1] Inspect the Graves \n[2] Inspect Body\n[3] Leave\n";
-						//ThiefisAlive = false;
 						taskDone[10] = true;
 						playerinventory.AddItem("Lamp Oil");
-						//cout << "Is the theif alive????????" << ThiefisAlive;
 						break;
 					}
 					else if (use == "Lantern")
@@ -866,7 +865,7 @@ void Locations::LocationLook(Locations TempLocation[], Inventory& playerinventor
 			{
 				locationDesc = "You are in the decrepid cemetary.\n The dates indicate that some of these graves have been here for hundreds of years.\n Most are too weathered to be legible anymore.\n The thief's lifeless body lays on the ground.\n\n[1] Inspect the Graves \n[2] Inspect Body\n[3] Leave\n";
 				cout << locationDesc;
-				playerchoice = validate.inputValidation();
+				/*playerchoice = validate.inputValidation();
 				switch (playerchoice)
 				{
 				case 1:
@@ -882,8 +881,10 @@ void Locations::LocationLook(Locations TempLocation[], Inventory& playerinventor
 				}
 				default:
 					cout << "Invalid\n\n";
-					break;
+					break; 
+				
 				}
+				*/
 			}
 		}
 	}
@@ -891,14 +892,14 @@ void Locations::LocationLook(Locations TempLocation[], Inventory& playerinventor
 	{
 		if (playerinventory.SearchInventory("Lamp Oil"))
 		{
-			northDoor = "Castle Gate";
+			//northDoor = "Castle Gate";
 			locationDesc = "";
 			cout << locationDesc;
 		}
 		else
 		{
 			locationDesc = "You keep walking forward, but the fog becomes too much for you to handle, you're certain that there has to be another way through the fog. You luckily still know the way back.\n";
-			northDoor = "";
+			//northDoor = "";
 			cout << locationDesc;
 		}
 	}
