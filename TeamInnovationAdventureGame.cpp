@@ -46,20 +46,20 @@ int main()
 	const int AllLocationsSize = 16;
 	
 	// Player starts at Village Entrance, so their initial location is Village Entrance;
-	//PlayerLocation = VillageEntrance;
+	PlayerLocation = VillageEntrance;
 	
 	// Testing commands. Replace with desired commands below, comment out above starting location:
 	
-	 PlayerLocation = HillyFields; // Change location to whatever starting area you want
-	PlayerInventory.AddItem("Lantern"); // add items you want
+	//PlayerLocation = HillyFields; // Change location to whatever starting area you want
+	/*PlayerInventory.AddItem("Lantern"); // add items you want
 	PlayerInventory.AddItem("Sage");
 	PlayerInventory.AddItem("Sword");
-	
+	*/
 	UI Interface;
 	PlayerClass Player();
 		cout << "Game Version 0.4" << endl;
 		// Display Start Screen
-	Interface.DisplayStartScreen();
+	Interface.DisplayStartScreen(PlayerInventory, PlayerLocation,AllLocations,AllLocationsSize);
 	// Display Introduction
 	// Interface.DisplayIntroduction();
 	while (true) //Will later be switched to !GameOver

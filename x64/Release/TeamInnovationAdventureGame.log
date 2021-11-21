@@ -1,1 +1,9 @@
-﻿  TeamInnovationAdventureGame.vcxproj -> C:\Users\guita\Source\Repos\TeamInnovationAdventureGameSWORD\x64\Release\TeamInnovationAdventureGame.exe
+﻿  GameClass.cpp
+  UI.cpp
+C:\Users\guita\source\repos\TeamInnovationAdventureGameSave\UI.cpp(111,6): warning C4101: 'playerChoice': unreferenced local variable
+  Generating code
+  2 of 326 functions ( 0.6%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  TeamInnovationAdventureGame.vcxproj -> C:\Users\guita\Source\Repos\TeamInnovationAdventureGameSave\x64\Release\TeamInnovationAdventureGame.exe

@@ -5,8 +5,10 @@
 #include <cstdlib>
 #include <string>
 #include <map>
+#include <vector>
 #include "InputValidation.h"
 #include <fstream>
+#include <regex>
 using namespace std;
 
 InputValidation validate;
@@ -14,12 +16,13 @@ PlayerClass player1;
 /*
 	Displays the introduction to the game
 */
-void UI::DisplayStartScreen()
+void UI::DisplayStartScreen(Inventory& playerInventory, Locations& playerLocation, Locations AllLocations[], int AllLocationsSize)
 {
 	GameClass Game;
 	cout << "-----------------------A Strand of Nightmares--------------------------" << endl;
 	cout << "                   | |--|                       |--| |                 " << endl << "                   |-|  |-----------------------|  |-|" << endl << "                   | |  |                       |  | |                 " << endl;
 	cout << "------------------(Press 1 to Start the Nightmare)---------------------"<<endl;
+	cout << "-----------------(Press 2 to Continue the Nightmare)-------------------" << endl;
 	cout << "---------------(Press Anything Else to End the Dream)------------------" << endl;
 	string playerinputst = "";
 	cin >> playerinputst;
@@ -29,7 +32,7 @@ void UI::DisplayStartScreen()
 		}
 		else if (playerinputst == "2")
 		{
-			//loadgame
+			LoadGame(playerInventory, playerLocation, AllLocations, AllLocationsSize);
 		}
 		else
 		{
@@ -157,29 +160,70 @@ void UI::MoveOptions(Locations AllLocations[], Locations& PlayerLocation, int Al
 	}
 }
 /*
-void UI::DisplayLocation(string room,string desc)
-{
-	cout << "You are currently at: " << room << endl;
-	cout << desc << endl;
-	//cin >> playerInput;
-}
-void UI::DisplayChoices(string c)
-{
-	cout << "What do you do? "<<endl;
-}
-int UI::ReturnChoices()
-{
-	return playerInput;
-}
+SaveGame takes in the playerInventory, and playerLocation, and saves the item information, and name of the location the player is currently at to a file wherever the play downloads the game to.
+These 2 saved files are TeamInnovationSaveInventory.txt, and TeamInnovationSaveLocation.txt. Every time the player saves, the file will be overwrited.
 */
 void UI::SaveGame(Inventory& playerInventory, Locations& playerLocation)
 {
-	ofstream saveFile;
-	saveFile.open("TeamInnovationSaveInventory.txt");
+	ofstream inventoryFile;
+	inventoryFile.open("TeamInnovationSaveInventory.txt");
 	for (int i = 0; i < playerInventory.GetInventorySize(); i++)
 	{
-		saveFile << playerInventory.GetItemAt(i + 1) << endl;
+		inventoryFile << playerInventory.GetItemAt(i + 1) << endl;
 	}
-	saveFile.close();
+	//inventoryFile.close();
+	ofstream locationFile;
+	locationFile.open("TeamInnovationSaveLocation.txt");
+	locationFile << playerLocation.getLocationName();
+	cout << "Game was successfully saved!\n";
+	//locationFile.close();
+
+}
+/*
+LoadGame reads 2 files TeamInnovationSaveInventory.txt, and TeamInnovationSaveLocation.txt, and if found, will set the players location to the location read by the file, and adds previous items to their inventory.
+
+*/
+void UI::LoadGame(Inventory& playerInventory, Locations& playerLocation, Locations AllLocations[],int AllLocationsSize)
+{
+	string inventoryData;
+	string northDoor;
+	string southDoor;
+	string eastDoor;
+	string westDoor;
+	string locationName;
+	string locationDesc;
+	string item;
+	string roomObject;
+	string e;
+	vector<string> items;
+	fstream inventoryLoad;
+	fstream locationLoad;
+	inventoryLoad.open("TeamInnovationSaveInventory.txt");
+	locationLoad.open("TeamInnovationSaveLocation.txt");
+	if (!inventoryLoad || !locationLoad)
+	{
+		cout << "Error, no file found";
+	}
+	else
+	{
+		while (inventoryLoad >> inventoryData)
+		{
+			items.push_back(inventoryData);
+		}
+		for (int i = 0; i < items.size(); i++)
+		{
+			playerInventory.AddItem(items[i]);
+		}
+		getline(locationLoad, locationName);
+		for (int i = 0; i < AllLocationsSize; i++)
+		{
+			if (locationName == AllLocations[i].getLocationName())
+			{
+				playerLocation = AllLocations[i];
+			}
+		}
+		cout << "Game was succesfully loaded!\n";
+	}
+
 
 }

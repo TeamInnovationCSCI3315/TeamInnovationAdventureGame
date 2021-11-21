@@ -17,7 +17,7 @@ class UI
 private:
 	enum PlayerMenuChoices
 	{
-		Interact,
+		Interact, 
 		Move,
 		ShowInventory,
 		QuitGame
@@ -26,8 +26,8 @@ private:
 
 public: 
 	void SaveGame(Inventory&,Locations&);
-	void LoadGame(Inventory&, Locations&);
-	void DisplayStartScreen();
+	void LoadGame(Inventory&, Locations&, Locations[],int);
+	void DisplayStartScreen(Inventory&, Locations&, Locations[],int);
 	void DisplayIntroduction();
 	void Menu(Locations[], Locations&, Inventory&, GameClass&, int);
 	void MoveOptions(Locations[], Locations&, int);

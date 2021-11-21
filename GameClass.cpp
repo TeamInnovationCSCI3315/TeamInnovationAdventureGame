@@ -34,7 +34,7 @@ void GameClass::Quit()
 {
 	string tempinput="";
 
-		cout << "Are you sure you would like to quit the game? Your progress will not be saved (Press Y to quit) \n";
+		cout << "Are you sure you would like to quit the game? Remember to save if you haven't yet! (Press Y to quit) \n";
 		cin >> tempinput;
 		if (tempinput == "Y" || tempinput ==  "y")
 		{
