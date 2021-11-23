@@ -57,7 +57,7 @@ int main()
 	*/
 	UI Interface;
 	PlayerClass Player();
-		cout << "Game Version 0.4" << endl;
+		cout << "Game Version 0.4 Save Edition" << endl;
 		// Display Start Screen
 	Interface.DisplayStartScreen(PlayerInventory, PlayerLocation,AllLocations,AllLocationsSize);
 	// Display Introduction
